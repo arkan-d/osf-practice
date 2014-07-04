@@ -1,8 +1,6 @@
 <!--login modal-->
 
 
-
-<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
     
        
   <div class="modal-dialog">
@@ -12,20 +10,50 @@
          
           <h1 class="text-center">Login</h1>
           <p class="">Notice: for use service, please log in to your account or register.</p>
+	  
+	 <!-- <div class="alert alert-danger" role="alert">...</div>-->
+	 <div> <?=validation_errors();?></div>
       </div>
       <div class="modal-body">
-          <form class="form col-md-12 center-block">
+	
+         
+<?php echo form_open('user_c/','class="form col-md-12 center-block"'); ?> 
             <div class="form-group">
-              <input type="text" class="form-control input-lg" placeholder="Email">
+            
+		<?php
+            $data_format = array(
+            'name'          =>  'email',
+            'placeholder'   =>  'email',
+            'class'         =>  'form-control input-lg',
+            'value'         =>  set_value('email')
+            );
+        echo form_input($data_format);
+        ?>
+		
             </div>
             <div class="form-group">
-              <input type="password" class="form-control input-lg" placeholder="Password">
+            		
+		<?php
+            $data_format = array(
+            'name'          =>  'password',
+            'placeholder'   =>  'password',
+            'class'         =>  'form-control input-lg',
+            'value'         =>  set_value('password')
+            );
+        echo form_password($data_format);
+        ?>
+		
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-              <h4 class="text-center"><a href="#">Register</a></h4>
+	      
+	   <?php echo form_submit("","Log In","class='btn btn-primary btn-lg btn-block'"); ?>   
+             
+      <h4 class="text-center"><a href="#">Register</a></h4>
             </div>
-          </form>
+       <?php echo form_close(); ?>
+	  
+	  
+	  
       </div>
       <div class="modal-footer">
           <div class="col-md-12">
@@ -36,12 +64,5 @@
   </div>
   
   
-   <div class="container col-md-8 col-md-offset-2">
-    
-    <p class="copyright text-muted small">Copyright &copy; OSF Global Services <?=date('Y')?>. All Rights Reserved</p>
-</div>
-
-</div>
-<script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+   
 
