@@ -17,7 +17,7 @@
       <div class="modal-body">
 	
          
-<?php echo form_open('user_c/','class="form col-md-12 center-block"'); ?> 
+<?php echo form_open('user/login/','class="form col-md-12 center-block"'); ?> 
             <div class="form-group">
             
 		<?php
