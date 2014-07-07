@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Main extends CI_controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,9 +19,16 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('templates/header');
+		$data['title'] = "Home";
+		//$this->load->library('ion_auth');
+			if (!$this->ion_auth->logged_in())
+		{
+			redirect('auth/login');
+		}
+		
+		$this->load->view('templates/header',$data);
 		$this->load->view('templates/nav');
-		$this->load->view('welcome_message');
+		$this->load->view('dashboard');
 		$this->load->view('templates/footer');
 	}
 }

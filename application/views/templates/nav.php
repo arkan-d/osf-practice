@@ -7,15 +7,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?=base_url();?>">Start Bootstrap</a>
+                <a class="navbar-brand" href="<?=base_url();?>">RSS Reader</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                     
-                            
-       <li class="<?=($this->uri->segment(1)==='home' || $this->uri->segment(1)== '')?'active':''?>"><a href="/" title="home">Home</a></li>
+            
+            <?php if ($this->ion_auth->logged_in()) {?>         
+       <li><a href="<?=base_url();?>auth/logout"> Log Out <span class="glyphicon glyphicon-log-out"></span></a> </li>
+                <?php } ?>
+                
+          <?php if ($this->ion_auth->is_admin()) {?>
+                      
+     <li class="<?=($this->uri->segment(1)==='auth')?'active':''?>">
+     
+     <a href="<?=base_url();?>auth/"> Manage <span class="glyphicon glyphicon-cog"></span></a>
+     
+     </li> <?php } ?>  
       
        
                 </ul>

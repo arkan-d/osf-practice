@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Arkan Denys">
 
-    <title>RSS Reader</title>
+    <title><?=$title;?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet">
