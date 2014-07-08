@@ -41,6 +41,10 @@
 $route['default_controller'] = "main";
 $route['404_override'] = '';
 
+if (config_item('installed') == 'no')
+{
+ $route["default_controller"] = "install";
+}
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

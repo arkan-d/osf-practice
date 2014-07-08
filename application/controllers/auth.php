@@ -19,11 +19,18 @@ class Auth extends CI_Controller {
 
 		$this->lang->load('auth');
 		$this->load->helper('language');
+		
+		if ($this->config->item('installed') === 'no')
+		{
+			//echo "sdsd"; die();
+			redirect(base_url());
+		}
+		
 	}
 
 	//redirect if needed, otherwise display the user list
 	function index()
-	{
+	{		
 		$this->data['title']="Users";	
 		if (!$this->ion_auth->logged_in())
 		{
@@ -50,6 +57,8 @@ class Auth extends CI_Controller {
 
 			$this->_render_page('auth/index', $this->data);
 		}
+	
+		
 	}
 
 	//log the user in

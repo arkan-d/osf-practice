@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://osf_practice/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +27,15 @@ $config['base_url']	= 'http://osf_practice/';
 |
 */
 $config['index_page'] = '';
+/*
+|--------------------------------------------------------------------------
+| Installation
+|--------------------------------------------------------------------------
+|If system is installed, option will be 'yes'
+|
+*/
+
+$config['installed'] = 'yes';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +233,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'as4A58sSfdPok566879StyIo23PldO0f';
+$config['encryption_key'] = '3KhE5xka';
 
 /*
 |--------------------------------------------------------------------------
