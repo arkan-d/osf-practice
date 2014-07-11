@@ -22,7 +22,7 @@
 		<?php endforeach; ?>
 	</ul>
 
-	<p> <a href='<?php=base_url();?>'> Go to site </a> </p>
+	<p> <a href='<?=base_url();?>'> Go to site </a> </p>
 	
 	
 	</div>

@@ -27,12 +27,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `feeds` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `link` varchar(255) DEFAULT NULL,
   `thumbnail` varchar(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -76,14 +76,14 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
 --
 
 CREATE TABLE IF NOT EXISTS `rss_posts` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `description` text,
   `link` varchar(255) DEFAULT NULL,
   `feeds_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_rss_posts_feeds1` (`feeds_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -152,14 +152,14 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `user_feeds` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `favourite` tinyint(1) unsigned DEFAULT NULL,
   `users_id` int(11) unsigned NOT NULL,
   `feeds_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_user_feeds_users1` (`users_id`),
   KEY `fk_user_feeds_feeds1` (`feeds_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

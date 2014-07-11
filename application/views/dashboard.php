@@ -34,7 +34,21 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">3D Device Mockups
                         <br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by PSDCovers! <a target="_blank" href="http://www.psdcovers.com/">Visit their website</a> to download some of their awesome, free photoshop actions!</p>
+		    
+		    <!--==================================================================-->
+		    <pre><? print_r($count);?> </pre>
+		    <pre><? print_r($info);?> </pre>
+		    
+		    <?php 
+		    foreach ($info as $value){?>
+			<a href="<?=$value['link'];?>" target="_blank"><?=$value['link'];?></a>
+			<p> <?=$value['description']; ?> </p>
+			
+			
+		   <?php } ?>    
+		    
+		    
+		    <!--=========================================================================-->
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <img class="img-responsive" src="img/doge.png" alt="">

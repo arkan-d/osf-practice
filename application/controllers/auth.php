@@ -85,6 +85,9 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
+				
+				
+				
 				redirect(base_url(), 'refresh');
 			}
 			else
@@ -139,6 +142,8 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('new', $this->lang->line('change_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
 		$this->form_validation->set_rules('new_confirm', $this->lang->line('change_password_validation_new_password_confirm_label'), 'required');
 
+			$this->data['title'] = "Change";
+			
 		if (!$this->ion_auth->logged_in())
 		{
 			redirect('auth/login', 'refresh');
@@ -557,11 +562,13 @@ class Auth extends CI_Controller {
 	{
 		$this->data['title'] = "Edit User";
 
-		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
+		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin() || !$this->ion_auth->user($id)->row())
 		{
 			redirect('auth', 'refresh');
 		}
-
+		
+		
+		
 		$user = $this->ion_auth->user($id)->row();
 		$groups=$this->ion_auth->groups()->result_array();
 		$currentGroups = $this->ion_auth->get_users_groups($id)->result();

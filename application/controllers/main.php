@@ -16,22 +16,43 @@ class Main extends CI_controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 
+	 
+	 
 	 */
-	public function index()
+	
+	function __construct()
 	{
-		$data['title'] = "Home";
-		//$this->load->library('ion_auth');
+		parent::__construct();
 			if (!$this->ion_auth->logged_in())
 		{
 			redirect('auth/login');
 		}
+	}
+	
+	
+	public function index()
+	{
+		$data['title'] = "Home";
 		
+		$user = $this->session->userdata('user_id');
+		
+		/**
+		 *@todo load feeds by id
+		*/
+		$this->load->model('feeds');
+		$data['info'] = $this->feeds->get_feeds_sources($user);
+		$data['count'] = $this->feeds->get_feeds_count($user);
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/nav');
-		$this->load->view('dashboard');
+		$this->load->view('dashboard',$data);
 		$this->load->view('templates/footer');
 	}
+	
+	
+		
+	
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file main.php */
+/* Location: ./application/controllers/main.php */
