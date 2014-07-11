@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://osf_practice/';
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ $config['index_page'] = '';
 |
 */
 
-$config['modules_locations'] = array(APPPATH . 'modules/');
+$config['modules_locations'] = APPPATH . 'modules/';
 
 
 /*
