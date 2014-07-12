@@ -28,7 +28,9 @@ class Main extends CI_controller {
 		{
 			redirect('auth/login');
 		}
-		
+		$this->load->model('rsources/feeds_model');
+		$this->load->library('form_validation');
+		$this->load->helper('form');
 	}
 	
 	
@@ -39,9 +41,8 @@ class Main extends CI_controller {
 		/**
 		 *@todo load feeds by id
 		*/
-		$this->load->model('feeds');
-		$data['info'] = $this->feeds->get_feeds_sources($user);
-		$data['count'] = $this->feeds->get_feeds_count($user);
+		
+		$data['info'] = $this->feeds_model->get_feeds_sources($user);
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/nav');
 		$this->load->view('dashboard',$data);
@@ -50,7 +51,40 @@ class Main extends CI_controller {
 	
 	
 	
+	/**
+	 *insert new post in DB
+	 *
+	 *
+	 */
+	function new_rss_source(){
+		$data['title'] = "Insert";
 		
+		$this->form_validation->set_rules('rss_feed', "rss_feed", 'required|xss_clean');		
+		if ($this->form_validation->run() == true)		{
+			$url = $this->input->post('rss_feed');
+			$this->load->library('rssparser');
+			//$url= "http://feeds.bbci.co.uk/news/rss.xml"; 
+			// Get all items from arstechnica
+			//return  $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);
+			redirect('main/new_rss_source/','refresh');
+			
+		}else{
+			//$this->data['message'] = validation_errors();
+			$this->load->view('templates/header',$data); //@see views/header.php
+			$this->load->view('templates/nav'); //@see views/nav.php
+			$this->load->view('new_feed',$data);//@see views/new_post.php
+			$this->load->view('templates/footer'); //@see views/footer.php
+		}
+	}
+	
+	
+	function edit_profile(){}
+	
+	function all_rss_posts(){}
+	
+	function single_feed(){}
+	
+	function edit_feeds (){}
 	
 }
 

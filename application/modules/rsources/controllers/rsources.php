@@ -30,20 +30,18 @@ class Rsources extends CI_controller {
 		
 		$data['title'] = "Single";
 		       // Load RSS Parser
-		$this->load->library('rssparser');
-		$url= "http://feeds.bbci.co.uk/news/rss.xml"; 
-	       // Get 6 items from arstechnica
-	       $data['rss'] = $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);
-		   
-		//http://www.spiegel.de/schlagzeilen/tops/index.rss           
-		//http://feeds.feedburner.com/ruseller/CdHX/
+		$this->load->model('feeds_model');
+		$data['rss'] = $this->feeds_model->rss_posts();
 	 
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/nav');
-		$this->load->view('single',$data);
+		$this->load->view('main/single',$data);
 		$this->load->view('templates/footer');
 		    
 	       }
+	       
+	       
+	       
 	
     
 }

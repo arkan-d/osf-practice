@@ -14,7 +14,7 @@
                     <p class="lead">A special thanks to Death to the Stock Photo for providing the photographs that you see in this template. <a target="_blank" href="http://join.deathtothestockphoto.com/">Visit their website</a> to become a member.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/ipad.png" alt="">
+                    <img class="img-responsive" src="<?=base_url();?>img/ipad.png" alt="">
                 </div>
             </div>
 
@@ -36,8 +36,8 @@
                         <br>by PSDCovers</h2>
 		    
 		    <!--==================================================================-->
-		    <pre><? print_r($count);?> </pre>
-		    <pre><? print_r($info);?> </pre>
+		  
+		    <pre><? //print_r($info);?> </pre>
 		    
 		    <?php 
 		    foreach ($info as $value){?>
