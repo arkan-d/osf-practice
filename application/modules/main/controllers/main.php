@@ -28,15 +28,14 @@ class Main extends CI_controller {
 		{
 			redirect('auth/login');
 		}
+		
 	}
 	
 	
 	public function index()
 	{
-		$data['title'] = "Home";
-		
 		$user = $this->session->userdata('user_id');
-		
+		$data['title'] = "Home";
 		/**
 		 *@todo load feeds by id
 		*/
@@ -50,9 +49,10 @@ class Main extends CI_controller {
 	}
 	
 	
+	
 		
 	
 }
 
 /* End of file main.php */
-/* Location: ./application/controllers/main.php */
+/* Location: ./application/modules/main/controllers/main.php */
