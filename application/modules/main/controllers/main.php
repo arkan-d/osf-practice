@@ -27,8 +27,11 @@ class Main extends CI_controller {
 			if (!$this->ion_auth->logged_in())
 		{
 			redirect('auth/login');
+		}elseif($this->ion_auth->is_admin()) {
+			redirect('auth');
 		}
-		$this->load->model('rsources/feeds_model');
+		
+		$this->load->model('feeds_model');
 		$this->load->library('form_validation');
 		$this->load->helper('form');
 	}
@@ -45,7 +48,7 @@ class Main extends CI_controller {
 		$data['info'] = $this->feeds_model->get_feeds_sources($user);
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/nav');
-		$this->load->view('dashboard',$data);
+		$this->load->view('welcome_page',$data);
 		$this->load->view('templates/footer');
 	}
 	
@@ -78,12 +81,35 @@ class Main extends CI_controller {
 	}
 	
 	
+	/**
+	*@todo function to handle url address is valid rss or NO
+	*
+	*/    
+	
+	
+	/**
+	 *@var string  valid url adress
+	 *
+	 *@todo check for sql/xss injections
+	 */
+       
+        function single_feed(){
+	
+	$data['title'] = "Single";
+	       // Load RSS Parser
+	$data['rss'] = $this->feeds_model->rss_posts();
+ 
+	$this->load->view('templates/header',$data);
+	$this->load->view('templates/nav');
+	$this->load->view('single',$data);
+	$this->load->view('templates/footer');
+	    
+        }
+	
 	function edit_profile(){}
 	
 	function all_rss_posts(){}
-	
-	function single_feed(){}
-	
+		
 	function edit_feeds (){}
 	
 }

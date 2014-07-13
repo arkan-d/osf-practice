@@ -26,6 +26,7 @@ class Auth extends CI_Controller {
 			redirect(base_url());
 		}
 		
+		
 	}
 
 	//redirect if needed, otherwise display the user list
@@ -137,7 +138,13 @@ class Auth extends CI_Controller {
 
 	//change password
 	function change_password()
-	{
+		{
+		if ($this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			show_404();
+		}	
+			
 		$this->form_validation->set_rules('old', $this->lang->line('change_password_validation_old_password_label'), 'required');
 		$this->form_validation->set_rules('new', $this->lang->line('change_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
 		$this->form_validation->set_rules('new_confirm', $this->lang->line('change_password_validation_new_password_confirm_label'), 'required');
@@ -273,7 +280,11 @@ class Auth extends CI_Controller {
 
 	//reset password - final step for forgotten password
 	public function reset_password($code = NULL)
-	{
+	{	if ($this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			show_404();
+		}
 		if (!$code)
 		{
 			show_404();
@@ -368,7 +379,11 @@ class Auth extends CI_Controller {
 
 	//activate the user
 	function activate($id, $code=false)
-	{
+	{	if ($this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			show_404();
+		}
 		if ($code !== false)
 		{
 			$activation = $this->ion_auth->activate($id, $code);
@@ -394,7 +409,11 @@ class Auth extends CI_Controller {
 
 	//deactivate the user
 	function deactivate($id = NULL)
-	{
+	{	if ($this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			show_404();
+		}
 		$id = $this->config->item('use_mongodb', 'ion_auth') ? (string) $id : (int) $id;
 
 		$this->load->library('form_validation');
@@ -543,10 +562,11 @@ class Auth extends CI_Controller {
 	
 	//delete user
 	function delete_user($id){
-		
+			
 		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
 		{
-			redirect('auth', 'refresh');
+			//redirect('auth', 'refresh');
+			show_404();
 		}elseif ($this->ion_auth->is_admin())
 			{
 			$this->ion_auth->delete_user($id);
@@ -559,7 +579,7 @@ class Auth extends CI_Controller {
 	
 	//edit a user 
 	function edit_user($id)
-	{
+	{	
 		$this->data['title'] = "Edit User";
 
 		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin() || !$this->ion_auth->user($id)->row())
