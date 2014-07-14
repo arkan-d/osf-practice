@@ -34,11 +34,14 @@ class Main extends CI_controller {
 		$this->load->model('feeds_model');
 		$this->load->library('form_validation');
 		$this->load->helper('form');
+		
+		
 	}
 	
 	
 	public function index()
 	{
+		$data['user']=  $this->session->userdata('user_id');
 		$user = $this->session->userdata('user_id');
 		$data['title'] = "Home";
 		/**
@@ -81,6 +84,12 @@ class Main extends CI_controller {
 	}
 	
 	
+
+	
+	
+	
+	
+	
 	/**
 	*@todo function to handle url address is valid rss or NO
 	*
@@ -106,7 +115,9 @@ class Main extends CI_controller {
 	    
         }
 	
-	function edit_profile(){}
+	
+		
+	
 	
 	function all_rss_posts(){}
 		

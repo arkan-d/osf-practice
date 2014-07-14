@@ -34,7 +34,7 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">3D Device Mockups
                         <br>by PSDCovers</h2>
-		    
+		    <a href="<?=base_url();?>auth/edit_user/<?=$user?>"> Edit Profile <span class="glyphicon glyphicon-user"></span></a>
 		    <!--==================================================================-->
 		  
 		    <pre><? //print_r($info);?> </pre>
