@@ -48,7 +48,7 @@ class Main extends CI_controller {
 		 *@todo load feeds by id
 		*/
 		
-		$data['info'] = $this->feeds_model->get_feeds_sources($user);
+		$data['info'] = $this->feeds_model->get_feeds_sources($user,1);
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/nav');
 		$this->load->view('welcome_page',$data);
@@ -68,10 +68,7 @@ class Main extends CI_controller {
 		$this->form_validation->set_rules('rss_feed', "rss_feed", 'required|xss_clean');		
 		if ($this->form_validation->run() == true)		{
 			$url = $this->input->post('rss_feed');
-			$this->load->library('rssparser');
-			//$url= "http://feeds.bbci.co.uk/news/rss.xml"; 
-			// Get all items from arstechnica
-			//return  $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);
+			
 			redirect('main/new_rss_source/','refresh');
 			
 		}else{
@@ -121,7 +118,9 @@ class Main extends CI_controller {
 	
 	function all_rss_posts(){}
 		
-	function edit_feeds (){}
+	function edit_feed (){}
+	
+	function delete_feed(){}
 	
 }
 

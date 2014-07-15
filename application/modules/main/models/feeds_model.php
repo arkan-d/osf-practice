@@ -16,7 +16,6 @@ class Feeds_model extends CI_Model{
                     $this->db->select('feeds.*');
                     $this->db->from('feeds');                    
                     $this->db->join("user_feeds", "user_feeds.feeds_id = feeds.id","inner");
-		    //$this->db->join("user_feeds", "user_feeds.feeds_id = user_feeds.favourite","inner");
                     //$this->db->join("users","users_id = users.id","inner");                    
                     $this->db->where("users_id",$id);
 		    $this->db->where("favourite",$favourite);
@@ -44,6 +43,17 @@ class Feeds_model extends CI_Model{
 		//http://feeds.feedburner.com/ruseller/CdHX/
 	      }
 	      
+	      function add_new_rss_source(){
+	       
+	      }
+	      
+	      function update_rss_source(){
+	       
+	      }
+	      
+	      function del_rss_source(){
+	       
+	      }
 	      
 	       
 	       

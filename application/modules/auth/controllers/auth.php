@@ -379,7 +379,7 @@ class Auth extends CI_Controller {
 
 	//activate the user
 	function activate($id, $code=false)
-	{	if ($this->ion_auth->logged_in())
+	{	if (!$this->ion_auth->logged_in())
 		{
 			//redirect them to the login page
 			show_404();
@@ -409,7 +409,7 @@ class Auth extends CI_Controller {
 
 	//deactivate the user
 	function deactivate($id = NULL)
-	{	if ($this->ion_auth->logged_in())
+	{	if (!$this->ion_auth->logged_in())
 		{
 			//redirect them to the login page
 			show_404();
@@ -425,6 +425,7 @@ class Auth extends CI_Controller {
 			// insert csrf check
 			$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
+			$this->data['title'] = "Deactivate";
 
 			$this->_render_page('auth/deactivate_user', $this->data);
 		}
@@ -572,7 +573,7 @@ class Auth extends CI_Controller {
 			$this->ion_auth->delete_user($id);
 			$this->session->set_flashdata('message', "User remouved");
 			redirect('auth', 'refresh');
-			}
+		}
 		
 	}
 	
