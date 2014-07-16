@@ -50,7 +50,7 @@ class Auth extends CI_Controller {
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
 			//list the users
-			$this->data['users'] = $this->ion_auth->users()->result();
+			$this->data['users'] = $this->ion_auth->users()->result();			
 			foreach ($this->data['users'] as $k => $user)
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
@@ -253,7 +253,7 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
-				$identity = $this->ion_auth->where('email', strtolower($this->input->post('email')))->users()->row();
+			$identity = $this->ion_auth->where('email', strtolower($this->input->post('email')))->users()->row();
 			}
 	            	if(empty($identity)) {
 		        	$this->ion_auth->set_message('forgot_password_email_not_found');
@@ -329,7 +329,6 @@ class Auth extends CI_Controller {
 					'type'  => 'hidden',
 					'value' => $user->id,
 				);
-				$this->data['csrf'] = $this->_get_csrf_nonce();
 				$this->data['code'] = $code;
 
 				//render
@@ -338,7 +337,7 @@ class Auth extends CI_Controller {
 			else
 			{
 				// do we have a valid request?
-				if ($this->_valid_csrf_nonce() === FALSE || $user->id != $this->input->post('user_id'))
+				if ($user->id != $this->input->post('user_id'))
 				{
 
 					//something fishy might be up
@@ -378,7 +377,7 @@ class Auth extends CI_Controller {
 
 
 	//activate the user
-	function activate($id, $code=false)
+	function activate($id, $code = FALSE)
 	{	if (!$this->ion_auth->logged_in())
 		{
 			//redirect them to the login page
@@ -386,7 +385,7 @@ class Auth extends CI_Controller {
 		}
 		if ($code !== false)
 		{
-			$activation = $this->ion_auth->activate($id, $code);
+			$activation = $this->ion_auth->activate($id,$code);
 		}
 		else if ($this->ion_auth->is_admin())
 		{
@@ -456,20 +455,12 @@ class Auth extends CI_Controller {
 	function create_user()
 	{
 		$this->data['title'] = "Create User";
-
-		//if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
-		//{
-		//	redirect('auth', 'refresh');
-		//}
-
 		$tables = $this->config->item('tables','ion_auth');
 		
 		//validate form input
 		$this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'required|xss_clean');
 		$this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'required|xss_clean');
 		$this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email');
-		$this->form_validation->set_rules('phone', $this->lang->line('create_user_validation_phone_label'), 'xss_clean');
-		$this->form_validation->set_rules('company', $this->lang->line('create_user_validation_company_label'), 'xss_clean');
 		$this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
 		$this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
 
@@ -481,9 +472,7 @@ class Auth extends CI_Controller {
 
 			$additional_data = array(
 				'first_name' => $this->input->post('first_name'),
-				'last_name'  => $this->input->post('last_name'),
-				'company'    => $this->input->post('company'),
-				'phone'      => $this->input->post('phone'),
+				'last_name'  => $this->input->post('last_name')				
 			);
 		}
 		if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email, $additional_data))
@@ -491,6 +480,14 @@ class Auth extends CI_Controller {
 			//check to see if we are creating the user
 			//redirect them back to the admin page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
+			//$this->_send_email();
+			/*=============================================
+			jkjkj
+			jkjkj
+			jkjkjk
+			email !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			
+		*/
 			redirect("auth", 'refresh');
 		}
 		else
@@ -522,23 +519,7 @@ class Auth extends CI_Controller {
 				'class'         =>  'form-control input-lg',
 				'type'  => 'text',
 				'value' => $this->form_validation->set_value('email'),
-			);
-			$this->data['company'] = array(
-				'name'  => 'company',
-				'id'    => 'company',
-				'type'  => 'text',
-				'placeholder'   =>  'Company',
-				'class'         =>  'form-control input-lg',
-				'value' => $this->form_validation->set_value('company'),
-			);
-			$this->data['phone'] = array(
-				'name'  => 'phone',
-				'id'    => 'phone',
-				'type'  => 'text',
-				'placeholder'   =>  '+380959427043',
-				'class'         =>  'form-control input-lg',
-				'value' => $this->form_validation->set_value('phone'),
-			);
+			);			
 			$this->data['password'] = array(
 				'name'  => 'password',
 				'id'    => 'password',
@@ -838,7 +819,26 @@ class Auth extends CI_Controller {
 
 		$this->_render_page('auth/edit_group', $this->data);
 	}
-
+	
+	
+	function _send_email(){
+		$this->load->model('registr_model');
+		$email = $this->registr_model->get_email();
+		$this->load->library('email');
+		$config['mailtype']='html';
+		$this->email->initialize($config); 
+		foreach($email as $row){
+			if($row['email']){				
+				$this->email->from('Admin');
+				$this->email->to($row['email']);
+				$this->email->subject('activation complite');
+				$this->email->message("hello");
+				$this->email->send();
+			}
+		}
+            
+        
+	}
 
 	function _get_csrf_nonce()
 	{

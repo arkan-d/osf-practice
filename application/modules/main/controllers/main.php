@@ -56,6 +56,10 @@ class Main extends CI_controller {
 	}
 	
 	
+	function manage_feeds($feed){
+		
+	}
+	
 	
 	/**
 	 *insert new post in DB

@@ -18,6 +18,7 @@ class Examples extends CI_Controller {
 		
 	}
 	
+	
 
 	public function index()
 	{
@@ -65,25 +66,30 @@ class Examples extends CI_Controller {
 	//}
 	
 	
-	public function edit_feeds_adm()
+	
+	
+	public function edit_feeds($id=null)
 	{
-		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
+		if (!$this->ion_auth->logged_in() && !$this->ion_auth->is_admin())
 		{
 			show_404();
+		}		
+		if(!isset($id)){
+			show_404();
 		}
-		
 		
 		try{
 			$crud = new grocery_CRUD();
 
-			$crud->set_theme('twitter-bootstrap');	
+			$crud->set_theme('twitter-bootstrap');
+			
+			$crud->where('users_id',$id);	
 			$crud->set_table('feeds');
+			$crud->columns('link','description');
+			$crud->fields('link','description','users_id');
+			$crud->change_field_type('users_id', 'hidden', $id);			
 			
-			$crud->set_relation_n_n('User', 'user_feeds', 'users', 'feeds_id', 'users_id', 'username');
-			$crud->set_relation_n_n('user', 'user_feeds', 'users', 'feeds_id', 'users_id', 'username');
-			$crud->unset_columns('User');
 			
-			$crud->fields('link', 'description','user' );
 
 			$output = $crud->render();
 			$this->_example_output($output);

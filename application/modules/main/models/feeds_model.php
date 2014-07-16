@@ -28,9 +28,6 @@ class Feeds_model extends CI_Model{
                     // );	       
 	       }
                
-               function get_feeds_count ($id){
-                return count ($this->feeds_model->get_feeds_sources($id));
-               }
 	       
 	       
 	      function rss_posts(){
@@ -42,6 +39,21 @@ class Feeds_model extends CI_Model{
 		//http://www.spiegel.de/schlagzeilen/tops/index.rss           
 		//http://feeds.feedburner.com/ruseller/CdHX/
 	      }
+	      
+	      function get_all_feeds($id){	
+                    
+                    $this->db->select('feeds.*');
+                    $this->db->from('feeds');                    
+                    $this->db->join("user_feeds", "user_feeds.feeds_id = feeds.id","inner");                  
+                    $this->db->where("users_id",$id);
+                    $query = $this->db->get();
+                    return $query->result_array();	       
+	       }
+	      
+	      function get_feeds_count ($id){
+                return count ($this->feeds_model->get_all_feeds($id));
+               }
+	       
 	      
 	      function add_new_rss_source(){
 	       

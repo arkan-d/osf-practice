@@ -17,6 +17,7 @@
 		<th><?php echo lang('index_status_th');?></th>
 		<th><?php echo lang('index_action_th');?></th>
 		<th><?php echo lang('index_delete_th');?></th>
+		<th><?php echo lang('index_feeds_th');?></th>
 	</tr>
 	<?php foreach ($users as $user):?>
 		<tr>
@@ -31,15 +32,14 @@
 			<td><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
 			<td><?php echo anchor("auth/edit_user/".$user->id, "<span class='glyphicon glyphicon-edit'></span>") ;?></td>
 			<td><?php echo anchor("auth/delete_user/".$user->id, "<span class='glyphicon glyphicon-trash'></span>",array ("onClick"=>"return confirm('Delete This account?')")) ;?></td>
-			
+			<td><?php echo anchor("examples/edit_feeds/".$user->id,'Edit Feeds') ;?></td>
 			
 			
 		</tr>
 	<?php endforeach;?>
 </table>
 
-<p><?php echo anchor('auth/create_user', lang('index_create_user_link'),"class='btn btn-default'")?> 
-<?php echo anchor('examples/edit_feeds_adm',"Manage RSS <span class='glyphicon glyphicon-bookmark'></span>","class='btn btn-default pull-right' target='_blank'")?></p>
+<p><?php echo anchor('auth/create_user', lang('index_create_user_link'),"class='btn btn-default'")?></p>
 		</div>
 	</div>
 </div>
