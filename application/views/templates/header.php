@@ -18,11 +18,10 @@
 
     <!-- Add custom CSS here -->
     <link href="<?=base_url();?>css/landing-page.css" rel="stylesheet">
-        
+               
     <!--Add favicon.ico    -->
     <link rel="icon" type="image/vnd.microsoft.icon" href="<?=base_url();?>favicon.ico">
 
 </head>
 <body>
 
-   

@@ -22,10 +22,10 @@
                       
      <li class="<?=($this->uri->segment(1)==='auth')?'active':''?>">
      
-     <a href="<?=base_url();?>auth/"> Manage <span class="glyphicon glyphicon-cog"></span></a>
+     <a href="<?=base_url();?>auth/"> Manage Users <span class="glyphicon glyphicon-cog"></span></a>
      
      </li> <?php } ?>  
-      
+ 
        
                 </ul>
             </div>

@@ -13,7 +13,7 @@ class Examples extends CI_Controller {
 	public function _example_output($output = null)	
 	{
 		
-		$this->load->view('example.php',$output);
+		$this->load->view('example',$output);
 		$this->load->view('templates/footer');
 		
 	}
