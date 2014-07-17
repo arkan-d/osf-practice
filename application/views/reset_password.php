@@ -31,6 +31,7 @@
 	
 
 	<p><?php echo form_submit('submit', lang('reset_password_submit_btn'),"class='btn btn-primary btn-md btn-block'");?></p>
+	
 			
 			 </div>
 <?php echo form_close();?>

@@ -17,14 +17,7 @@
             <?php if ($this->ion_auth->logged_in()) {?>         
        <li><a href="<?=base_url();?>auth/logout"> Log Out <span class="glyphicon glyphicon-log-out"></span></a> </li>
                 <?php } ?>
-                
-          <?php if ($this->ion_auth->is_admin()) {?>
-                      
-     <li class="<?=($this->uri->segment(1)==='auth')?'active':''?>">
-     
-     <a href="<?=base_url();?>auth/"> Manage Users <span class="glyphicon glyphicon-cog"></span></a>
-     
-     </li> <?php } ?>  
+       
  
        
                 </ul>

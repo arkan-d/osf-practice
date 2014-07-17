@@ -16,7 +16,7 @@
 
 
 
-<?php echo form_open("auth/create_group","class='form col-md-12 center-block'");?>
+<?php echo form_open("admin/create_group","class='form col-md-12 center-block'");?>
             
             <div class="form-group">
       <p>

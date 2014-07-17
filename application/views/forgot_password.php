@@ -24,7 +24,7 @@
       </p>
 	 </div>
       <p><?php echo form_submit('submit', lang('forgot_password_submit_btn'),"class='btn btn-primary btn-md btn-block'");?></p>
-
+   <p><a href="<?=base_url();?>" class='btn btn-primary btn-md btn-block'> <span class=' glyphicon glyphicon-remove'></span> Cancel</a> </p> 
 <?php echo form_close();?>
 
 

@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "main";
+$route['default_controller'] = "route";
 $route['404_override'] = '';
 
 if (config_item('installed') == 'no')

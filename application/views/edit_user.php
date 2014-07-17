@@ -78,7 +78,9 @@
       <?php echo form_hidden($csrf); ?>
 
       <p><?php echo form_submit('submit', lang('edit_user_submit_btn'),"class='btn btn-primary btn-md btn-block'");?></p>
-                   </div>
+        
+	<button type='button' onclick="history.back()" class='btn btn-primary btn-md btn-block'><span class=' glyphicon glyphicon-remove'></span> Cancel</button>         
+		   </div>
 <?php echo form_close();?>
 
   

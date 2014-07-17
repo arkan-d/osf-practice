@@ -14,7 +14,7 @@
 
 
 
-<?php echo form_open("auth/deactivate/".$user->id,"class='form col-md-12 center-block'");?>
+<?php echo form_open("admin/deactivate/".$user->id,"class='form col-md-12 center-block'");?>
 			      
 			      <div class="form-group">
   <p>

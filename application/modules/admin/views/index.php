@@ -26,13 +26,13 @@
 			<td><?php echo $user->email;?></td>
 			<td>
 				<?php foreach ($user->groups as $group):?>
-					<?php echo anchor("auth/edit_group/".$group->id, $group->name) ;?><br />
+					<?php echo anchor("admin/edit_group/".$group->id, $group->name) ;?><br />
                 <?php endforeach?>
 			</td>
-			<td><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
+			<td><?php echo ($user->active) ? anchor("admin/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
 			<td><?php echo anchor("auth/edit_user/".$user->id, "<span class='glyphicon glyphicon-edit'></span>") ;?></td>
-			<td><?php echo anchor("auth/delete_user/".$user->id, "<span class='glyphicon glyphicon-trash'></span>",array ("onClick"=>"return confirm('Delete This account?')")) ;?></td>
-			<td><?php echo anchor("examples/edit_feeds/".$user->id,'Edit Feeds',"target='_blank'") ;?></td>
+			<td><?php echo anchor("admin/delete_user/".$user->id, "<span class='glyphicon glyphicon-trash'></span>",array ("onClick"=>"return confirm('Delete This account?')")) ;?></td>
+			<td><?php echo anchor("admin/edit_feeds/".$user->id,'Edit Feeds',"target='_blank'") ;?></td>
 			
 			
 		</tr>

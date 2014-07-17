@@ -31,7 +31,9 @@
       </p>
 
       <p><?php echo form_submit('submit', lang('edit_group_submit_btn'),"class='btn btn-primary btn-md btn-block'");?></p>
-                        </div>
+        
+	<p><button type='button' onclick="history.back()" class='btn btn-primary btn-md btn-block'><span class=' glyphicon glyphicon-remove'></span> Cancel</button> </p> 
+	                </div>
 <?php echo form_close();?>
 
 

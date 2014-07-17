@@ -35,7 +35,7 @@
 
       <?php echo form_input($user_id);?>
       <p><?php echo form_submit('submit', lang('change_password_submit_btn'),"class='btn btn-primary btn-md btn-block'");?></p>
-                         </div>
+        </div>
 
 <?php echo form_close();?>
 
