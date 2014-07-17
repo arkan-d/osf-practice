@@ -41,29 +41,31 @@
                         </div>
 
                         <div class="panel-body">
-                            <ul class="chat-box">
-                                <li class="left clearfix">
-                                    <?php
+                           
+                                <div class="left clearfix">
+                                     <div class="chat-body">  
+				    
+                                                                      
+                                       <?php
 				foreach ($favourite as $value){ ?>
-				    <span class="chat-img pull-left">
-                                <img src="<?=$value['thumbnail']?>"  class="img-circle" />
-                                    </span>
-                                    <div class="chat-body">                                     
-                                         
-				   <p> <a href="<?=base_url();?>user/single_feed/<?=$value['id']?>" target="_blank"><?=$value['link']?></a> </p>
+				<p> 
+                                <img src="<?=base_url();?>img/rss.png" width="45" height="30" class="img-circle" />
+                                   
+				   <a href="<?=base_url();?>user/single_feed/<?=$value['id']?>" target="_blank"><?=$value['link']?></a> </p>
 				<?php }
 				?>
                                     </div>
-                                </li>
+                                </div>
 				
 				
                                 
-                            </ul>
+                           
                         </div>
 
                         <div class="panel-footer">
-                           <p> <?php echo anchor('user/edit_feeds/'.$user,"Manage feeds","target='_blank'"); ?> </p>
-			   <p> <?php echo anchor('auth/edit_user/'.$user,"Edit profile"); ?></p>
+                           <p> <span class="glyphicon glyphicon-cog"></span> <?php echo anchor('user/edit_feeds/'.$user,"Manage feeds","target='_blank'"); ?> </p>
+			   <p><span class="glyphicon glyphicon-user"></span> <?php echo anchor('auth/edit_user/'.$user,"Edit profile"); ?></p>
+			   <p><span class="glyphicon glyphicon-plus-sign"></span> <?php echo anchor('user/add_feed/'.$user,"Add Feed"); ?></p>
                         </div>
 
                     </div>

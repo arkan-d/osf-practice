@@ -21,16 +21,20 @@ class Feeds_model extends CI_Model{
                     return $query->result_array();	       
 	       }
                
-	       
+	       function insert_feed($user,$data){
+		    $this->load->library('rssparser');
+		    
+	       }
 	       
 	      function rss_posts(){
 	       $this->load->library('rssparser');
-		$url= "http://feeds.bbci.co.uk/news/rss.xml"; 
+		
+		$url="http://fishbowl.pastiche.org/atom.xml";	       
 	       // Get all items from arstechnica
-	       return  $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);
-		   
+	       return  $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);		   
 		//http://www.spiegel.de/schlagzeilen/tops/index.rss           
 		//http://feeds.feedburner.com/ruseller/CdHX/
+		//http://feeds.bbci.co.uk/news/rss.xml
 	      }
 	      
 	      

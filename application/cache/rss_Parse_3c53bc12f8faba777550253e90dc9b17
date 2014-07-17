@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>The Fishbowl</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/" />
+    <link rel="self" type="application/atom+xml" href="http://fishbowl.pastiche.org/atom.xml" />
+    <id>tag:fishbowl.pastiche.org,2008-03-22://1</id>
+    <updated>2014-07-17T11:09:39Z</updated>
+    <subtitle>tail -f /dev/mind &gt; blog</subtitle>
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type Open Source 4.1</generator>
+
+<entry>
+    <title>Software Development Sucks</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/07/17/software_development_sucks/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1794</id>
+
+    <published>2014-07-17T10:14:14Z</published>
+    <updated>2014-07-17T11:09:39Z</updated>
+
+    <summary>One thing I&apos;ve been trying to do in my daily life is to be less critical of other peoples software, especially in public places, and especially if I think someone who might have been responsible for that software might be listening.</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="stories" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>I spend a non-trivial amount of my time talking to students, junior developers and other newcomers to the industry, and one of the war stories I share goes something like this.</p>
+
+<blockquote><p>At its heart, commercial software development is soul-crushingly depressing.</p>
+
+<p>As a developer, your working day revolves around everything that's wrong with all the hard work you've put in so far. When you come in to work, your primary interface with reality is the infinite list of shit that needs to be done. You have a list of bugs that need fixing. You have a list of feature requests, things your software is deficient for not doing, and every one of which somebody can't live without. Your job is to pick something off one of those lists and fix it, but when you come in tomorrow, <em>the infinite list of shit will still be infinitely long</em>.</p></blockquote>
+
+<p>One memory from the early days of my current job is a developer who got so mired in this mindset that the founders literally ordered him to fly from Sydney to San Francisco where he could talk to some real customers, the people who had bought his product and, while they might have the occasional gripe, mostly wanted to tell him how awesome it was, and how it was helping them.</p>
+
+<p>One thing I've been trying to do in my daily life is to be less critical of other peoples software, especially in public places, and especially if I think someone who might have been responsible for that software might be listening. I sometimes let frustration get the better of me, but I'm trying.</p>
+
+<p>There are plenty of official channels to report bugs and request features, but when you go outside them, there's a good chance all you're going to do is ruin someone's day for no real benefit.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Mindfulness and Me</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/06/08/mindfulness_and_me/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1793</id>
+
+    <published>2014-06-07T15:16:17Z</published>
+    <updated>2014-06-08T03:41:15Z</updated>
+
+    <summary>Instant messages, last Thursday: Charles: I’m spending the next two days at a terribly wanky-sounding seminar. Charles: “Search Inside Yourself” Vidya: Eek. Charles: Someone else cancelled and gave me their ticket. Vidya: You’d better not come out brainwashed and be...</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="personal" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="rambling aimlessly" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="stories" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>Instant messages, last Thursday:</p>
+
+<blockquote><p><strong>Charles:</strong> I’m spending the next two days at a terribly wanky-sounding seminar.</p>
+
+<p><strong>Charles:</strong> <a href="http://wakeupproject.com.au/events/search-inside-yourself/">“Search Inside Yourself”</a></p>
+
+<p><strong>Vidya:</strong> Eek.</p>
+
+<p><strong>Charles:</strong> Someone else cancelled and gave me their ticket.</p>
+
+<p><strong>Vidya:</strong> You’d better not come out brainwashed and be like “It was great. I never expected it, but it’s mind blowing ladidah…”</p>
+
+<p><strong>Vidya:</strong> You’d better return a cynic.</p>
+
+<p><strong>Charles:</strong> I searched inside myself, and found a cynical bastard.</p></blockquote>
+
+<h3>The Good</h3>
+
+<p>To my great disappointment, a decent chunk of what went on in the day and a half I was holed up in the Sheraton learning to be mindful was <em>not</em> an irredeemable load of wank. Much of the theory around self-awareness and self-improvement was <em>prima facie</em> plausible, and seemed backed by a non-trivial amount of peer reviewed science.</p>
+
+<p>As anyone will tell you, paying attention to one thing at a time is not my strongest skill. In a recent hack day, one of the company’s <span class="caps">CEO</span>s went so far as to tell me I had “one of the biggest cases of attention deficit he’s ever seen” as I obsessively command-tabbed between the many windows that keep me with one leg on each strand of my spider-web of constantly streaming global information.</p>
+
+<p>So as much as I hate to admit it, the “mindfulness meditation” exercises around controlling the focus of your attention, recognising when your attention was wandering and drawing it back to whatever you were originally supposed to be doing without falling into a downward spiral of judgement and meta-analysis were something I could use to good effect in my day-to-day life.</p>
+
+<p>I even found myself paying more attention to the speakers than I normally would. It almost seems like cheating, when you start the day teaching your audience how not to tune out of what you’re saying for the rest of it.</p>
+
+<p>The journalling exercises also reminded me of the power of putting one word after another. Whenever I write, I fight with the way what felt in my head like a linear narrative waiting to be transcribed verbatim turns out to be anything but. Turning ideas into written words forces you to fill in all sorts of gaps you didn’t even know were there until you started writing, and often you learn a great deal of what you really think by making yourself express it.</p>
+
+<p>Other techniques, like the practice of recognising emotion in the physical effects it has on your body, and then distancing yourself from them enough to make rational decisions seemed promising, although I utterly failed to summon any triggers from memory during meditation.</p>
+
+<p>It’s also worth mentioning the massive buffet lunch the hotel put on for us was nothing short of amazing.</p>
+
+<h3>The Bad</h3>
+
+<p>The first thing I wrote down in my notes on day one: “Amazing how you can prime an audience to say what you want them to, by describing something then asking people to describe it as if you hadn't.” If you have spent five minutes telling a room full of people what you think are important qualities for success, don’t pretend to be all surprised when you ask them what they value in a leader and have those points regurgitated back to you.</p>
+
+<p>Despite the presentations being quite grounded in rationality and scientific evidence, the atmosphere in the room often verged on the revival meeting, and even if there was no “woo” on stage, you could hear the crystals’ faint clinking whenever the microphones roamed the audience. In the frequent feedback sessions, attendees competed to be the most earnest, to provide the most insightful reinforcement of the speakers, to gush at how the most recent five minutes of meditation had changed their lives.</p>
+
+<p>By the second day I had started collecting examples of “common phrases that make me dismiss your statement”, including any comment from the audience starting with “Can I acknowledge…” or ending with “I just wanted to share that.”</p>
+
+<p class="aside">A note from my end-of-first-day summary: “Boring people should not be given microphones.”</p>
+
+<p>I hope they didn't think I was taking the piss <em>too</em> much when I volunteered that I had attempted to mindfully drink a beer, but wasn't sure I had experienced anything different because “the first beer after work is already a spiritual experience.”</p>
+
+<p>The rare admission that some practice hadn’t been useful, or some enlightenment hadn’t been felt, was met by the presenters with a thoughtful “Well isn’t <em>that</em> interesting”, reminding me so much of the “That is such a great dream” that Quentin Watts, Triple J’s resident morning show dream interpreter in the 90s, would preface every one of her blatant cold readings.</p>
+
+<p class="aside">A note early from the second day, whispered to me from a neighbouring seat during one of the many times comment was being sought from the audience: “I challenge you to think of the most absurd thing you can say and still get [the presenter] to agree with you.”</p>
+
+<p>Even as the presenters pushed the science, they were careful to hedge their bets occasionally by pointing out that the field and much of the research was new and uncorroborated.  </p>
+
+<p>During the lunch break on day one, I asked an academic working in the field how you could possibly have a double-blind study when the subjects obviously knew which group they were in by dint of the fact that they either were, or were not taking a mindfulness course. His response: “It’s even worse than that. In [the study he was involved with], the evaluating therapists all knew which group each subject was in within minutes of starting their evaluation, just from the words they used to describe their progress.”</p>
+
+<h3>The Ugly</h3>
+
+<p>I suffer from a mild social anxiety. It manifests as an irrational but unescapable belief that aside from about half a dozen people—wife, immediate family, closest friend—everyone else in the world would be far happier if I wasn’t around. Amongst other things it’s why at University I was that guy who would always leave parties without saying goodbye, why I’m so bad at conferences and trade-shows, and why performance reviews turn me into an alcoholic.</p>
+
+<p>Over the years I’ve developed effective ways of coping. Simple things like structuring social interaction around some activity like a game, or around alcohol, (preferably both) limiting my daily contact with strangers, or making sure I have scripts to deal with common social situations. (When I make a phone call, I’ll map the expected conversation out in my head before I dial the number. Which is why voicemail always throws me for a loop.)</p>
+
+<p>Which brings me to the last four lines in my notebook, written just before lunch on the second day:</p>
+
+<blockquote><p>“Just like me” practice.<br />
+Kindness training.</p>
+
+<p>Staring at someone - awkward as fuck.<br />
+Profound?</p></blockquote>
+
+<p>The exercise… I mean “practice” was to explore the concept of empathy by staring intently at a complete stranger for what felt like an eternity, while the convener quietly encouraged you to recognise this person as another human being just like you, with all the same kinds of thoughts and feelings, memories, triumphs and pain as you, to connect with them. </p>
+
+<p>At times it was hard not to giggle, but we got through it. It certainly created the illusion that somehow just by staring at someone for a while I had made some connection to them. </p>
+
+<p>After the practice was over, as we debriefed in preparation for lunch, I felt this growing feeling of dread. </p>
+
+<p>“Aha!” I thought. “A chance to use that thing we learned yesterday!” </p>
+
+<p>I took a deep breath or two, tuned out the microphone-grabbers describing how their minds had been opened to the beauty of the world and focused my attention on the sensations in my body. Tightness in my chest. Tense muscles. Heightened senses. “Fight or flight” reflex. </p>
+
+<p>It was the very familiar sensation of “human being overload”. Unlike all the previous one-on-one exercises which had been safely covered by my “talking at someone on a harmless predetermined topic” script, this unexpected, unscripted and unfamiliar interaction was something my brain was not prepared to process rationally.</p>
+
+<p>I'd felt this often enough to realise the only reliable way to make it go away was to distance myself from anyone who might want to interact with me. So I gathered up my notepad and bag, avoided the Sheraton’s delicious buffet, ate a large tub of frozen yogurt in blissful anonymity in a food court, then went home.</p>
+
+<p>Everyone’s mind is different. Some peoples minds don’t work quite as you (or they) wish they did. Introducing people cold to exercises designed to have a psychological impact, in an unregulated, highly conformist environment with no safe avenue to opt out seems… risky.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Another day in the Donna/Charles household</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/05/22/another_day_in_the_donnacharle/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1792</id>
+
+    <published>2014-05-22T09:05:02Z</published>
+    <updated>2014-05-22T09:11:37Z</updated>
+
+    <summary> (Transcript of IM conversation) Charles: We need this! Donna: No. Charles: Awwww… Donna: It&apos;s fugly. Charles: Yes, but… but… Donna: You can put it in your study? Charles: I don&apos;t have room. It would have to go in the...</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="personal" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p><img alt="Sorry, this blog entry is all images. I fail at accessibility. If it's any consolation, you've only missed a lame Star Wars joke." src="http://fishbowl.pastiche.org/archives/pictures/Han_table_15small.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>(Transcript of IM conversation)</p>
+
+<p><b>Charles:</b> We need this!</p>
+
+<p><b>Donna:</b> No.</p>
+
+<p><b>Charles:</b> Awwww…</p>
+
+<p><b>Donna:</b> It's fugly.</p>
+
+<p><b>Charles:</b> Yes, but… but…</p>
+
+<p><b>Donna:</b> You can put it in your study?</p>
+
+<p><b>Charles:</b> I don't have room. It would have to go in the living room.</p>
+
+<p><b>Charles:</b> IT <span class="caps">WAS HIS FAULT FOR NOT PAYING</span> ON <span class="caps">TIME.</span></p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Curbing Online Abuse Isn&apos;t Impossible</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/05/19/curbing_online_abuse_isnt_impo/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1791</id>
+
+    <published>2014-05-18T23:24:31Z</published>
+    <updated>2014-05-19T22:46:00Z</updated>
+
+    <summary>Laura Hudson, writing in Wired: Ultimately, online abuse isn’t a technological problem; it’s a social problem that just happens to be powered by technology. The best solutions are going to be those that not only defuse the Internet’s power to...</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="internet" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p><a href="http://www.wired.com/2014/05/fighting-online-harassment/">Laura Hudson, writing in Wired</a>:</p>
+
+<blockquote><p>Ultimately, online abuse isn’t a technological problem; it’s a social problem that just happens to be powered by technology. The best solutions are going to be those that not only defuse the Internet’s power to amplify abuse but also encourage crucial shifts in social norms, placing bad behavior beyond the pale. When people speak up about online harassment, one of the most common responses is “Well, what did you expect from the Internet?” If we truly want to change our online spaces, the answer from all of us has got to be: more.</p></blockquote>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>No, really. What web developers thought of in the noughties as being MVC doesn&apos;t scale.</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/05/16/no_really_what_web_developers/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1790</id>
+
+    <published>2014-05-16T11:01:26Z</published>
+    <updated>2014-05-16T13:42:15Z</updated>
+
+    <summary>I haven&apos;t seen the F8 session or used Flux. I&apos;ve just vaguely skimmed some of the reddit comments. However… Once upon a time, there was this thing called the Model View Controller architecture. It was a product of the Smalltalk...</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="java" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="stories" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p class="aside">I haven't seen the <a href="http://www.infoq.com/news/2014/05/facebook-mvc-flux">F8 session</a> or used Flux. I've just vaguely skimmed some of the reddit comments. However…</p>
+
+<p>Once upon a time, there was this thing called the Model View Controller architecture. It was a product of the Smalltalk community, but then so were Design Patterns and Extreme Programming. At its heart, it was the simple idea that <i>Model</i> classes should be responsible for representing the state of your application, <i>View</i> classes should be responsible for drawing your user interfaces and presenting that state to your users, and <i>Controller</i> classes should be for translating actions performed by your user into changes to your model, that were then reflected in your view.</p>
+
+<p>In a typical screen for an <span class="caps">MVC GUI </span>you might have any number of widgets, each drawn by their own independent view objects, backed by different models, connected to multiple controllers. <a href="http://heim.ifi.uio.no/~trygver/themes/mvc/mvc-index.html">Almost forty years after the <span class="caps">MVC </span>pattern was formulated for <span class="caps">GUI </span>development</a> it is still out there, albeit in obscure rarely-used frameworks like <a href="https://developer.apple.com/library/mac/documentation/general/conceptual/devpedia-cocoacore/MVC.html">Cocoa Touch</a>.</p>
+
+<p>Then, twenty years after <span class="caps">MVC </span>was introduced to the Smalltalk world, along came the <a href="http://en.wikipedia.org/wiki/Model_2">Model 2 Web Application</a>. In an attempt to make Java web development fit into the growing <span class="caps">J2EE </span>spec, the Java community seized on <span class="caps">MVC </span>and mapped it almost arbitrarily to the web. Every <span class="caps">HTTP </span>request would be served by a single controller (servlet), which would collaborate with zero-to-many models (EJBs), and map the resulting data into a <span class="caps">DTO </span>(Pay no attention to the man behind the curtain!) that could be passed via RequestDispatcher to a single <span class="caps">JSP </span>view.</p>
+
+<p>The sleight-of-hand was the assumption—baked into the servlet spec—that each <span class="caps">HTTP </span>request would map to a <b>single controller</b> which would delegate to a <b>single view</b>. A few frameworks like Tapestry tried to buck the trend, but a Java developer years later could literally replace servlets with actions, <span class="caps">EJB</span>s with dependency-injected beans and <span class="caps">JSP</span>s with the templating language <i>du jour</i>, and still deliver a not-unreasonable technology choice in most circles. This malaise even infected other undeserving languages like Ruby.</p>
+
+<p>The problem is that even in a very simple web application, a single page contains elements that by rights should be the responsibility of different views, backed by different controllers and their own models. The single controller-per-request, or even the <i>primary</i> controller-per-request is a broken paradigm, and one that every developer has come up with some sub-optimal tower of contraptions to compensate for.</p>
+
+<p>As a result, your average non-trivial Java web application ended up being a mess of controller implementation inheritence, servlet filters, interceptor stacks, <a href="http://wiki.sitemesh.org/wiki/display/sitemesh/Home">view decorators</a> and arbitrary objects placed in the template engine's context to allow the drawing of all the bits of the web page that don't belong to the increasingly impure controller.</p>
+
+<p class="aside">Amusingly, the "Type 2" approach to web <span class="caps">MVC </span>isn't a bad fit for <span class="caps">REST</span>-based systems, (because a <span class="caps">REST </span>resource usually <i>does</i> have a single responsibility), but most pure <span class="caps">REST </span>systems figure it's overkill… because a <span class="caps">REST </span>resource just has a single responsibility.</p>
+
+<p>A simple inversion fixes so much. Going back to the <span class="caps">GUI </span>paradigm and flipping the process around so the view comes first and then delegates to controllers and models as necessary is already the go-to strategy for single-page applications and frameworks like Backbone. This kind of "view first" is also a perfectly good strategy for server-side page generation, one that large distributed systems have been taking advantage of for years to delegate fragments of page generation to independent external services.</p>
+
+<p>This blog post was brought to you by the Society for Sending Charles Back In Time Fourteen Years To Slap Himself.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Now Hiring: Enterprise Senior Support Engineer</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/05/12/now_hiring_enterprise_senior_s/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1789</id>
+
+    <published>2014-05-12T01:12:36Z</published>
+    <updated>2014-05-12T20:48:42Z</updated>
+
+    <summary> Help! Stuck in Turbolift! Reporter: Williams, D. Lieutenant Priority: Critical Version: NCC-1701 Description: The Turbolift is not moving, no matter how many times I state my destination to the computer. Comment from Bandt, G. Ensign I am reducing the...</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="stories" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<img alt="mVOSg.gif" src="http://fishbowl.pastiche.org/archive/images/mVOSg.gif" width="75" height="94" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" />
+
+<p><b>Help! Stuck in Turbolift!</b><br>
+Reporter: Williams, D. Lieutenant<br>
+Priority: Critical<br>
+Version: NCC-1701<br></p>
+
+<p><b>Description:</b></p>
+
+<p>The Turbolift is not moving, no matter how many times I state my destination to the computer.</p>
+
+<p style="border-bottom: 1px dotted #ccc">Comment from Bandt, G. Ensign</p>
+
+<p>I am reducing the priority of this issue from Critical to High. While we appreciate the urgency of your situation, Critical priority is reserved for issues that may impact the integrity or spaceworthiness of the vessel.</p>
+
+<p>Old Enterprise versions do not have a reliable voice control in the Turbolift. Have you tried twisting the cylindrical handle clockwise or anticlockwise?</p>
+
+<p style="border-bottom: 1px dotted #ccc">Comment from Williams, D. Lieutenant</p>
+
+<p>I rotated the handle anticlockwise and I am now in Engineering. Please close the issue, I will find someone here to show me how to get to the Bridge.</p>
+
+
+<img alt="mVOSg.gif" src="http://fishbowl.pastiche.org/archive/images/mVOSg.gif" width="75" height="94" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" />
+
+<p>From: Cordova, M. Lieutenant Commander<br>
+To: enterprise-support@starfleet.gov<br>
+Subject: Auxiliary Power<br></p>
+
+<p>It has come to my attention that many support engineers are reducing their “time to first response” by, on receiving a new case, immediately bouncing it back to the customer with the comment: “Have you tried diverting auxiliary power to the affected system?”</p>
+
+<p>While diverting auxiliary power is often a good short-term fix, suggesting it in every case will only reduce the confidence our customers have in our service, and increase the perception that we are just making guesses instead of taking the time to understand the issue and provide informed advice.</p>
+
+<p>As Starfleet officers, we should take pride in the service we provide, and not resort to cheap shortcuts to artificially boost our metrics.</p>
+
+<p>LtC. Michelle Cordova<br>
+Team Lead, Enterprise Support</p>
+
+<img alt="mVOSg.gif" src="http://fishbowl.pastiche.org/archive/images/mVOSg.gif" width="75" height="94" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" />
+
+<p><b>Starship adrift! Please Escalate!</b><br>
+Reporter: Picard, J-L. Captain<br>
+Priority: Blocker<br>
+Version: NCC-1701-D</p>
+
+<p><b>Description:</b></p>
+
+<p>It has been seven days since I opened my previous ticket re: having completely lost control of my Starship. The Enterprise is currently adrift in space, main power is dead as are the warp and impulse engines. We are locked out of the computer and all diagnostics and overrides have so far been fruitless.</p>
+
+<p>Despite this dire situation we have found ourselves being bounced back and forth by a junior engineer who does not seem to appreciate the gravity of the situation, or even be able to provide us with an idea of how much longer our situation will <i>have</i> gravity!</p>
+
+<p>We have approximately four days of auxiliary power remaining (Thank you for that suggestion, it would SO OBVIOUSLY have not been the very first thing we tried ourselves!) and would appreciate the attention of a more senior engineer before then.</p>
+
+<p style="border-bottom: 1px dotted #ccc">Comment from Garvin T. Snr Ensign</p>
+
+<p>Hi, I was assigned to help you with your case. I have reviewed the previous tickets and will be working personally with you going forward until we have found a solution.</p>
+
+<p>Have you checked Jeffries Tube 194a? The problem you are experiencing could be caused by a crystalline intelligence having taken refuge in your substructure, using that location as a beach-head to control the core engineering functions of your starship.</p>
+
+<p>As a higher form of life you may not wish to kill it, but short bursts of gamma radiation triggered manually from the deflector dish can make it uncomfortable enough to leave on its own.</p>
+
+<p style="border-bottom: 1px dotted #ccc">Comment from Picard, J-L. Captain</p>
+
+<p>That was exactly right! How did you know? Please close the issue.</p>
+
+<p style="border-bottom: 1px dotted #ccc">Comment from Garvin T. Snr Ensign</p>
+
+<p>It happens more often than you think.</p>
+
+<p style="border-bottom: 1px dotted #ccc">Comment from System</p>
+
+<p>Thank you for contacting Enterprise Support. Now your case is closed, we would appreciate if you took a moment to fill out the following survey:</p>
+
+<p>On a scale of 1 to 10 where 1 is “never” and 10 is “always”, how likely would you be to recommend Enterprise Support to a friend or colleague?</p>
+
+<img alt="mVOSg.gif" src="http://fishbowl.pastiche.org/archive/images/mVOSg.gif" width="75" height="94" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" />
+
+<p>From: Cordova, M. Lieutenant Commander<br>
+To: enterprise-support@starfleet.gov<br>
+Subject: First and last warning.</p>
+
+<p>Everything in my previous email referring to diverting auxiliary power _also_ applies to reversing the polarity.</p>
+
+<p>LtC. Michelle Cordova<br>
+Team Lead, Enterprise Support</p>
+
+<p class="aside">Ideas shamelessly stolen from <a href="https://twitter.com/oysta">Chris</a> and <a href="https://twitter.com/coldboot">Conor</a>. Also, Atlassian <i>is</i> hiring an <a href="https://www.atlassian.com/company/careers/jobs/listing?org=ATLASSIAN&cws=1&rid=1297">Enterprise Senior Support Engineer</a>, but I can’t guarantee you’d end up fixing warp core breaches if you applied.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>It&apos;s the Upload Speed</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/04/15/its_about_the_upload_speed/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1788</id>
+
+    <published>2014-04-15T03:14:15Z</published>
+    <updated>2014-04-15T07:18:40Z</updated>
+
+    <summary>The advances in productivity, the opportunities to build the digital economy in Australia that should be the goal of a national infrastructure project like the NBN don&apos;t come from giving Foxtel and Netflix a bigger pipe to shovel content into our homes. They come from giving us connectivity that can talk back.</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="internet" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="stories" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>According to the Wall Street Journal, the top five <a href="http://www.ongamers.com/articles/wall-street-journal-chart-lists-twitch-tv-fourth-in-u-s-peak-traffic/1100-824/">companies responsible for <span class="caps">U.S. </span>peak Internet traffic in 2013</a> were Netflix (32%), Google (22%), Apple (4.3%), twitch.tv (1.8%), and Hulu (1.7%).</p>
+
+<p>For those of you who haven't been following along at home, <a href="http://twitch.tv">Twitch.tv</a>, the company coming in fourth place, the one that edged out the name-brand service that streams TV shows from <span class="caps">NBC,</span> Fox and <span class="caps">ABC </span>for free, is a platform devoted to streaming video of people playing computer games. </p>
+
+<p>Twitch produces almost no content themselves, instead acting as a portal through which anybody can use readily available (often <a href="https://obsproject.com">free</a>) software to broadcast their own gaming shows, live. These shows are monetized through advertising and subscriptions, with Twitch passing a proportion of that revenue back to the streamer.</p>
+
+<p>By <a href="http://www.twitch.tv/year/2013">their own statistics</a>, Twitch reached a global audience of 45 million unique viewers a month, each of whom averaged 106 minutes of viewing a day. Regardless of what <i>you</i> think of the kind of person who will sit down in front of their computer to watch someone else play <a href="leagueoflegends.com">League of Legends</a>, it's hard to argue that the numbers are astounding.</p>
+
+<p>And for every <a href="http://www.dota2.com/international/home/overview/">big eSports organisation getting a million concurrent viewers</a> for their grand finals, there are a dozen <a href="http://day9.tv/">popular streamers</a> broadcasting gameplay or doing shows from their bedrooms for thousands of viewers, making a decent living from advertising and subscription revenue. And for each of those, there are several hundred amateurs streaming to their friends, or whoever happens to pass by, hoping maybe to make the big time.</p>
+
+<p>So what is the least you need to take part in this new, booming opportunity? A reasonably fast <span class="caps">PC, </span>a webcam and a microphone, and an Internet connection capable of reliably uploading 1080p video. (The resolution at which most modern games stop looking blurry).</p>
+
+<p>Which might be why Australia is famous for having exciting events and world-class players, that only the most die-hard fan wants to watch because of the awful video quality. There could be thousands of young, hungry Australians competing in this exciting new market, trying to make money entertaining viewers around the world, but there aren't, because our Internet is shit.</p>
+
+<p>Advances in Internet connectivity are usually measured in download speed, but download speed is only a measure of how efficiently you can <em>consume</em> the Internet. Upload speed is the measure of how you can change from being a consumer to a producer. Upload speed is what allows an Internet user to engage with the network as a peer. And it's not just the video-maker wanting to send their content to Twitch or YouTube, it's <em>every</em> knowledge worker who wants to send the product of their labour to someone else without a prohibitively expensive dedicated connection.</p>
+
+<p class="aside">One of the more frustrating things in the early days of Atlassian was how insanely long it took to upload a new version of our software from our office in Sydney to the download servers in the <span class="caps">USA, </span>because even a business-grade 
+<span class="caps">ADSL </span>line is still an <span class="caps">ADSL </span>line.</p>
+
+<p>And this is why I am dismayed by the continually dwindling promise of the Australian National Broadband Network, now down to <a href="http://www.itnews.com.au/News/382817,nbn-co-drops-speed-guarantees-for-fttn-service.aspx">25Mb/s down/1Mb/s up</a> even in areas <i>with</i> fibre. It's not the download speed. At least until 4k video becomes the norm, 25Mbit is more than enough bandwidth to stream a high definition movie.</p>
+
+<p>It's the upload speed. Falling from the originally planned 40Mb/s to 1Mb/s is the difference between telling your co-worker in the branch office a few suburbs over to grab a cup of coffee while you send them that file, and telling them it's probably faster if they get in a car, drive over and with a <span class="caps">USB </span>stick and pick it up themselves.</p>
+
+<p>The advances in productivity, the opportunities to build the digital economy in Australia that should be the goal of a national infrastructure project like the <span class="caps">NBN </span>don't come from giving Foxtel and Netflix a bigger pipe to shovel content into our homes. They come from giving us connectivity that can <i>talk back</i>, that can let knowledge workers be just as productive without having to slog into an office every day, that puts small networked businesses on the same footing as the established heavy-weights, that allows entrepreneurs to build amazing things from home and loose them on the Internet.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Not Seeing the Forest for the Gotos</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/02/26/not_seeing_the_forest_for_the/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1787</id>
+
+    <published>2014-02-25T22:08:58Z</published>
+    <updated>2014-02-25T23:51:17Z</updated>
+
+    <summary>The Apple SSL bug existed, and remained undetected for a year and a half, because Apple wasn&apos;t testing their browser against dodgy certificates. And it made us unsafe because the NSA, amongst presumably many other individuals and organisations government and otherwise, were.</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="apple" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="security" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="stories" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>Almost every report on the recent <a href="http://www.theguardian.com/technology/2014/feb/25/apples-ssl-iphone-vulnerability-how-did-it-happen-and-what-next">Apple <span class="caps">SSL </span>security bug</a> has focused on the code. On the failure of developers to notice the <a href="http://nakedsecurity.sophos.com/2014/02/24/anatomy-of-a-goto-fail-apples-ssl-bug-explained-plus-an-unofficial-patch/">pernicious extra <code>goto</code> statement.</a>. On the way it could have been picked up by code review, or static analysis, or (my favourite) by making sure you put braces around one-line conditional branches.</p>
+
+<p>Just as much has been made of the almost-too-coincidental fact that within a month of the bug shipping to the public, Apple was added to the <span class="caps">NSA'</span>s <span class="caps">PRISM </span>hitlist of vendors subject to "data collection".</p>
+
+<p>I'm not a conspiracy theorist. Here’s how I am 95% sure they did it, because it's too obvious for them <i>not</i> to be doing it.</p>
+
+<p>Somewhere, in a boring lab in a boring building, an overworked government employee has the job of running a mundane (hopefully automated) test suite against every new release of an OS or web browser. The test suite tries to fool the browser with a collection of malformed or mis-signed <span class="caps">SSL </span>certificates and invalid handshakes, and rings a triumphant bell when one is mistakenly accepted as valid.</p>
+
+<p>Focusing on <code>goto</code> or braces, misses the point. There are an uncountable number of ways a bug like this could end up in a codebase. It's not even the first, or even the worst example of an <span class="caps">SSL </span>certificate validation bug: <a href="http://fishbowl.pastiche.org/2002/08/19/mon_19_aug_2002_055417_gmt/">back in 2002 an issue was discovered in Internet Explorer (and also, to be fair, <span class="caps">KDE</span>)</a> that meant 90% of web users would accept a trivially forged certificate. <br />
+ <br />
+The Apple <span class="caps">SSL </span>bug existed, and remained undetected for a year and a half, because Apple wasn't testing their <span class="caps">SSL </span>implementation against dodgy handshakes. And it made us unsafe because the <span class="caps">NSA, </span>presumably alongside an unknown number of other individuals and organisations, government and otherwise, were.</p>
+
+<p>It's a depressingly common blind spot for software developers. We’ve become much better over the years at verifying that our software works for positive assertions (All my valid certificates are accepted! Ship it!), but we're still depressingly bad at testing outside the “happy path”.</p>
+
+<p>What we call hacking is a form of outsourced <span class="caps">QA.</span> Hackers understand the potential failure modes of systems that can lead to a compromises of integrity, availability or confidentiality, and doggedly test for those failures. Sometimes they succeed because the systems are incredibly complex and the way to exploit the failure incredibly obscure, and there's just more people with more time to look at the problem from outside than from within. </p>
+
+<p>Far more often, they succeed because nobody else was looking in the first place.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Happy New Year!</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2014/01/01/happy_new_year_1/" />
+    <id>tag:fishbowl.pastiche.org,2014://1.1786</id>
+
+    <published>2013-12-31T14:33:37Z</published>
+    <updated>2014-01-09T20:01:12Z</updated>
+
+    <summary></summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://fishbowl.pastiche.org/archives/pictures/521A9064.html" onclick="window.open('http://fishbowl.pastiche.org/archives/pictures/521A9064.html','popup','width=1024,height=683,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://fishbowl.pastiche.org/archives/pictures/521A9064-thumb-500x333.jpg" width="500" height="333" alt="521A9064.jpg" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>It&apos;s that time again</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2013/12/03/its_that_time_again/" />
+    <id>tag:fishbowl.pastiche.org,2013://1.1785</id>
+
+    <published>2013-12-02T20:05:53Z</published>
+    <updated>2013-12-02T20:35:05Z</updated>
+
+    <summary>Happy birthday to me Happy birthday to me Two years ’til I&apos;m forty Fuck fuck fuck fuck fuck fuck....</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>Happy birthday to me<br />
+Happy birthday to me<br />
+Two years ’til I'm forty<br />
+Fuck fuck fuck fuck fuck fuck.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>All network software is social software.</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2013/09/01/all_network_software_is_social/" />
+    <id>tag:fishbowl.pastiche.org,2013://1.1784</id>
+
+    <published>2013-09-01T10:24:35Z</published>
+    <updated>2013-09-01T10:31:20Z</updated>
+
+    <summary>…because the thing that Usenet did, the important thing that Usenet did that put everything else to shame, was that it provided a way for all of the cool people in the world to actually meet each other.</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="blogging" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="personal" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>Back in 1998, network news administrator Russ Albery wrote <a href="http://www.eyrie.org/%7Eeagle/writing/rant.html">an inspiring rant</a> in reply to a spammer who was invoking “free speech” to defend his dumping of thousands of job advertisements on local newsgroups.</p>
+
+<p>I still go back to it on occasion to remind myself that when you’re writing network software, even when on the surface that software is about sharing code, or tracking bug reports, or answering support queries, or publishing blogs, or producing documentation…  you’re writing software about <em>people</em>.</p>
+
+<blockquote>
+…because the thing that Usenet did, the important thing that Usenet did that put everything else to shame, was that it provided a way for all of the cool people in the world to actually meet each other.
+
+<p>Sure, I've been involved in Usenet politics for years now, involved in newsgroup creation, and I enjoy that sort of thing. If I didn't, I wouldn't be doing it. But I've walked through the countryside of Maine in the snow and seen branches bent to the ground under the weight of it because of Usenet, I've been in a room with fifty people screaming the chorus of "March of Cambreadth" at a Heather Alexander concert in Seattle because of Usenet, I've written some of the best damn stuff I've ever written in my life because of Usenet, I started writing because of Usenet, I understand my life and my purpose and my center because of Usenet, and you know 80% of what Usenet has given me has fuck all to do with computers and everything to do with people. Because none of that was in a post. I didn't read any of that in a newsgroup. And yet it all came out of posts, and the people behind them, and the interaction with them, and the conversations that came later, and the plane trips across the country to meet people I otherwise never would have known existed.</p>
+
+<p>That's what this is all about. That's why I do what I do.</p>
+
+<p>People.</p>
+
+<p>[a few paragraphs…]</p>
+
+<p>And you can talk to me about free speech and applications and the future of communication and the use to which people put such things until you're blue in the face, and when you ask me if there's really such a thing as good speech and bad speech, I'll still say yes. Because there are people talking to other people and there are machines talking to no one as loud as they can to try to make people listen, and damn it, there is a difference, and the first one does deserve to be here more than the second one. And I don't know how to tell the difference reliably either, but that has jack to do with the way I feel about it.</p>
+
+And to all of the spammers and database dumpers and multiposters out there, I say this: You want to read that stuff, fine. You want to create a network for such things, fine. You want to explore the theoretical boundaries of free speech, fine. But when it starts impacting people trying to communicate, then that is where I draw the line. This is not a negotiation and this is not a threat; this is simply a fact. I've been through pain and joy with this network, I've seen communities form and wither and reform, I've met friends and lost friends here, I've learned things and discovered things and created things. I've seen people make a home here when they didn't have any other, not on a newsgroup, not with a bunch of electrons, but with people that they've met and communities that they've found and support that they've received from people who had just the words they needed to hear and would never have known they existed, and by God I <span class="caps">KNOW </span>what this network is for, and you can't have it.<br />
+</blockquote>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Bundled Out</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2013/08/26/bundled_out/" />
+    <id>tag:fishbowl.pastiche.org,2013://1.1783</id>
+
+    <published>2013-08-25T21:32:37Z</published>
+    <updated>2013-08-26T00:22:15Z</updated>
+
+    <summary>Blaming Ballmer for the woes of Microsoft, though, misses the fact that every problem the company is experiencing today was written into its DNA in the 1980s.</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+        <category term="nerd" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="stories" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>With the recent announcement of the (probably forced) retirement of Microsoft <span class="caps">CEO</span> Steve Ballmer, respectable publications are rolling out another series of “Where Did Microsoft Go Wrong?” pieces that almost all trace the same narrative arc:</p>
+
+<blockquote><p>In 2000, Ballmer inherited a software juggernaut so powerful that it was known to many as the “Evil Empire”. How could he possibly have mismanaged it to the point that, despite its continuing record of raking in cash, it is now almost the industry’s comedic afterthought?</p></blockquote>
+
+<p>We like our classic tragedies, where one man’s hubris brings down everyone around him. We like stories where there’s someone we can point at and blame, especially when that villain is easy to dislike. And by all accounts Ballmer wasn’t a good leader for Microsoft; neither great himself, nor the kind of person to inspire those under him to greatness.</p>
+
+<p>Blaming Ballmer for the woes of Microsoft, though, misses the fact that every problem the company is experiencing today was written into its <span class="caps">DNA </span>in the 1980s.</p>]]>
+        <![CDATA[<p>In 1980, <span class="caps">IBM </span>were looking for an operating system for the <span class="caps">IBM PC, </span>their entry into the nascent personal computing market. When attempts to license CP/M from Digital Research stalled, <span class="caps">IBM </span>went to Microsoft. Microsoft didn't have an operating system so they licensed a CP/M work-alike originally called <span class="caps">QDOS </span>(literally “Quick and Dirty Operating System”), filed down some of the more jagged corners and licensed it on to <span class="caps">IBM.</span></p>
+
+<p>Not long after, seeing the success of the <span class="caps">IBM PC, </span>a company called Compaq realised that there was a market for “PC Compatible” computers. The only two parts of the PC that weren't off-the-shelf hardware were <span class="caps">IBM'</span>s proprietary <span class="caps">BIOS </span>(which Compaq engineers reverse-engineered), and the PC-DOS operating system, which Microsoft was happy to start selling to third parties as MS-DOS.</p>
+
+<p><span class="caps">DOS </span>wasn't the best PC operating system. It wasn't even a particularly good one. All that mattered is that it was the operating system on the <span class="caps">IBM PC, </span>and then on the “PC Compatible” clones.</p>
+
+<p>Microsoft did not make its mark as a builder of great things, but as a very successful bundler of good-enough things. </p>
+
+<p>Microsoft built its empire making products that complemented <span class="caps">DOS, </span>and that would eventually become symbiotic with <span class="caps">DOS </span>so that each would ensure the others dominance.  Microsoft then used its monopoly position to exert absolute control over the channel that delivered those products to customers. I’ve heard a first-hand accounts of Microsoft’s ruthless dealings with <span class="caps">OEM</span>s in the <span class="caps">DOS </span>era, and they’re even worse than you think.</p>
+
+<p>Eventually by the mid-90s an argument could be made that Microsoft was making the best PC software in its class. Not because it had suddenly found the ability to develop cool, innovative products, but because everyone else was dead. This was the ‘golden era’ that most modern-day pundits seem to be hearkening back to: the two great serpents of Windows and Office, each with its jaws eternally locked on the other’s tail; Microsoft the victorious monopolist.</p>
+
+<p>Still, outside that monopoly, there is a clear distinction between Microsoft products that can trace their market dominance back to <span class="caps">DOS, </span>and those that can't. The former make money, the latter lose it. Lacklustre success online and in mobile shows just how quickly the brand loses its attractiveness once compatibility and integration with Microsoft on the desktop stops being a point of distinction. </p>
+
+<p>Microsoft’s losses in the tablet market must be particularly galling. They spent the decade before the iPad trying to make a compelling tablet product, only to have the whole thing taken away from them overnight. It’s also no coincidence that the first thing Microsoft fell back on to try to fight the iPad was promises of delivering the “full Windows experience”, complete with Office.</p>
+
+<p class="aside">The Xbox is an interesting, possibly the only interesting exception. Originally one of the big selling points of the console was that the first generation was just a PC inside, and game developers could use familiar DirectX <span class="caps">API</span>s to program to it. Realistically though, this didn’t have nearly as much influence on the success of the console as Microsoft’s purchase of a small gaming studio called Bungie, redirecting their game Halo from a planned simultaneous Macintosh/PC release to an Xbox exclusive.</p>
+
+<p>Even Microsoft’s attempt to use their PC dominance to muscle in on the Internet failed; ironically not thanks to the US Department of Justice and its legally successful but practically ineffectual antitrust suit, but thanks to that unlikeliest of heroes, America Online. For more than five years <span class="caps">AOL </span>kept Netscape alive almost entirely as an escape hatch in case licensing Internet Explorer became too expensive, long enough for the Mozilla project to survive the Netscape 6 disaster, bring out Firefox and re-ignite the browser wars.</p>
+
+<p>Then the 2000s happened. The Internet led us into the post-PC era, breaking <span class="caps">DOS</span>’s twenty-year grip. New generations of PC hardware no longer provided the noticeable real-world improvements in things people actually wanted to do (besides play games, which is why the 2000s also saw the final victory of the consoles). And with Windows <span class="caps">XP,</span> Microsoft had finally produced an operating system that was stable and functional enough that it could compete meaningfully with its own successor.</p>
+
+<p>The market for new PCs and for new versions of Windows both went into steep decline, and Microsoft went along with it.</p>
+
+<p>Software isn’t an industry where the monster company selling the last generation’s product gets to stay being the monster for the next generation. It’s the industry where a thousand hungry small companies are waiting for a shift in the market that will allow them to slay the monster, carve it up and eat it for breakfast.</p>
+
+<p class="aside">Apple is the obvious outlier here. Or maybe it isn’t: that’s a topic for an entirely different thousand words. Either way, if your plan to save your business is “First, hire Steve Jobs”, I’ve got some bad news for you.</p>
+
+<p>This goes doubly when the monster in question is a company with no record to speak of for building products that succeeded in their own right, just in bundling together stuff that was “good enough” to keep customers locked in to the orbit of a cold, dead, thirty-year old command line operating system.</p>
+
+<p>Maybe Ballmer being <span class="caps">CEO </span>didn't help, but I find it hard to think what would have saved Microsoft. Microsoft was the ship that <span class="caps">DOS </span>built, and a belated mutiny isn’t going to stop it from sinking.</p>]]>
+    </content>
+</entry>
+
+<entry>
+    <title>Meanwhile, on a chat server somewhere…</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2013/08/06/meanwhile_on_a_chat_server_som/" />
+    <id>tag:fishbowl.pastiche.org,2013://1.1782</id>
+
+    <published>2013-08-06T01:56:18Z</published>
+    <updated>2013-08-06T02:02:16Z</updated>
+
+    <summary> clepetit: What should I do for lunch? Carlfish: Eat. clepetit: Genius. Carlfish: That’s why I’m the architect. I come up with the general solution, it’s up to you to decide how to implement it....</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<div style="text-align: center; font-family: monospace; margin-left: 18%; margin-right: 18%; font-size: larger">
+<strong>clepetit:</strong>
+
+<p>What should I do for lunch?</p>
+
+<p><strong>Carlfish:</strong></p>
+
+<p>Eat.</p>
+
+<p><strong>clepetit:</strong></p>
+
+<p>Genius.</p>
+
+<p><strong>Carlfish:</strong></p>
+
+<p>That’s why I’m the architect.</p>
+
+I come up with the general solution, it’s up to you to decide how to implement it.<br />
+</div>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Just nod if you can hear me…</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2013/07/29/just_nod_if_you_can_hear_me/" />
+    <id>tag:fishbowl.pastiche.org,2013://1.1781</id>
+
+    <published>2013-07-29T01:18:53Z</published>
+    <updated>2013-07-29T02:07:05Z</updated>
+
+    <summary>This leads to the superficially awesome thought that, at least subjectively, you can&apos;t die. Because your subjective consciousness will always be looking back through that path of causality in which you survived.</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p>On the surface, <a href="https://en.wikipedia.org/wiki/Quantum_suicide_and_immortality">Quantum Immortality</a> is an attractive thought. </p>
+
+<p>Under the <a href="https://en.wikipedia.org/wiki/Everett_many-worlds_interpretation">many-worlds interpretation of quantum mechanics</a>, every chance event leads to the creation of multiple parallel universes. When you roll the die, it doesn't come up 5. It comes up <i>six different universes</i>, and your personal thread of causation just happens to be looking backwards from the perspective of the '5' branch.</p>
+
+<p>As a corollary, if you are ever in a life-threatening situation and there is a possibility you might survive, in at least one universe, you will.</p>
+
+<blockquote><p><strong>Sheldon:</strong> Penny, while I subscribe to the "Many Worlds" theory which posits the existence of an infinite number of Sheldons in an infinite number of universes, I assure you that in none of them am I dancing.</p>
+
+<p><strong>Penny:</strong> Are you fun in any of them?</p>
+
+<p><strong>Sheldon:</strong> The math would suggest that in a few of them I'm a clown made of candy, but I don't dance. </p>
+
+<p>– <i>Big Bang Theory: <span class="caps">S3.</span> Ep3. The Gothowitz Deviation</i></p></blockquote>
+
+<p>This leads to the superficially awesome thought that, at least subjectively, you can't die. Your subjective consciousness will always be looking back through that path of causality in which you survived.</p>
+
+<p>This would be great if existence was a binary state between being dead, and being perfectly healthy and able.</p>
+
+<p>Except It's far more likely that as time increases, the number of universes in which you are not a brain in a jar, screaming your insanity into an eternity of nothingness, approaches zero.</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Killing in the Name Of</title>
+    <link rel="alternate" type="text/html" href="http://fishbowl.pastiche.org/2013/07/07/killing_in_the_name_of/" />
+    <id>tag:fishbowl.pastiche.org,2013://1.1780</id>
+
+    <published>2013-07-06T12:05:37Z</published>
+    <updated>2013-07-06T14:49:09Z</updated>
+
+    <summary>Contains Game of Thrones spoilers. Just after the infamous “Red Wedding” made its way from the pages of his novels onto the HBO TV series Game of Thrones, author George R. R. Martin was interviewed by Entertainment Weekly: ENTERTAINMENT WEEKLY:...</summary>
+    <author>
+        <name>Charles Miller</name>
+        <uri>http://fishbowl.pastiche.org/</uri>
+    </author>
+    
+    
+    <content type="html" xml:lang="en" xml:base="http://fishbowl.pastiche.org/">
+        <![CDATA[<p><i>Contains Game of Thrones spoilers.</i></p>
+
+<p>Just after the infamous “Red Wedding” made its way from the pages of his novels onto the <span class="caps">HBO</span> TV series Game of Thrones, author George R. R. Martin was <a href="http://edition.cnn.com/2013/06/07/showbiz/tv/game-martin-red-wedding-ew">interviewed by Entertainment Weekly</a>:</p>
+
+<blockquote><p><b><span class="caps">ENTERTAINMENT WEEKLY</span>:</b> How early in the process of writing the book series did you know you were gonna kill off Robb and Catelyn?</p>
+
+<p><b>George <span class="caps">R.R.</span> Martin:</b> I knew it almost from the beginning. Not the first day, but very soon. I've said in many interviews that I like my fiction to be unpredictable. I like there to be considerable suspense. I killed Ned in the first book and it shocked a lot of people. I killed Ned because everybody thinks he's the hero and that, sure, he's going to get into trouble, but then he'll somehow get out of it. The next predictable thing is to think his eldest son is going to rise up and avenge his father. And everybody is going to expect that. So immediately [killing Robb] became the next thing I had to do.</p></blockquote>
+
+<p>There are a lot of very good reasons to kill a character. Maybe the death of the character is necessary to take the plot in a particular direction. Maybe you want to explore how other characters deal with the death, how it changes them or how the character's absence opens up new possibilities for them. Maybe the character's arc is fundamentally tragic and can only end in death.</p>
+
+<p>“I wanted to surprise the readers” strikes me as a really bad reason. It's soap opera writing: start with how you want your audience to react then work backwards, poking the characters with sharp sticks until they fill in the details.</p>
+
+<p>I’ll be the first to admit that fantasy writing is terribly formulaic, and so laden with predictable plot lines and character archetypes that you can tell from the first page exactly what will happen on the last. David Eddings made a very successful career out of writing exactly the same story over and over again, so well so that over the years he got more and more efficient: condensing the One True Plot from five books down to three, then finally being able to knock the whole thing over in one volume.</p>
+
+<p>This leaves a lot of room for authors to take a machete to the genre's thick undergrowth of tropes, but subverting a trope is a means, not an end. It should be a way to say something new, or at least something newer than “Ha! You weren’t expecting that!”</p>
+
+<p>Also, leaning on your subversion too often can put you in the uncomfortable position where you’re <a href="http://surlymuse.com/song-of-nice-and-ire-the-subversion-becomes-the-trope/">as predictable as Eddings</a>:</p>
+
+<blockquote><p>So Martin kills off beloved characters in order to subvert reader expectations. But after the first two times, what does the reader actually expect? What if you’ve read <i>Wild Cards</i> and find Martin’s debasement and slaughter of protagonists not only not surprising, but pretty much Martin’s stock in trade? Are reader expectations still being subverted then?</p></blockquote>
+
+<p>I’m sure Martin has a lot of other reasons to do what he does to his characters. Killing Ned Stark created a power-vacuum that was very important to the plot, and both isolated his children and forced them to learn to live without their father and protector. It’s just telling that when put on the spot, the author picked this reason out of all possible reasons to explain it.</p>
+
+<p>Which is why I think I'll stick to watching it on TV instead of catching up with the novels. If you're going to follow a soap it may as well be a TV soap.</p>
+
+<p>(And it may as well have frequent nudity.)</p>]]>
+        
+    </content>
+</entry>
+
+</feed>

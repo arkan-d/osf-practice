@@ -67,6 +67,32 @@ class User extends CI_controller {
 		$this->load->view('templates/footer');
 	}
 	
+	function add_feed(){
+		
+		
+		$this->form_validation->set_rules('url', "Url", 'required|xss_clean');
+		if ($this->form_validation->run() == TRUE){
+			$data['url'] = array(
+			'url' => $_POST['url'],			
+			);
+			
+		$user = $this->session->userdata('user_id');		
+		$this->feeds_model->insert_feed($user,$data);
+		
+		redirect('user/add_feed','refresh');
+		}else{
+			$this->session->set_flashdata('message',validation_errors());			
+			$data['message'] = $this->session->flashdata('message');
+			$data['message'] = validation_errors();
+			$data['title'] = 'Add feed';
+			$this->load->view('templates/header',$data);
+			$this->load->view('templates/nav');
+			$this->load->view('add_feed',$data);
+			$this->load->view('templates/footer');
+		}
+	}
+		
+		
 		
 	public function edit_feeds($id=null)
 	{
