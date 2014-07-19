@@ -70,26 +70,47 @@ class User extends CI_controller {
 	function add_feed(){
 		
 		
-		$this->form_validation->set_rules('url', "Url", 'required|xss_clean');
-		if ($this->form_validation->run() == TRUE){
-			$data['url'] = array(
-			'url' => $_POST['url'],			
-			);
-			
-		$user = $this->session->userdata('user_id');		
-		$this->feeds_model->insert_feed($user,$data);
+		$this->form_validation->set_rules('url', "Url", 'required|xss_clean|min_length[10]|trim');
 		
+		if ($this->form_validation->run() == TRUE){
+			
+			$feed['link'] =  $_POST['url'];
+			$feed['thumbnail'] = NULL;
+			$feed['description'] = NULL;
+			$feed['users_id']= $this->session->userdata('user_id');
+			$feed['favourite'] = 0;
+			
+			$user = $this->session->userdata('user_id');				
+			$this->load->library('rssparser');
+			$url = $feed['link'];	
+			
+			try {
+		$rss = @$this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);
+				} catch (Exception $e) {
+				//some error occured
+				redirect('user/add_feed');
+				}
+			
+			
+			
+			
+		//$data = array_merge($data1, $data2);
+		//echo "<pre>";
+		//print_r($data);
+		//echo "</pre>";
+		//echo "<pre>";
+		//print_r($feed);
+		//echo "</pre>";
+		$this->feeds_model->insert_feed($user,$feed,$rss);
 		redirect('user/add_feed','refresh');
 		}else{
-			$this->session->set_flashdata('message',validation_errors());			
-			$data['message'] = $this->session->flashdata('message');
 			$data['message'] = validation_errors();
 			$data['title'] = 'Add feed';
 			$this->load->view('templates/header',$data);
 			$this->load->view('templates/nav');
 			$this->load->view('add_feed',$data);
 			$this->load->view('templates/footer');
-		}
+			}
 	}
 		
 		
@@ -142,7 +163,7 @@ class User extends CI_controller {
         function single_feed(){
 	
 	$data['title'] = "Single";
-	       // Load RSS Parser
+	//       // Load RSS Parser
 	$data['rss'] = $this->feeds_model->rss_posts();
  
 	$this->load->view('templates/header',$data);

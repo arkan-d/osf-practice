@@ -21,17 +21,33 @@ class Feeds_model extends CI_Model{
                     return $query->result_array();	       
 	       }
                
-	       function insert_feed($user,$data){
-		    $this->load->library('rssparser');
+	       function insert_feed($user,$feed,$rss){
+		    $this->db->insert('feeds',$feed);
+		    $this->db->where('users_id',$user);
+		    $feeds_id =  $this->db->insert_id();
+		    $data = array();		    
+		   foreach($rss as $post => $data){
+			 $data['feeds_id'] = $feeds_id;
+			 unset($data['pubDate']);
+			 unset($data['author']);
+		     echo "<pre>";
+		     print_r($data);
+		     echo "</pre>";
+		    //$this->db->insert_batch('rss_posts',$data);
+		    }
+		   
+		    
+		    
+		    //$this->db->insert('rss_posts',$data);
 		    
 	       }
 	       
 	      function rss_posts(){
-	       $this->load->library('rssparser');
+	       //$this->load->library('rssparser');
 		
-		$url="http://fishbowl.pastiche.org/atom.xml";	       
+		//$url="http://feeds.feedburner.com/e64f?format=xml";	       
 	       // Get all items from arstechnica
-	       return  $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);		   
+	       //return  $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);		   
 		//http://www.spiegel.de/schlagzeilen/tops/index.rss           
 		//http://feeds.feedburner.com/ruseller/CdHX/
 		//http://feeds.bbci.co.uk/news/rss.xml

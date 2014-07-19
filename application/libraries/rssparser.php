@@ -24,26 +24,28 @@
 */
 
 
-class RSSParser {
+class RSSParser{
 
-	public $feed_uri 			= NULL; 					// Feed URI
-	public $data 				= FALSE; 					// Associative array containing all the feed items
-	public $channel_data 		= array(); 					// Store RSS Channel Data in an array
-	public $feed_unavailable	= NULL; 					// Boolean variable which indicates whether an RSS feed was unavailable
-	public $cache_life 			= 0; 						// Cache lifetime
-	public $cache_dir 			= './application/cache/'; 	// Cache directory
-	public $write_cache_flag 	= FALSE; 					// Flag to write to cache
-	public $callback 			= FALSE; 					// Callback to read custom data
+	public $feed_uri 		= NULL; 			// Feed URI
+	public $data 			= TRUE; 			// Associative array containing all the feed items
+	public $channel_data 		= array(); 			// Store RSS Channel Data in an array
+	public $feed_unavailable	= NULL; 			// Boolean variable which indicates whether an RSS feed was unavailable
+	public $cache_life 		= 0; 				// Cache lifetime
+	public $cache_dir 		= './application/cache/'; 	// Cache directory
+	public $write_cache_flag 	= FALSE; 			// Flag to write to cache
+	public $callback 		= FALSE; 			// Callback to read custom data
 	
 
 	function __construct($callback = FALSE)
 	{
+		
 		if ($callback)
 		{
 			$this->callback = $callback;
 		}
 	}
 
+	
 	// --------------------------------------------------------------------
 
 	function parse()
@@ -84,10 +86,15 @@ class RSSParser {
 		if (!isset($rawFeed))
 		{
 			$rawFeed = file_get_contents($this->feed_uri);
-		}
-
-		$xml = new SimpleXmlElement($rawFeed);
-
+		}			
+			//	try {
+			//$xml = @new SimpleXMLElement($rawFeed);
+			//	} catch (Exception $e) {
+			//	//some error occured				
+			//	redirect('user/add_feed/');
+			//	}
+			$xml = @new SimpleXMLElement($rawFeed);
+			
 		if ($xml->channel)
 		{
 			// Assign the channel data

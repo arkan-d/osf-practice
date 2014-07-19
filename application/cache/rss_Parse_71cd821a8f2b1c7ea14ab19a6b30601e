@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html lang="uk-ua" dir="ltr"  data-config='{"twitter":0,"plusone":0,"facebook":0,"style":"default"}'>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="http://college.cv.ua/" />
+  <meta name="keywords" content="коледж університет навчання чернівці учеба ВУЗ ВНЗ вступ економіка право колледж черновцы чкепк коператив чну унивеситет" />
+  <meta name="description" content="Офіційний сайт :: Чернівецький кооперативний економіко-правовий коледж!" />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Головна — Чернівецький кооперативний економіко-правовий коледж</title>
+  <link href="http://college.cv.ua/" rel="canonical" />
+  <link href="/?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+  <link href="/?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+  <link href="http://college.cv.ua/component/search/?format=opensearch" rel="search" title="пошук..." type="application/opensearchdescription+xml" />
+  <link href="/templates/yoo_avenue/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/jui/js/jquery.min.js" type="text/javascript"></script>
+  <script src="/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+  <script src="/media/jui/js/jquery-migrate.min.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script type="text/javascript">
+jQuery(function($) {
+			 $('.hasTip').each(function() {
+				var title = $(this).attr('title');
+				if (title) {
+					var parts = title.split('::', 2);
+					$(this).data('tip:title', parts[0]);
+					$(this).data('tip:text', parts[1]);
+				}
+			});
+			var JTooltips = new Tips($('.hasTip').get(), {"maxTitleChars": 50,"fixed": false});
+		});
+  </script>
+
+<link rel="apple-touch-icon-precomposed" href="/templates/yoo_avenue/apple_touch_icon.png">
+<link rel="stylesheet" href="/templates/yoo_avenue/css/bootstrap.css">
+<link rel="stylesheet" href="/templates/yoo_avenue/css/theme.css">
+<link rel="stylesheet" href="/templates/yoo_avenue/css/custom.css">
+<script src="/templates/yoo_avenue/warp/vendor/uikit/js/uikit.js"></script>
+<script src="/templates/yoo_avenue/warp/js/social.js"></script>
+<script src="/templates/yoo_avenue/js/theme.js"></script>
+</head>
+
+<body class="tm-sidebar-a-left tm-sidebar-b-right tm-sidebars-2 tm-isblog  tm-content-blank">
+
+	<div class="tm-page-bg">
+
+		<div class="uk-container uk-container-center">
+
+			<div class="tm-container">
+
+								<div class="tm-headerbar uk-clearfix uk-hidden-small">
+
+										<a class="tm-logo" href="http://college.cv.ua">
+	<p><img src="/images/logo-type-orange-test3.png" alt="Чернівецький кооперативний економіко-правовий коледж" /></p></a>
+					
+										<div class="tm-search uk-float-right">
+						
+<form id="search-40" class="uk-search" action="/" method="post" role="search" data-uk-search="{'source': '/component/search/?tmpl=raw&amp;type=json&amp;ordering=&amp;searchphrase=all', 'param': 'searchword', 'msgResultsHeader': 'Search Results', 'msgMoreResults': 'More Results', 'msgNoResults': 'No results found', flipDropdown: 1}">
+	<input class="uk-search-field" type="search" name="searchword" placeholder="search...">
+	<button class="uk-search-close" type="reset"></button>
+	<input type="hidden" name="task"   value="search">
+	<input type="hidden" name="option" value="com_search">
+	<input type="hidden" name="Itemid" value="107">
+</form>					</div>
+					
+					<div class="uk-panel">
+	<img src="/images/LOGO-coop-ukraine-v3.png" /></div>
+				</div>
+				
+								<div class="tm-top-block tm-grid-block">
+
+										<nav class="tm-navbar uk-navbar">
+
+												<ul class="uk-navbar-nav uk-hidden-small"><li class="uk-active" data-uk-dropdown="{}"><a href="/"><i class="uk-icon-home"></i> Головна</a></li><li class="uk-parent" data-uk-dropdown="{}"><a href="#"><i class="uk-icon-globe"></i> СПЕЦІАЛЬНОСТІ</a><div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1"><div class="uk-grid"><div class="uk-width-1-1"><ul class="uk-nav uk-nav-navbar"><li><a href="/specialties/accounting">Бухгалтерський облік</a></li><li><a href="/specialties/food-products-production">Виробництво харчової продукції (технологія харчування)</a></li><li><a href="/specialties/finance">Фінанси і кредит</a></li><li><a href="/specialties/jurisprudence">Правознавство</a></li><li><a href="/specialties/restaurant-service">Ресторанне обслуговування</a></li><li><a href="/specialties/tourism">Туристичне обслуговування</a></li><li><a href="/specialties/merchandizing-and-commercial-activity">Товарознавство та комерційна діяльність (в митній справі)</a></li><li class="uk-nav-header">ЦИКЛОВІ КОМІСІЇ</li><li><a href="/specialties/philologicaldisciplines">Філологічних дисциплін</a></li><li><a href="/specialties/highschool">Загальноосвітніх дисциплін</a></li><li><a href="#">Курсова підготовка робітничих професій</a></li><li><a href="#">Обслуговування комп'ютерних систем і мереж</a></li></ul></div></div></div></li><li class="uk-parent" data-uk-dropdown="{}"><a href="#"><i class="uk-icon-bell"></i> ВСТУПНИКУ</a><div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1"><div class="uk-grid"><div class="uk-width-1-1"><ul class="uk-nav uk-nav-navbar"><li><a href="/entrants/admission">Вступ на навчання</a></li><li><a href="/entrants/faq">Запитуйте - відповідаємо!</a></li><li><a href="/entrants/partnership">Партнерство</a></li><li><a href="/entrants/courses">Підготовчі курси</a></li></ul></div></div></div></li><li class="uk-parent" data-uk-dropdown="{}"><a href="#"><i class="uk-icon-users"></i> СТУДЕНТАМ</a><div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1"><div class="uk-grid"><div class="uk-width-1-1"><ul class="uk-nav uk-nav-navbar"><li><a href="/students/schedule">Розклад занять</a></li><li><a href="/students/rings">Розклад дзвінків</a></li><li><a href="/students/meth">Методичні матеріали</a></li><li><a href="/students/profkom">Студентський профком</a></li><li class="uk-nav-header">Заочне відділення</li><li><a href="/students/part-time-dep-schedule">Графік заочного відділення</a></li></ul></div></div></div></li><li class="uk-parent" data-uk-dropdown="{}"><a href="#"><i class="uk-icon-info"></i> ІНФОРМАЦІЯ</a><div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1"><div class="uk-grid"><div class="uk-width-1-1"><ul class="uk-nav uk-nav-navbar"><li><a href="/information/headhunters">РОБОТОДАВЦЯМ</a></li><li><a href="/information/history">Наша історія</a></li><li><a href="/information/management">Дирекція</a></li><li><a href="/information/licenses-and-diplomas">Ліцензії / Дипломи</a></li></ul></div></div></div></li><li data-uk-dropdown="{}"><a href="/contacts"><i class="uk-icon-envelope"></i> КОНТАКТИ</a></li></ul>						
+												<a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+						
+												<div class="uk-navbar-content uk-navbar-center uk-visible-small"><a class="tm-logo-small" href="http://college.cv.ua">
+	<img src="/images/yootheme/demo/default/logo_small.svg" width="100" height="35" alt="Demo" class="uk-responsive-height"></a></div>
+						
+					</nav>
+					
+										<div class="tm-toolbar uk-clearfix uk-hidden-small">
+
+												<div class="uk-float-left"><div class="uk-panel"><ul class="uk-breadcrumb"></ul></div></div>
+						
+												<div class="uk-float-right"><div class="uk-panel"><ul class="uk-subnav uk-subnav-line"><li><a href="/entrants/admission">Абітурієнту</a></li><li><a href="/information/licenses-and-diplomas">Ліцензії та Дипломи</a></li><li><a href="/entrants/faq">Запитуйте - відповідаємо!</a></li></ul></div></div>
+						
+					</div>
+					
+				</div>
+				
+				
+				
+								<div class="tm-middle uk-grid" data-uk-grid-match>
+
+										<div class="tm-main uk-width-medium-3-5 uk-push-1-5">
+
+												<section class="tm-main-top uk-grid tm-grid-block" data-uk-grid-match="{target:'> div > .uk-panel'}">
+<div class="uk-width-1-1"><div class="uk-panel uk-panel-box">
+<ul class="uk-list uk-list-line">
+	<li><a href="/253-become-a-student">ЧКЕПК :: Стань студентом!</a></li>
+	<li><a href="/252-2014-06-27-vypusk-studentiv-2014">ЧКЕПК :: Урочистості присвячені врученню дипломів випускникам!</a></li>
+	<li><a href="/251-stud-perlyny-2014">ЧКЕПК :: "Студентські перлини - тобі, Україно!"</a></li>
+	<li><a href="/250-2014-05-23-cv-student-conference">ЧКЕПК :: Студентська конференція серед вищих навчальних закладів І-ІІ р.а.</a></li>
+</ul></div></div>
+</section>
+						
+												<main class="tm-content">
+
+							
+							
+
+
+
+
+<div class="uk-grid tm-leading-article tm-blog"><div class="uk-width-1-1"><article class="uk-article tm-article" data-permalink="http://college.cv.ua/253-become-a-student">
+
+	
+	<div class="tm-article-content ">
+
+		
+				<h1 class="uk-article-title">
+							<a href="/253-become-a-student" title="ЧКЕПК :: Стань студентом!">ЧКЕПК :: Стань студентом!</a>
+					</h1>
+		
+		
+		
+		
+		
+		<div>
+			<p style="text-align: center;">Чернівецький кооперативний економіко-правовий коледж<br /><strong>ОГОЛОШУЄ ПРИЙОМ ДОКУМЕНТІВ</strong><br />НА <strong>ДЕННУ</strong> ТА <strong>ЗАОЧНУ</strong> ФОРМУ НАВЧАННЯ <strong>ВИПУСКНИКІВ 9-11 КЛАСІВ!</strong></p>
+<p style="text-align: center;"><strong>За спеціальностями:</strong></p>
+<ul>
+<li style="text-align: left;">Обслуговування комп'ютерних систем і мереж</li>
+<li style="text-align: left;">Виробництво харчової продукції (технологія харчування)</li>
+<li style="text-align: left;">Фінанси і кредит</li>
+<li style="text-align: left;">Бухгалтерський облік</li>
+<li style="text-align: left;">Правознавство</li>
+<li style="text-align: left;">Ресторанне обслуговування</li>
+<li style="text-align: left;">Туристичне обслуговування</li>
+<li style="text-align: left;">Товарознавство та комерційна діяльність (Товарознавство в митній справі)</li>
+</ul>
+<p><b>Прийом документів:</b></p>
+<ul>
+<li><b>9 клас:</b> з <strong>11.07.2014</strong> року по <strong>24.07.2014</strong> року</li>
+<li><b>11 клас: </b>з <strong>11.07.2014</strong> року по <strong>01.08.2014</strong> року</li>
+</ul>
+<p><a title="Вступнику" href="/entrants/admission"><b>Іспити: </b>з <strong>25.07.2014</strong> року по <strong>01.08.2014</strong></a></p>
+<p><a title="Вступнику" href="/entrants/admission"><b style="line-height: 1.3em;">БЕЗКОШТОВНІ консультації до іспитів: </b>з <strong>21.07.2014</strong> року по <strong>24.07.2014 </strong>року</a></p>
+<p><a title="Контакти" href="/contacts" target="_blank"><strong>Телефон для довідок:</strong> (0372) 53-89-95, 53-59-56</a></p>		</div>
+
+		
+		
+		
+	</div>
+
+	
+	
+</article></div></div><div class="uk-grid uk-margin-top-remove tm-blog" data-uk-grid-match><div class="uk-width-medium-1-1"><article class="uk-article tm-article" data-permalink="http://college.cv.ua/252-2014-06-27-vypusk-studentiv-2014">
+
+		<div class="tm-article-featured-image">
+					<a href="/252-2014-06-27-vypusk-studentiv-2014" title=""><img src="/images/sitecontent/news/2014-06-27-vypusk-studentiv-2014.jpg" alt=""></a>
+			</div>
+	
+	<div class="tm-article-content ">
+
+		
+				<h1 class="uk-article-title">
+							<a href="/252-2014-06-27-vypusk-studentiv-2014" title="ЧКЕПК :: Урочистості присвячені врученню дипломів випускникам!">ЧКЕПК :: Урочистості присвячені врученню дипломів випускникам!</a>
+					</h1>
+		
+		
+		
+		
+		
+		<div>
+			<p style="text-align: justify;">27 червня 2014 року в Чернівецькому кооперативному економіко-правовому коледжі відбулися урочистості присвячені врученню дипломів випускникам денного відділення зі спеціальностей: "Правознавство", "Товарознавство та комерційна діяльність", «Фінанси і кредит», "Бухгалтерський облік"та "Ресторанне обслуговування".</p>
+		</div>
+
+		
+				<p>
+			<a class="uk-button" href="/252-2014-06-27-vypusk-studentiv-2014" title="ЧКЕПК :: Урочистості присвячені врученню дипломів випускникам!">Continue Reading</a>
+		</p>
+		
+		
+	</div>
+
+	
+	
+</article><article class="uk-article tm-article" data-permalink="http://college.cv.ua/251-stud-perlyny-2014">
+
+		<div class="tm-article-featured-image">
+					<a href="/251-stud-perlyny-2014" title=""><img src="/images/sitecontent/news/2014-06-stud-perlyny.jpg" alt=""></a>
+			</div>
+	
+	<div class="tm-article-content ">
+
+		
+				<h1 class="uk-article-title">
+							<a href="/251-stud-perlyny-2014" title="ЧКЕПК :: &quot;Студентські перлини - тобі, Україно!&quot;">ЧКЕПК :: &quot;Студентські перлини - тобі, Україно!&quot;</a>
+					</h1>
+		
+		
+		
+		
+		
+		<div>
+			<p>Участь студентів Коледжу у Дванадцятому огляді – конкурсі художньої самодіяльності серед колективів кооперативних вищих навчальних закладів І рівня акредитації «Студентські перлини - тобі, Україно»</p>
+		</div>
+
+		
+				<p>
+			<a class="uk-button" href="/251-stud-perlyny-2014" title="ЧКЕПК :: &quot;Студентські перлини - тобі, Україно!&quot;">Continue Reading</a>
+		</p>
+		
+		
+	</div>
+
+	
+	
+</article><article class="uk-article tm-article" data-permalink="http://college.cv.ua/250-2014-05-23-cv-student-conference">
+
+		<div class="tm-article-featured-image">
+					<a href="/250-2014-05-23-cv-student-conference" title=""><img src="/images/sitecontent/news/2014-05-23-cv-student-conference.jpeg" alt=""></a>
+			</div>
+	
+	<div class="tm-article-content ">
+
+		
+				<h1 class="uk-article-title">
+							<a href="/250-2014-05-23-cv-student-conference" title="ЧКЕПК :: Студентська конференція серед вищих навчальних закладів І-ІІ р.а.">ЧКЕПК :: Студентська конференція серед вищих навчальних закладів І-ІІ р.а.</a>
+					</h1>
+		
+		
+		
+		
+		
+		<div>
+			<p>23 травня 2014р. на базі ДВНЗ «Чернівецький політехнічний коледж» відбулася науково-пізнавальна студентська конференція серед вищих навчальних закладів І-ІІ р.а. Чернівецької області. Участь у конференції взяли такі навчальні заклади:</p>
+		</div>
+
+		
+				<p>
+			<a class="uk-button" href="/250-2014-05-23-cv-student-conference" title="ЧКЕПК :: Студентська конференція серед вищих навчальних закладів І-ІІ р.а.">Continue Reading</a>
+		</p>
+		
+		
+	</div>
+
+	
+	
+</article><article class="uk-article tm-article" data-permalink="http://college.cv.ua/249-2014-05-19-tyzhden-dobroty">
+
+		<div class="tm-article-featured-image">
+					<a href="/249-2014-05-19-tyzhden-dobroty" title=""><img src="/images/sitecontent/news/2014-05-19-tyzhden-dobroty.jpg" alt=""></a>
+			</div>
+	
+	<div class="tm-article-content ">
+
+		
+				<h1 class="uk-article-title">
+							<a href="/249-2014-05-19-tyzhden-dobroty" title="ЧКЕПК :: Тиждень доброти">ЧКЕПК :: Тиждень доброти</a>
+					</h1>
+		
+		
+		
+		
+		
+		<div>
+			<p>В рамках благодійної акції «Тиждень доброти», що проводилась Чернівецьким департаментом освіти і науки, молоді та спорту в період з 19.05.14 по 25.05.14 долучились і студенти 381 групи спеціальності 5.05170101 Виробництво харчової продукції, які організували виставку-розпродаж борошняних та кондитерських виробів виготовлених власноруч під час захисту технологічної практики на робочому місці «кондитер».</p>
+<p>Отримані від розпродажу кошти було передано Чернівецькій обласній благодійній організації «Майбутнє Україні».</p>
+		</div>
+
+		
+				<p>
+			<a class="uk-button" href="/249-2014-05-19-tyzhden-dobroty" title="ЧКЕПК :: Тиждень доброти">Continue Reading</a>
+		</p>
+		
+		
+	</div>
+
+	
+	
+</article></div></div>
+<div class="uk-grid tm-grid-block">
+	<div class="uk-width-1-1">
+		<div class="uk-panel uk-panel-header">
+			<h3 class="uk-panel-title">Більше статей...</h3>
+			<ul class="uk-list">
+								<li><a href="/248-2014-04-30-znayomstvo-z-europe">ЧКЕПК :: Знайомство з Європою</a></li>
+								<li><a href="/247-2014-05-15-den-vyshyvanky">ЧКЕПК :: Загальнобуковинська акція - День вишиванки!</a></li>
+								<li><a href="/246-2014-05-14-mama-day-in-college">ЧКЕПК :: День матері</a></li>
+								<li><a href="/245-2014-05-05-novokahovsky-college">ЧКЕПК :: Делегація Новокаховського приладобудівного технікуму</a></li>
+								<li><a href="/221-2014-04-26-chornobyl-pamyataemo">ЧКЕПК :: Пам’ятаємо!  Біль Чорнобиля в наших серцях</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+
+<div class="uk-grid tm-grid-block">
+	<div class="uk-width-1-1">
+		<div class="uk-panel uk-panel-space">
+		<ul class="uk-pagination"><li class="uk-active"><span>1</span></li><li><a class="" href="/?start=5" title="">2</a></li><li><a class="" href="/?start=10" title="">3</a></li><li><a class="" href="/?start=15" title="">4</a></li><li><span>...</span></li><li><a class="" href="/?start=45" title="">10</a></li><li><a class="next" href="/?start=5" title="Наступна"><i class="uk-icon-angle-double-right"></i></a></li></ul>		</div>
+	</div>
+</div>
+
+						</main>
+						
+						
+					</div>
+					
+		            		            		            		            		            <aside class="tm-sidebar-a uk-width-medium-1-5 uk-pull-3-5"><div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">ВСТУПНИКУ</h3><ul class="uk-nav uk-nav-parent-icon uk-nav-side" data-uk-nav="{}"><li><a href="/entrants/admission">Вступ на навчання</a></li><li><a href="/entrants/faq">Запитуйте - відповідаємо!</a></li><li><a href="/entrants/partnership">Партнерство</a></li><li><a href="/entrants/courses">Підготовчі курси</a></li></ul></div>
+<div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">СПЕЦІАЛЬНОСТІ</h3><ul class="uk-nav uk-nav-parent-icon uk-nav-side" data-uk-nav="{}"><li><a href="/specialties/accounting">Бухгалтерський облік</a></li><li><a href="/specialties/food-products-production">Виробництво харчової продукції (технологія харчування)</a></li><li><a href="/specialties/finance">Фінанси і кредит</a></li><li><a href="/specialties/jurisprudence">Правознавство</a></li><li><a href="/specialties/restaurant-service">Ресторанне обслуговування</a></li><li><a href="/specialties/tourism">Туристичне обслуговування</a></li><li><a href="/specialties/merchandizing-and-commercial-activity">Товарознавство та комерційна діяльність (в митній справі)</a></li><li class="uk-nav-header">ЦИКЛОВІ КОМІСІЇ</li><li><a href="/specialties/philologicaldisciplines">Філологічних дисциплін</a></li><li><a href="/specialties/highschool">Загальноосвітніх дисциплін</a></li><li><a href="#">Курсова підготовка робітничих професій</a></li><li><a href="#">Обслуговування комп'ютерних систем і мереж</a></li></ul></div>
+<div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">СТУДЕНТАМ</h3><ul class="uk-nav uk-nav-parent-icon uk-nav-side" data-uk-nav="{}"><li><a href="/students/schedule">Розклад занять</a></li><li><a href="/students/rings">Розклад дзвінків</a></li><li><a href="/students/meth">Методичні матеріали</a></li><li><a href="/students/profkom">Студентський профком</a></li><li class="uk-nav-header">Заочне відділення</li><li><a href="/students/part-time-dep-schedule">Графік заочного відділення</a></li></ul></div>
+<div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">ІНФОРМАЦІЯ</h3><ul class="uk-nav uk-nav-parent-icon uk-nav-side" data-uk-nav="{}"><li><a href="/information/headhunters">РОБОТОДАВЦЯМ</a></li><li><a href="/information/history">Наша історія</a></li><li><a href="/information/management">Дирекція</a></li><li><a href="/information/licenses-and-diplomas">Ліцензії / Дипломи</a></li></ul></div></aside>
+		            		            		            		            <aside class="tm-sidebar-b uk-width-medium-1-5"><div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">Ліцензії</h3>
+	<p><a href="/information/licenses-and-diplomas"> <img src="/images/sitecontent/gallery/documents/licenses/lic200.jpg" alt="Ліцензія 2014" /></a></p>
+<hr />
+<p style="text-align: center; color: #e05b3a; font-size: 9pt;"><strong>СУЧАСНА ОСВІТА В УКРАЇНІ 2014</strong></p>
+<p><a href="/information/licenses-and-diplomas"> <img src="/images/sitecontent/gallery/documents/diplomas/1_200.jpg" alt="Дипломи 2014" /></a></p>
+<p><a href="/information/licenses-and-diplomas"> <img src="/images/sitecontent/gallery/documents/diplomas/2_200.jpg" alt="Дипломи 2014" /></a></p></div>
+<div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">Лічильники</h3>
+	<!-- Yandex.Metrika informer -->
+<a href="http://metrika.yandex.ru/stat/?id=18141238&amp;from=informer"
+target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/18141238/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:18141238,type:0,lang:'ru'});return false}catch(e){}"/></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18141238 = new Ya.Metrika({id:18141238, enableAll: true, webvisor:true});
+        } catch(e) { }
+    });
+    
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18141238" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<p></p>
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">//<![CDATA[
+var a='',js=10;try{a+=';r='+escape(document.referrer);}catch(e){}try{a+=';j='+navigator.javaEnabled();js=11;}catch(e){}
+try{s=screen;a+=';s='+s.width+'*'+s.height;a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;}catch(e){}
+try{if(typeof((new Array).push('t'))==="number")js=13;}catch(e){}
+try{document.write('<a href="http://top.mail.ru/jump?from=1740434">'+
+'<img src="http://de.c8.ba.a1.top.mail.ru/counter?id=1740434;t=219;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru" style="border:0;" height="31" width="88" \/><\/a>');}catch(e){}//]]></script>
+<noscript><p><a href="http://top.mail.ru/jump?from=1740434">
+<img src="http://de.c8.ba.a1.top.mail.ru/counter?js=na;id=1740434;t=219" 
+style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a></p></noscript>
+<!-- //Rating@Mail.ru counter --></div>
+<div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">Об'єднуйся з нами!</h3>
+	<div class="tm-social-icon-buttons">
+  	<a href="https://www.youtube.com/user/thecvcollege" class="uk-icon-button uk-icon-youtube"></a>
+	<a href="https://www.facebook.com/cvcollege" class="uk-icon-button uk-icon-facebook"></a>
+	<a href="http://vk.com/cvcollege" class="uk-icon-button uk-icon-linkedin"></a>
+
+</div>
+<div class="tm-social-icon-buttons">
+	<a href="https://twitter.com/collegecvua" class="uk-icon-button uk-icon-twitter"></a>
+</div></div></aside>
+		            		            
+				</div>
+				
+				
+								<div class="tm-block-bottom">
+
+					
+					
+										<footer class="tm-footer">
+
+												<a class="tm-totop-scroller" data-uk-smooth-scroll href="#"></a>
+						
+						<div class="uk-panel">
+	<p>Чернівецький кооперативний економіко-правовий коледж<br /><a href="/../">www.college.cv.ua</a> © 2014</p></div>
+					</footer>
+					
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	
+		<div id="offcanvas" class="uk-offcanvas">
+		<div class="uk-offcanvas-bar"><ul class="uk-nav uk-nav-offcanvas"><li class="uk-active"><a href="/"><i class="uk-icon-home"></i> Головна</a></li><li class="uk-parent"><a href="#"><i class="uk-icon-globe"></i> СПЕЦІАЛЬНОСТІ</a><ul class="uk-nav-sub"><li><a href="/specialties/accounting">Бухгалтерський облік</a></li><li><a href="/specialties/food-products-production">Виробництво харчової продукції (технологія харчування)</a></li><li><a href="/specialties/finance">Фінанси і кредит</a></li><li><a href="/specialties/jurisprudence">Правознавство</a></li><li><a href="/specialties/restaurant-service">Ресторанне обслуговування</a></li><li><a href="/specialties/tourism">Туристичне обслуговування</a></li><li><a href="/specialties/merchandizing-and-commercial-activity">Товарознавство та комерційна діяльність (в митній справі)</a></li><li><a href="#">ЦИКЛОВІ КОМІСІЇ</a></li><li><a href="/specialties/philologicaldisciplines">Філологічних дисциплін</a></li><li><a href="/specialties/highschool">Загальноосвітніх дисциплін</a></li><li><a href="#">Курсова підготовка робітничих професій</a></li><li><a href="#">Обслуговування комп'ютерних систем і мереж</a></li></ul></li><li class="uk-parent"><a href="#"><i class="uk-icon-bell"></i> ВСТУПНИКУ</a><ul class="uk-nav-sub"><li><a href="/entrants/admission">Вступ на навчання</a></li><li><a href="/entrants/faq">Запитуйте - відповідаємо!</a></li><li><a href="/entrants/partnership">Партнерство</a></li><li><a href="/entrants/courses">Підготовчі курси</a></li></ul></li><li class="uk-parent"><a href="#"><i class="uk-icon-users"></i> СТУДЕНТАМ</a><ul class="uk-nav-sub"><li><a href="/students/schedule">Розклад занять</a></li><li><a href="/students/rings">Розклад дзвінків</a></li><li><a href="/students/meth">Методичні матеріали</a></li><li><a href="/students/profkom">Студентський профком</a></li><li><a href="#">Заочне відділення</a></li><li><a href="/students/part-time-dep-schedule">Графік заочного відділення</a></li></ul></li><li class="uk-parent"><a href="#"><i class="uk-icon-info"></i> ІНФОРМАЦІЯ</a><ul class="uk-nav-sub"><li><a href="/information/headhunters">РОБОТОДАВЦЯМ</a></li><li><a href="/information/history">Наша історія</a></li><li><a href="/information/management">Дирекція</a></li><li><a href="/information/licenses-and-diplomas">Ліцензії / Дипломи</a></li></ul></li><li><a href="/contacts"><i class="uk-icon-envelope"></i> КОНТАКТИ</a></li></ul></div>
+	</div>
+	
+</body>
+</html>
