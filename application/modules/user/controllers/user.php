@@ -67,7 +67,12 @@ class User extends CI_controller {
 		$this->load->view('templates/footer');
 	}
 	
-	function add_feed(){
+	function add_feed($id){
+		
+		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
+		{
+			show_404();
+		}
 		
 		
 		$this->form_validation->set_rules('url', "Url", 'required|xss_clean|min_length[10]|trim');
@@ -90,17 +95,7 @@ class User extends CI_controller {
 				//some error occured
 				redirect('user/add_feed');
 				}
-			
-			
-			
-			
-		//$data = array_merge($data1, $data2);
-		//echo "<pre>";
-		//print_r($data);
-		//echo "</pre>";
-		//echo "<pre>";
-		//print_r($feed);
-		//echo "</pre>";
+		
 		$this->feeds_model->insert_feed($user,$feed,$rss);
 		redirect('user/add_feed','refresh');
 		}else{
@@ -160,12 +155,47 @@ class User extends CI_controller {
 	 *@todo check for sql/xss injections
 	 */
        
-        function single_feed(){
+        function single_feed($feed_id){
 	
-	$data['title'] = "Single";
-	//       // Load RSS Parser
-	$data['rss'] = $this->feeds_model->rss_posts();
- 
+	$data['title'] = "Single";	
+	$data['rss'] = $this->feeds_model->rss_posts($feed_id);
+			
+			
+			
+	$this->load->library('pagination'); 
+	$config = array(); 
+	$config["base_url"] = base_url()."user/single_feed/{$feed_id}";
+	 $config['total_rows'] = count($data['rss']);	
+	 $config["per_page"] = 10; 
+	 $config["uri_segment"] = 4; 
+	 // twitter bootstrap markup 
+	 $config['full_tag_open'] = '<ul class="pagination pagination-sm">';
+	 $config['full_tag_close'] = '</ul>';
+	 $config['num_tag_open'] = '<li>';
+	 $config['num_tag_close'] = '</li>';
+	 $config['cur_tag_open'] = '<li class="active"><span>';
+	 $config['cur_tag_close'] = '<span class="sr-only">(current)</span></span></li>';
+	 $config['prev_tag_open'] = '<li>'; 
+	 $config['prev_tag_close'] = '</li>';
+	 $config['next_tag_open'] = '<li>';
+	 $config['next_tag_close'] = '</li>';
+	 $config['first_link'] = '&laquo;';
+	 $config['prev_link'] = '&lsaquo;'; 
+	 $config['last_link'] = '&raquo;'; 
+	 $config['next_link'] = '&rsaquo;'; 
+	 $config['first_tag_open'] = '<li>'; 
+	 $config['first_tag_close'] = '</li>'; 
+	 $config['last_tag_open'] = '<li>'; 
+	 $config['last_tag_close'] = '</li>';
+	 $this->pagination->initialize($config);
+	 // pass the parameters for per_page, page number, order by, sort, etc here
+	 // generate links 
+	 $data['links'] = $this->pagination->create_links(); 
+	 // pass the data to the view  
+ 		
+			
+			
+			
 	$this->load->view('templates/header',$data);
 	$this->load->view('templates/nav');
 	$this->load->view('single',$data);
@@ -173,6 +203,24 @@ class User extends CI_controller {
 	    
         }	
 	
+	
+	function all_feeds($id=0){
+		
+		$data['title'] = "My feeds";
+
+		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
+		{
+			show_404();
+		}
+	$user = $this->session->userdata('user_id');
+	$data['feeds'] = $this->feeds_model->get_all_feeds($user);
+	
+	$this->load->view('templates/header',$data);
+	$this->load->view('templates/nav');
+	$this->load->view('all_feeds',$data);
+	$this->load->view('templates/footer');
+		
+	}
 	
 	
 	function _get_csrf_nonce()

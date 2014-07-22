@@ -43,7 +43,7 @@
                         <div class="panel-body">
                            
                                 <div class="left clearfix">
-                                     <div class="chat-body">  
+            <div class="chat-body" style="height: 200px; overflow: scroll;">  
 				    
                                                                       
                                        <?php
@@ -51,7 +51,7 @@
 				<p> 
                                 <img src="<?=base_url();?>img/rss.png" width="45" height="30" class="img-circle" />
                                    
-				   <a href="<?=base_url();?>user/single_feed/<?=$value['id']?>" target="_blank"><?=$value['link']?></a> </p>
+				   <a href="<?=base_url();?>user/single_feed/<?=$value['id']?>"><?=$value['link']?></a> </p>
 				<?php }
 				?>
                                     </div>

@@ -1,12 +1,16 @@
 body, html {
 	height: 100%;
 	width: 100%;
+	background-image: url('../img/debut-light.png');
 }
 
 body, h1, h2, h3, h4, h5, h6 {
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 700;
 }
+
+
+a {color:#080;}
 
 .lead {
 	font-size: 18px;
@@ -144,7 +148,10 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 footer {
-	background-color: #f8f8f8;
+	//background-color: #f8f8f8;
+	//background: none repeat scroll 0% 0% #080;
+	background: none repeat scroll 0% 0% #232323;
+	border-bottom: 3px solid #080;
 	padding: 50px 0;
 }
 
