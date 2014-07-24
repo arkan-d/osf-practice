@@ -2,10 +2,10 @@
 -- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1
--- Время создания: Июл 24 2014 г., 11:11
--- Версия сервера: 5.5.25
--- Версия PHP: 5.3.13
+-- Host: 127.0.0.1
+-- Generation Time: Jul 24, 2014 at 04:37 PM
+-- Server version: 5.5.25
+-- PHP Version: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `like12`
+-- Database: `like12`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ci_sessions`
+-- Table structure for table `ci_sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
@@ -37,16 +37,37 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ci_sessions`
+-- Dumping data for table `ci_sessions`
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('5d13f0eac73ac663bcbbc295051d6ed5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 1406189387, 'a:6:{s:9:"user_data";s:0:"";s:8:"identity";s:18:"denys.arkan@gm.com";s:8:"username";s:12:"denys arkan2";s:5:"email";s:18:"denys.arkan@gm.com";s:7:"user_id";s:2:"11";s:14:"old_last_login";s:10:"1406189268";}');
+('c549c93e60d62d6027a80d46237f3d3a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0', 1406208931, 'a:1:{s:9:"user_data";s:0:"";}');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `feeds`
+-- Table structure for table `day`
+--
+
+CREATE TABLE IF NOT EXISTS `day` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` varchar(10) NOT NULL DEFAULT '',
+  `user` int(10) NOT NULL DEFAULT '0',
+  `view` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `day`
+--
+
+INSERT INTO `day` (`id`, `day`, `user`, `view`) VALUES
+(2, '2014.07.24', 1, 61);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feeds`
 --
 
 CREATE TABLE IF NOT EXISTS `feeds` (
@@ -61,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `feeds` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=115 ;
 
 --
--- Дамп данных таблицы `feeds`
+-- Dumping data for table `feeds`
 --
 
 INSERT INTO `feeds` (`id`, `link`, `thumbnail`, `description`, `users_id`, `favourite`) VALUES
@@ -75,7 +96,7 @@ INSERT INTO `feeds` (`id`, `link`, `thumbnail`, `description`, `users_id`, `favo
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE IF NOT EXISTS `groups` (
@@ -86,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -96,7 +117,63 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `login_attempts`
+-- Table structure for table `ips`
+--
+
+CREATE TABLE IF NOT EXISTS `ips` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(15) NOT NULL DEFAULT '',
+  `time` int(20) NOT NULL DEFAULT '0',
+  `online` int(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `ips`
+--
+
+INSERT INTO `ips` (`id`, `ip`, `time`, `online`) VALUES
+(1, '127.0.0.1', 1406206470, 1406209005);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `keyword`
+--
+
+CREATE TABLE IF NOT EXISTS `keyword` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` varchar(10) NOT NULL DEFAULT '',
+  `keyword` varchar(255) NOT NULL DEFAULT '',
+  `view` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `language`
+--
+
+CREATE TABLE IF NOT EXISTS `language` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` varchar(10) NOT NULL DEFAULT '',
+  `language` varchar(2) NOT NULL DEFAULT '',
+  `view` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `language`
+--
+
+INSERT INTO `language` (`id`, `day`, `language`, `view`) VALUES
+(1, '2014.07.24', 'en', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_attempts`
 --
 
 CREATE TABLE IF NOT EXISTS `login_attempts` (
@@ -110,7 +187,52 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `rss_posts`
+-- Table structure for table `page`
+--
+
+CREATE TABLE IF NOT EXISTS `page` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` varchar(10) NOT NULL DEFAULT '',
+  `page` varchar(255) NOT NULL DEFAULT '',
+  `view` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `page`
+--
+
+INSERT INTO `page` (`id`, `day`, `page`, `view`) VALUES
+(1, '2014.07.24', '/user', 4),
+(2, '2014.07.24', '/user/all_feeds/4', 5),
+(3, '2014.07.24', '/user/single_feed/104', 3),
+(4, '2014.07.24', '/user/edit_feeds/4', 1),
+(5, '2014.07.24', '/user/add_feed/4', 1),
+(6, '2014.07.24', '/admin', 1),
+(7, '2014.07.24', '/user/single_feed/112', 2),
+(8, '2014.07.24', '/user/single_feed/109', 2),
+(9, '2014.07.24', '/auth/create_user', 1),
+(10, '2014.07.24', '/auth/forgot_password', 1),
+(11, '2014.07.24', '/auth/login', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `referer`
+--
+
+CREATE TABLE IF NOT EXISTS `referer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` varchar(10) NOT NULL DEFAULT '',
+  `referer` varchar(255) NOT NULL DEFAULT '',
+  `view` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rss_posts`
 --
 
 CREATE TABLE IF NOT EXISTS `rss_posts` (
@@ -121,10 +243,10 @@ CREATE TABLE IF NOT EXISTS `rss_posts` (
   `feeds_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_rss_posts_feeds1` (`feeds_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=607 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=637 ;
 
 --
--- Дамп данных таблицы `rss_posts`
+-- Dumping data for table `rss_posts`
 --
 
 INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUES
@@ -215,44 +337,14 @@ INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUE
 (410, 'Afternoon Tease at Volupté', 'A burlesque afternoon tea event at sumptuous London cabaret venue Volupté. Various dates	 	 ', 'http://www.visitlondon.com/things-to-do/event/13664960', 113),
 (411, '99 Club Leicester Square', 'Laughs for your weekend at Leicester Square''s 99 Club. Bring your pals and your sense of humour!	 	 ', 'http://www.visitlondon.com/things-to-do/event/973478', 113),
 (412, 'Old Rope', 'Award winning comedian Phil Nichol presents a weekly comedy night at The Phoenix. Every Monday	 	 ', 'http://www.visitlondon.com/things-to-do/event/6866216', 113),
-(547, 'Sudan: Zum Tode verurteilte Christin rettet sich nach Italien', 'Wegen ihres Übertritts zum Christentum wurde eine Frau im Sudan zum Tode verurteilt. Jetzt durfte Mariam Jahia Ibrahim Ishak mit ihrer Familie nach Italien ausfliegen.', 'http://www.spiegel.de/politik/ausland/sudan-zum-tode-verurteilte-christin-nach-italien-a-982643.html#ref=rss', 104),
-(548, 'Afghanistan: Gericht verhängt Todesstrafe gegen Mörder der Fotografin Niedringhaus', 'Die sechs Richter in Kabul waren sich einig: Sie verurteilten den Mörder der in Afghanistan getöteten deutschen Fotografin Anja Niedringhaus zum Tode.', 'http://www.spiegel.de/politik/ausland/anja-niedringhaus-todesstrafe-fuer-moerder-der-fotografin-in-afghanistan-a-982631.html#ref=rss', 104),
-(549, 'Gaza-Konflikt: Uno-Generalsekretär empört über Raketenfunde in Schulen', 'In mehreren Uno-Schulen im Gazastreifen sind Raketen versteckt worden. Generalsekretär Ban Ki Moon fordert Aufklärung: Das Leben unschuldiger Kinder sei in Gefahr gebracht worden.', 'http://www.spiegel.de/politik/ausland/krieg-in-gaza-ban-ki-moon-empoert-ueber-raketen-fund-in-uno-schulen-a-982624.html#ref=rss', 104),
-(550, 'Stiftung Warentest: Viele Mineralwässer sind verunreinigt', 'Die Stiftung Warentest hat in 10 von 30 Medium-Mineralwässern Süßstoff oder Abbauprodukte von Pestiziden entdeckt. Uneingeschränkt empfehlen können die Tester nur wenige Produkte - vor allem günstige Eigenmarken von Lidl und Co.', 'http://www.spiegel.de/wirtschaft/service/stiftung-warentest-verunreinigung-vieler-mineralwasser-mit-a-982627.html#ref=rss', 104),
-(551, 'Zwei Stunden Todeskampf: US-Doppelmörder stirbt bei qualvoller Hinrichtung', 'In den USA ist erneut ein Mann grausam hingerichtet worden. Bis Joseph Wood tot war, vergingen zwei Stunden.', 'http://www.spiegel.de/panorama/justiz/qualvolle-hinrichtung-in-arizona-moerder-stirbt-nach-zwei-stunden-a-982625.html#ref=rss', 104),
-(552, 'Gaza-Konflikt: Deutsche Politiker kritisieren Flugstopp nach Israel', 'Die US-Luftfahrtbehörde hat das Flugverbot für amerikanische Airlines nach Tel Aviv aufgehoben. Doch die Lufthansa und andere Gesellschaften steuern Israel weiter nicht an. Deutsche Politiker kritisieren die Einstellung der Flüge massiv.', 'http://www.spiegel.de/politik/ausland/gaza-konflikt-flugverbot-nach-israel-in-der-kritik-a-982623.html#ref=rss', 104),
-(553, 'Akute Rückenschmerzen: Paracetamol nicht besser als Placebo', 'Bei akuten Rückenschmerzen entscheiden sich Patienten wie Ärzte häufig für einen Wirkstoff: Paracetamol. Doch einer neuen Studie zufolge hilft das Schmerzmittel nicht besser als ein Placebo.', 'http://www.spiegel.de/gesundheit/diagnose/akute-rueckenschmerzen-paracetamol-nicht-besser-als-placebo-a-982366.html#ref=rss', 104);
-INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUES
-(554, 'Maccabi Haifa: Testspiel von israelischem Spitzenklub nach Platzsturm abgebrochen', 'Anti-Israel-Proteste auch beim Fußball: Nach Angriffen auf Spieler und einem Zuschauersturm auf den Rasen ist ein Spiel des israelischen Klubs Maccabi Haifa in Österreich abgebrochen worden. Am Samstag spielt das Team gegen Paderborn.', 'http://www.spiegel.de/sport/fussball/anti-israel-proteste-testspiel-abgebrochen-a-982622.html#ref=rss', 104),
-(555, 'Erdumrundung: 17-Jähriger stirbt bei Weltrekordversuch mit Flugzeug', 'Er wollte der jüngste Mensch sein, der jemals in einer einmotorigen Maschine in 30 Tagen um die Welt flog. Diesen Wunsch musste Haris Suleman nun mit dem Leben bezahlen. Sein Flugzeug stürzte vor Amerikanisch-Samoa ins Meer.', 'http://www.spiegel.de/panorama/weltrekordversuch-17-jaehriger-stirbt-bei-flugzeugabsturz-a-982620.html#ref=rss', 104),
-(556, 'Ostukraine: Rebellenführer bestätigt Besitz von Buk-Flugabwehr', 'Die Separatisten in der Ostukraine verfügten über das Buk-System, mit dessen Raketen offenbar der Malaysia-Airlines-Flug MH17 abgeschossen wurde. Das räumt jetzt ein einflussreicher Rebellenkommandeur ein. Er will auch wissen, woher die Waffe kam.', 'http://www.spiegel.de/politik/ausland/mh17-rebellenkommandeur-bestaetigt-besitz-von-buk-raketen-a-982616.html#ref=rss', 104),
-(557, 'Unglücksflug MH17: Niederlande finden keine Hinweise auf Manipulation der Blackbox', 'Die Flugschreiber des abgestürzten Malaysia-Airlines-Flugzeugs befanden sich tagelang in den Händen von Aufständischen. Doch Befürchtungen, dass die Separatisten die Blackbox manipulierten, waren unbegründet. ', 'http://www.spiegel.de/politik/ausland/malaysia-airlines-mh17-boeing-777-blackbox-wurde-nicht-manipuliert-a-982607.html#ref=rss', 104),
-(558, '"Russisches Blackwater": Moskau will Privatarmeen aufbauen', 'Die russische Regierung plant den Einsatz privater Sicherheitsfirmen. Die nichtstaatlichen Kämpfer sollen einspringen, wenn es politisch brenzlig wird.', 'http://www.spiegel.de/politik/ausland/russland-kreml-plant-privatarmee-nach-dem-vorbild-blackwater-a-982559.html#ref=rss', 104),
-(559, 'Internet-Agenda der Bundesregierung: Drei Minister, eine Enttäuschung', 'Schneller, höher, weiter: Die Bundesregierung hat ihre Digitale Agenda vorgelegt - sie verspricht nicht weniger als eine Internet-Revolution für Deutschland. Und was heißt das konkret?', 'http://www.spiegel.de/politik/deutschland/digitale-agenda-erster-gesetzentwurf-ist-eine-enttaeuschung-a-982503.html#ref=rss', 104),
-(560, 'Kämpfe in der Ostukraine: Kiew macht Russland für Kampfjet-Abschuss verantwortlich', 'Für die Regierung in Kiew ist die Sache klar: Die Raketen auf zwei ukrainische Kampfjets seien von russischem Territorium aus abgefeuert worden. ', 'http://www.spiegel.de/politik/ausland/ukraine-macht-russland-fuer-abschuss-von-kampfjets-verantwortlich-a-982587.html#ref=rss', 104),
-(561, 'Gauck zu judenfeindlichen Demos: "Wir wollen Antisemitismus nicht hinnehmen"', 'Nach antisemitischen Parolen bei Anti-Israel-Kundgebungen verlangt Bundespräsident Gauck mehr Zivilcourage von den Deutschen. Die Kanzlerin warnt vor einem "Angriff auf Freiheit und Toleranz".', 'http://www.spiegel.de/politik/deutschland/antisemitismus-bundespraesident-gauck-fordert-zivilcourage-a-982566.html#ref=rss', 104),
-(562, 'Antisemitismus: Staatsanwaltschaft ermittelt gegen Berliner Hassprediger', 'Sheikh Abu Bilal Ismail wetterte in der Berliner Al-Nur-Moschee gegen Juden. Jetzt hat die Staatsanwaltschaft Ermittlungen eingeleitet. Der Vorwurf: Volksverhetzung.', 'http://www.spiegel.de/politik/deutschland/antisemitismus-ermittlungen-gegen-hassprediger-wegen-volksverhetzung-a-982381.html#ref=rss', 104),
-(563, 'Flugzeugunglück: Bruchlandung in Taiwan - viele Tote', 'In der taiwanischen Provinz Penghu sind bei einem Flugzeugunglück offenbar mindestens 47 Menschen gestorben. Laut der chinesischen Nachrichtenagentur Xinhua missglückte die Notlandung eines Flugzeugs der Linie Transasia.', 'http://www.spiegel.de/panorama/taiwan-tote-bei-flugzeugunglueck-der-transasia-a-982557.html#ref=rss', 104),
-(564, 'Prozess in Regensburg: Mollath-Anwälte sollen als Pflichtverteidiger weitermachen', 'Turbulenter Tag vor dem Landgericht Regensburg: Die Mollath-Anwälte legen ihr Mandat nieder - weil der Mandant offenbar das Vertrauen in sie verloren hat. Nun sollen die Juristen als Pflichtverteidiger weiterarbeiten.', 'http://www.spiegel.de/panorama/justiz/mollath-prozes-anwalt-strate-wird-pflichtverteidiger-a-982550.html#ref=rss', 104),
-(565, 'Transport-App: Hamburg verbietet Fahrdienst Uber', 'Taxifahrer hassen die Konkurrenz durch Uber, jetzt will die Stadt Hamburg den kalifornischen Dienst stoppen. Die Verkehrsbehörde bezeichnet dessen App als "nicht legal". Privatleute, die sich dem Verbot widersetzen, riskieren hohe Strafen.', 'http://www.spiegel.de/wirtschaft/unternehmen/uber-hamburg-verbietet-fahrtdienst-a-982543.html#ref=rss', 104),
-(566, 'Krise in der Ukraine: Merkel verlangt schnelle Sanktionen gegen Russland', 'Der Druck auf Wladimir Putin steigt. Bundeskanzlerin Merkel fordert jetzt weitere Strafmaßnahmen gegen Russland - weil Moskau kein Interesse an einer schnellen Aufklärung des MH17-Abschusses zeige. Das Auswärtige Amt erklärt: "Jetzt reicht es."', 'http://www.spiegel.de/politik/ausland/ukraine-merkel-fordert-schnelle-eu-sanktionen-gegen-russland-a-982546.html#ref=rss', 104),
-(567, 'Prozess in Regensburg: Verteidiger von Mollath legen Mandat nieder', 'Die beiden Verteidiger von Gustl Mollath haben ihr Mandat niedergelegt. Dies erfolge auf Wunsch des Angeklagten, sagte Mollaths Anwalt Gerhard Strate. ', 'http://www.spiegel.de/panorama/justiz/gustl-mollath-verteidiger-legen-mandat-nieder-a-982541.html#ref=rss', 104),
-(568, 'Deutsche Fußball-Nationalmannschaft: Bundestrainer Löw macht bis 2016 weiter', 'Er macht weiter: Joachim Löw bleibt bis 2016 Bundestrainer der Fußball-Nationalmannschaft. "Ich bin so motiviert wie am ersten Tag", sagt der 54-Jährige.', 'http://www.spiegel.de/sport/fussball/joachim-loew-bundestrainer-macht-bis-2016-weiter-a-982542.html#ref=rss', 104),
-(569, 'Terrorgruppe im Irak: "Islamischer Staat" lässt Schaufensterpuppen verhüllen', 'Die Radikalen berufen sich auf das Bilderverbot im Islam: Im Einflussgebiet der Terrorgruppe "Islamischer Staat" müssen sich nicht nur Frauen verschleiern - sondern auch Schaufensterpuppen.', 'http://www.spiegel.de/politik/ausland/irak-islamischer-staat-laesst-schaufensterpuppen-in-mossul-verhuellen-a-982485.html#ref=rss', 104),
-(570, 'Kämpfe in der Ostukraine: Separatisten schießen zwei ukrainische Militärjets ab', 'Schon wieder sind in der Ostukraine zwei Flugzeuge abgestürzt: Die prorussischen Milizen haben zwei Militärjets der Armee abgeschossen - nahe dem Unglücksort des Malaysian-Airlines-Fluges MH17.', 'http://www.spiegel.de/politik/ausland/ukraine-separatisten-teilen-abschuss-von-zwei-militaerjets-mit-a-982525.html#ref=rss', 104),
-(571, 'Klimapolitik: Brüssel beschließt Energiesparziel von 30 Prozent', 'Die EU-Kommission wird nach SPIEGEL-ONLINE-Informationen ein Energieeffizienzziel von 30 Prozent für 2030 vorschlagen. Dies ist höher als erwartet - und entspricht der Forderung des künftigen Kommissionschefs Jean-Claude Juncker.', 'http://www.spiegel.de/wirtschaft/soziales/energieeffizienz-eu-kommission-will-ziel-von-30-prozent-fuer-2030-a-982471.html#ref=rss', 104),
-(572, 'Reaktion auf Russlands Ukraine-Politik: Nato hält Putin Lügen vor', 'Die Nato schlägt einen eisigen Ton gegenüber Russland an: In einer Erklärung wirft das Militärbündnis Kreml-Chef Wladimir Putin vor, Unwahrheiten zu verbreiten. Im Gegensatz zu Moskau halte sich der Westen an internationale Vereinbarungen.', 'http://www.spiegel.de/politik/ausland/ukraine-konflikt-mit-russland-nato-haelt-putin-luegen-vor-a-982517.html#ref=rss', 104),
-(573, '"Freies Netz Süd": Bayern verbietet größtes Neonazi-Netzwerk', '"Aggressiv und verfassungsfeindlich": Das bayerische Innenministerium hat das rechtsextreme "Freie Netz Süd" verboten. Zudem gehen die Behörden gegen Unterstützer vor - ein bundesweit bekannter Neonazi-Treffpunkt wird durchsucht. ', 'http://www.spiegel.de/politik/deutschland/freies-netz-sued-bayern-verbietet-neonazi-netzwerk-a-982487.html#ref=rss', 104),
-(574, 'Eingestellter Flugverkehr nach Tel Aviv: Airlines bescheren der Hamas einen Erfolg', 'Dutzende internationale Airlines haben ihren Flugverkehr nach Israel eingestellt: Ein großer strategischer Sieg für die Hamas - er könnte Israel zu Zugeständnissen zwingen. ', 'http://www.spiegel.de/politik/ausland/fluege-nach-tel-aviv-airlines-bescheren-der-hamas-einen-erfolg-a-982452.html#ref=rss', 104),
-(575, 'Allianz-Berechnung: Mini-Zinsen kosten deutsche Sparer im Schnitt 67 Euro im Jahr', 'Die mickrigen Zinsen kommen Deutschlands Sparer teuer zu stehen. Laut Allianz summierte sich der Verlust 2013 auf 67,60 Euro pro Kopf im Vergleich zur Zeit vor der Finanzkrise. Dieses Jahr fällt das Minus wohl noch größer aus.', 'http://www.spiegel.de/wirtschaft/service/mini-zinsen-kosten-sparer-in-deutschland-laut-allianz-milliarden-a-982463.html#ref=rss', 104),
-(576, '"Costa Concordia": Wrack nimmt Kurs auf Genua', 'Die letzte Reise der "Costa Concordia" hat begonnen. Zweieinhalb Jahre nach der Havarie bewegt sich das Kreuzfahrtschiff wieder. Schlepper haben das Wrack von der Insel Giglio weggezogen und Kurs auf Genua genommen.', 'http://www.spiegel.de/panorama/costa-concordia-abtransport-von-giglio-nach-genua-beginnt-a-982468.html#ref=rss', 104),
 (577, 'Sudan: Zum Tode verurteilte Christin rettet sich nach Italien', 'Wegen ihres Übertritts zum Christentum wurde eine Frau im Sudan zum Tode verurteilt. Jetzt durfte Mariam Jahia Ibrahim Ishak mit ihrer Familie nach Italien ausfliegen.', 'http://www.spiegel.de/politik/ausland/sudan-zum-tode-verurteilte-christin-nach-italien-a-982643.html#ref=rss', 114),
 (578, 'Afghanistan: Gericht verhängt Todesstrafe gegen Mörder der Fotografin Niedringhaus', 'Die sechs Richter in Kabul waren sich einig: Sie verurteilten den Mörder der in Afghanistan getöteten deutschen Fotografin Anja Niedringhaus zum Tode.', 'http://www.spiegel.de/politik/ausland/anja-niedringhaus-todesstrafe-fuer-moerder-der-fotografin-in-afghanistan-a-982631.html#ref=rss', 114),
 (579, 'Gaza-Konflikt: Uno-Generalsekretär empört über Raketenfunde in Schulen', 'In mehreren Uno-Schulen im Gazastreifen sind Raketen versteckt worden. Generalsekretär Ban Ki Moon fordert Aufklärung: Das Leben unschuldiger Kinder sei in Gefahr gebracht worden.', 'http://www.spiegel.de/politik/ausland/krieg-in-gaza-ban-ki-moon-empoert-ueber-raketen-fund-in-uno-schulen-a-982624.html#ref=rss', 114),
 (580, 'Stiftung Warentest: Viele Mineralwässer sind verunreinigt', 'Die Stiftung Warentest hat in 10 von 30 Medium-Mineralwässern Süßstoff oder Abbauprodukte von Pestiziden entdeckt. Uneingeschränkt empfehlen können die Tester nur wenige Produkte - vor allem günstige Eigenmarken von Lidl und Co.', 'http://www.spiegel.de/wirtschaft/service/stiftung-warentest-verunreinigung-vieler-mineralwasser-mit-a-982627.html#ref=rss', 114),
 (581, 'Zwei Stunden Todeskampf: US-Doppelmörder stirbt bei qualvoller Hinrichtung', 'In den USA ist erneut ein Mann grausam hingerichtet worden. Bis Joseph Wood tot war, vergingen zwei Stunden.', 'http://www.spiegel.de/panorama/justiz/qualvolle-hinrichtung-in-arizona-moerder-stirbt-nach-zwei-stunden-a-982625.html#ref=rss', 114),
 (582, 'Gaza-Konflikt: Deutsche Politiker kritisieren Flugstopp nach Israel', 'Die US-Luftfahrtbehörde hat das Flugverbot für amerikanische Airlines nach Tel Aviv aufgehoben. Doch die Lufthansa und andere Gesellschaften steuern Israel weiter nicht an. Deutsche Politiker kritisieren die Einstellung der Flüge massiv.', 'http://www.spiegel.de/politik/ausland/gaza-konflikt-flugverbot-nach-israel-in-der-kritik-a-982623.html#ref=rss', 114),
-(583, 'Akute Rückenschmerzen: Paracetamol nicht besser als Placebo', 'Bei akuten Rückenschmerzen entscheiden sich Patienten wie Ärzte häufig für einen Wirkstoff: Paracetamol. Doch einer neuen Studie zufolge hilft das Schmerzmittel nicht besser als ein Placebo.', 'http://www.spiegel.de/gesundheit/diagnose/akute-rueckenschmerzen-paracetamol-nicht-besser-als-placebo-a-982366.html#ref=rss', 114),
+(583, 'Akute Rückenschmerzen: Paracetamol nicht besser als Placebo', 'Bei akuten Rückenschmerzen entscheiden sich Patienten wie Ärzte häufig für einen Wirkstoff: Paracetamol. Doch einer neuen Studie zufolge hilft das Schmerzmittel nicht besser als ein Placebo.', 'http://www.spiegel.de/gesundheit/diagnose/akute-rueckenschmerzen-paracetamol-nicht-besser-als-placebo-a-982366.html#ref=rss', 114);
+INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUES
 (584, 'Maccabi Haifa: Testspiel von israelischem Spitzenklub nach Platzsturm abgebrochen', 'Anti-Israel-Proteste auch beim Fußball: Nach Angriffen auf Spieler und einem Zuschauersturm auf den Rasen ist ein Spiel des israelischen Klubs Maccabi Haifa in Österreich abgebrochen worden. Am Samstag spielt das Team gegen Paderborn.', 'http://www.spiegel.de/sport/fussball/anti-israel-proteste-testspiel-abgebrochen-a-982622.html#ref=rss', 114),
 (585, 'Erdumrundung: 17-Jähriger stirbt bei Weltrekordversuch mit Flugzeug', 'Er wollte der jüngste Mensch sein, der jemals in einer einmotorigen Maschine in 30 Tagen um die Welt flog. Diesen Wunsch musste Haris Suleman nun mit dem Leben bezahlen. Sein Flugzeug stürzte vor Amerikanisch-Samoa ins Meer.', 'http://www.spiegel.de/panorama/weltrekordversuch-17-jaehriger-stirbt-bei-flugzeugabsturz-a-982620.html#ref=rss', 114),
 (586, 'Ostukraine: Rebellenführer bestätigt Besitz von Buk-Flugabwehr', 'Die Separatisten in der Ostukraine verfügten über das Buk-System, mit dessen Raketen offenbar der Malaysia-Airlines-Flug MH17 abgeschossen wurde. Das räumt jetzt ein einflussreicher Rebellenkommandeur ein. Er will auch wissen, woher die Waffe kam.', 'http://www.spiegel.de/politik/ausland/mh17-rebellenkommandeur-bestaetigt-besitz-von-buk-raketen-a-982616.html#ref=rss', 114),
@@ -275,12 +367,42 @@ INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUE
 (603, '"Freies Netz Süd": Bayern verbietet größtes Neonazi-Netzwerk', '"Aggressiv und verfassungsfeindlich": Das bayerische Innenministerium hat das rechtsextreme "Freie Netz Süd" verboten. Zudem gehen die Behörden gegen Unterstützer vor - ein bundesweit bekannter Neonazi-Treffpunkt wird durchsucht. ', 'http://www.spiegel.de/politik/deutschland/freies-netz-sued-bayern-verbietet-neonazi-netzwerk-a-982487.html#ref=rss', 114),
 (604, 'Eingestellter Flugverkehr nach Tel Aviv: Airlines bescheren der Hamas einen Erfolg', 'Dutzende internationale Airlines haben ihren Flugverkehr nach Israel eingestellt: Ein großer strategischer Sieg für die Hamas - er könnte Israel zu Zugeständnissen zwingen. ', 'http://www.spiegel.de/politik/ausland/fluege-nach-tel-aviv-airlines-bescheren-der-hamas-einen-erfolg-a-982452.html#ref=rss', 114),
 (605, 'Allianz-Berechnung: Mini-Zinsen kosten deutsche Sparer im Schnitt 67 Euro im Jahr', 'Die mickrigen Zinsen kommen Deutschlands Sparer teuer zu stehen. Laut Allianz summierte sich der Verlust 2013 auf 67,60 Euro pro Kopf im Vergleich zur Zeit vor der Finanzkrise. Dieses Jahr fällt das Minus wohl noch größer aus.', 'http://www.spiegel.de/wirtschaft/service/mini-zinsen-kosten-sparer-in-deutschland-laut-allianz-milliarden-a-982463.html#ref=rss', 114),
-(606, '"Costa Concordia": Wrack nimmt Kurs auf Genua', 'Die letzte Reise der "Costa Concordia" hat begonnen. Zweieinhalb Jahre nach der Havarie bewegt sich das Kreuzfahrtschiff wieder. Schlepper haben das Wrack von der Insel Giglio weggezogen und Kurs auf Genua genommen.', 'http://www.spiegel.de/panorama/costa-concordia-abtransport-von-giglio-nach-genua-beginnt-a-982468.html#ref=rss', 114);
+(606, '"Costa Concordia": Wrack nimmt Kurs auf Genua', 'Die letzte Reise der "Costa Concordia" hat begonnen. Zweieinhalb Jahre nach der Havarie bewegt sich das Kreuzfahrtschiff wieder. Schlepper haben das Wrack von der Insel Giglio weggezogen und Kurs auf Genua genommen.', 'http://www.spiegel.de/panorama/costa-concordia-abtransport-von-giglio-nach-genua-beginnt-a-982468.html#ref=rss', 114),
+(607, 'Neue Satellitendaten: Extremer Sonnensturm verfehlte die Erde', 'Die Analyse von Satellitendaten belegt: Ein heftiger Sonnensturm hat die Erde im Juli 2012 knapp verfehlt. Er hätte wohl Schäden von mehr als einer Billion Euro verursacht - und könnte sich schon bald wiederholen.', 'http://www.spiegel.de/wissenschaft/weltall/sonnensturm-2012-fast-katastrophe-auf-erde-plasma-verfehlt-planet-a-982652.html#ref=rss', 104),
+(608, 'Randale bei Akademikerball: Josef S. geht gegen Schuldspruch vor', 'Ein Wiener Gericht verurteilte den deutschen Studenten Josef S. zu 12 Monaten Haft. Er soll am Rande einer rechtsgerichteten Tanzveranstaltung randaliert haben. Die Beweislage war dürftig - jetzt haben seine Anwälte Berufung angekündigt.', 'http://www.spiegel.de/unispiegel/jobundberuf/josef-s-geht-in-berufung-deutscher-student-in-wien-verurteilt-a-982729.html#ref=rss', 104),
+(609, 'Schiedsrichter-Hilfsmittel: Spanien führt Freistoßspray ein', 'Es darf gesprüht werden: Der spanische Fußballverband gibt seinen Schiedsrichtern das von der Weltmeisterschaft bekannte Freistoßspray in die Hand. Auch in anderen Wettbewerben wird es eingesetzt.', 'http://www.spiegel.de/sport/fussball/freistossspray-wird-in-spanien-eingesetzt-a-982720.html#ref=rss', 104),
+(610, 'Sinkende Arbeitslosigkeit: Hunderttausende Spanier haben wieder einen Job', 'Nach Jahren der Rezession schafft die spanische Wirtschaft wieder Jobs. Zwar ist noch immer fast jeder Vierte ohne Beschäftigung, doch die Zahl der Arbeitslosen ist binnen eines Jahres um 425.000 gefallen. ', 'http://www.spiegel.de/wirtschaft/soziales/spanien-arbeitslosenzahl-sinkt-wirtschafft-erholt-sich-a-982714.html#ref=rss', 104),
+(611, 'Wahl im Parlament: Kurde Massum ist neuer irakischer Präsident', 'Nach monatelangen Verhandlungen hat der Irak einen neuen Staatschef: Der Kurde Fuad Massum wurde vom Parlament in Bagdad zum Präsidenten gewählt. Damit ist auch der Weg frei für eine neue Regierung.', 'http://www.spiegel.de/politik/ausland/irak-kurde-massum-neuer-staatschef-a-982727.html#ref=rss', 104),
+(612, 'Verdacht auf Mordversuch im Kreißsaal: Münchner Polizei verhaftet Hebamme', 'Eine Hebamme soll in einer Münchner Klinik mit einem Medikament versucht haben, vier Mütter und deren Neugeborene zu töten. Die 33-Jährige wurde verhaftet. Sie bestreitet die Taten.', 'http://www.spiegel.de/panorama/justiz/muenchen-hebamme-wegen-versuchten-mordes-verhaftet-a-982709.html#ref=rss', 104),
+(613, 'Air Algérie: Passagiermaschine mit 116 Insassen stürzt über Mali ab', 'Auf dem Weg von Burkina Faso nach Algerien ist ein Passagierflugzeug abgestürzt. Nach Uno-Angaben ereignete sich das Unglück über Mali. An Bord der Maschine von Air Algérie waren 116 Menschen.', 'http://www.spiegel.de/panorama/flugzeugabsturz-ueber-mali-air-algerie-verliert-maschine-mit-116-passagieren-a-982676.html#ref=rss', 104),
+(614, 'Angriff auf Datenbank: Hacker knacken EZB-Computersystem', 'In eine Datenbank der Europäischen Zentralbank sind Hacker eingedrungen. Die Angreifer erbeuteten 20.000 E-Mail-Adressen und weitere Kontakte - und versuchten, die Notenbank zu erpressen. ', 'http://www.spiegel.de/wirtschaft/ezb-hacker-stehlen-daten-und-e-mail-adressen-aus-computersystem-a-982662.html#ref=rss', 104),
+(615, 'Ukrainische Kampfjets: Kreml bestreitet Abschuss von russischem Boden aus', 'Der Kreml spricht von "Fantasien der Kiewer Behörden": Die russische Regierung streitet ab, dass zwei ukrainische Kampfflugzeuge von Russland aus abgeschossen wurden.', 'http://www.spiegel.de/politik/ausland/ukraine-russland-bestreitet-verantwortung-fuer-abschuss-von-kampfflugzeugen-a-982654.html#ref=rss', 104),
+(616, 'Antisemitismus in Deutschland: CDU-Ratsherr tritt nach judenfeindlicher Äußerung zurück', '"Juden sind scheiße", schrieb ein CDU-Kommunalpolitiker aus Niedersachsen auf Facebook. Der 62-Jährige ist nun einem Parteiausschluss zuvorgekommen.', 'http://www.spiegel.de/politik/deutschland/antisemitismus-cdu-politiker-aus-seesen-in-niedersachsen-tritt-zurueck-a-982647.html#ref=rss', 104),
+(617, 'Reaktion auf MH17-Abschuss: Niederländer fordern Ausweisung von Putins Tochter', 'Maria Putina, Tochter des russischen Präsidenten, lebt in den Niederlanden - noch. Viele Holländer machen Moskau für den Abschuss der Malaysia-Airlines-Maschine verantwortlich. Sie fordern die Ausweisung der jungen Frau. ', 'http://www.spiegel.de/politik/ausland/malaysia-airlines-mh17-niederlande-wollen-putins-tochter-ausweisen-a-982630.html#ref=rss', 104),
+(618, 'Sudan: Zum Tode verurteilte Christin rettet sich nach Italien', 'Wegen ihres Übertritts zum Christentum wurde eine Frau im Sudan zum Tode verurteilt. Jetzt durfte Mariam Yahya Ibrahim mit ihrer Familie nach Italien ausfliegen.', 'http://www.spiegel.de/politik/ausland/sudan-zum-tode-verurteilte-christin-nach-italien-a-982643.html#ref=rss', 104),
+(619, 'Afghanistan: Gericht verhängt Todesstrafe gegen Mörder der Fotografin Niedringhaus', 'Die sechs Richter in Kabul waren sich einig: Sie verurteilten den Mörder der in Afghanistan getöteten deutschen Fotografin Anja Niedringhaus zum Tode.', 'http://www.spiegel.de/politik/ausland/anja-niedringhaus-todesstrafe-fuer-moerder-der-fotografin-in-afghanistan-a-982631.html#ref=rss', 104),
+(620, 'Gaza-Konflikt: Uno-Generalsekretär empört über Raketenfunde in Schulen', 'In mehreren Uno-Schulen im Gazastreifen sind Raketen versteckt worden. Generalsekretär Ban Ki Moon fordert Aufklärung: Das Leben unschuldiger Kinder sei in Gefahr gebracht worden.', 'http://www.spiegel.de/politik/ausland/krieg-in-gaza-ban-ki-moon-empoert-ueber-raketen-fund-in-uno-schulen-a-982624.html#ref=rss', 104),
+(621, 'Stiftung Warentest: Viele Mineralwässer sind verunreinigt', 'Die Stiftung Warentest hat in 10 von 30 Medium-Mineralwässern Süßstoff oder Abbauprodukte von Pestiziden entdeckt. Uneingeschränkt empfehlen können die Tester nur wenige Produkte - vor allem günstige Eigenmarken von Lidl und Co.', 'http://www.spiegel.de/wirtschaft/service/stiftung-warentest-verunreinigung-vieler-mineralwasser-mit-a-982627.html#ref=rss', 104),
+(622, 'Zwei Stunden Todeskampf: US-Doppelmörder stirbt bei qualvoller Hinrichtung', 'In den USA ist erneut ein Mann grausam hingerichtet worden. Bis Joseph Wood tot war, vergingen zwei Stunden.', 'http://www.spiegel.de/panorama/justiz/qualvolle-hinrichtung-in-arizona-moerder-stirbt-nach-zwei-stunden-a-982625.html#ref=rss', 104),
+(623, 'Gaza-Konflikt: Deutsche Politiker kritisieren Flugstopp nach Israel', 'Die US-Luftfahrtbehörde hat das Flugverbot für amerikanische Airlines nach Tel Aviv aufgehoben. Doch die Lufthansa und andere Gesellschaften steuern Israel weiter nicht an. Deutsche Politiker kritisieren die Einstellung der Flüge massiv.', 'http://www.spiegel.de/politik/ausland/gaza-konflikt-flugverbot-nach-israel-in-der-kritik-a-982623.html#ref=rss', 104),
+(624, 'Akute Rückenschmerzen: Paracetamol nicht besser als Placebo', 'Bei akuten Rückenschmerzen entscheiden sich Patienten wie Ärzte häufig für einen Wirkstoff: Paracetamol. Doch einer neuen Studie zufolge hilft das Schmerzmittel nicht besser als ein Placebo.', 'http://www.spiegel.de/gesundheit/diagnose/akute-rueckenschmerzen-paracetamol-nicht-besser-als-placebo-a-982366.html#ref=rss', 104),
+(625, 'Maccabi Haifa: Testspiel von israelischem Spitzenklub nach Platzsturm abgebrochen', 'Anti-Israel-Proteste auch beim Fußball: Nach Angriffen auf Spieler und einem Zuschauersturm auf den Rasen ist ein Spiel des israelischen Klubs Maccabi Haifa in Österreich abgebrochen worden. Am Samstag spielt das Team gegen Paderborn.', 'http://www.spiegel.de/sport/fussball/anti-israel-proteste-testspiel-abgebrochen-a-982622.html#ref=rss', 104),
+(626, 'Erdumrundung: 17-Jähriger stirbt bei Weltrekordversuch mit Flugzeug', 'Er wollte der jüngste Mensch sein, der jemals in einer einmotorigen Maschine in 30 Tagen um die Welt flog. Diesen Wunsch musste Haris Suleman nun mit dem Leben bezahlen. Sein Flugzeug stürzte vor Amerikanisch-Samoa ins Meer.', 'http://www.spiegel.de/panorama/weltrekordversuch-17-jaehriger-stirbt-bei-flugzeugabsturz-a-982620.html#ref=rss', 104),
+(627, 'Ostukraine: Rebellenführer bestätigt Besitz von Buk-Flugabwehr', 'Die Separatisten in der Ostukraine verfügten über das Buk-System, mit dessen Raketen offenbar der Malaysia-Airlines-Flug MH17 abgeschossen wurde. Das räumt jetzt ein einflussreicher Rebellenkommandeur ein. Er will auch wissen, woher die Waffe kam.', 'http://www.spiegel.de/politik/ausland/mh17-rebellenkommandeur-bestaetigt-besitz-von-buk-raketen-a-982616.html#ref=rss', 104),
+(628, 'Unglücksflug MH17: Niederlande finden keine Hinweise auf Manipulation der Blackbox', 'Die Flugschreiber des abgestürzten Malaysia-Airlines-Flugzeugs befanden sich tagelang in den Händen von Aufständischen. Doch Befürchtungen, dass die Separatisten die Blackbox manipulierten, waren unbegründet. ', 'http://www.spiegel.de/politik/ausland/malaysia-airlines-mh17-boeing-777-blackbox-wurde-nicht-manipuliert-a-982607.html#ref=rss', 104),
+(629, '"Russisches Blackwater": Moskau will Privatarmeen aufbauen', 'Die russische Regierung plant den Einsatz privater Sicherheitsfirmen. Die nichtstaatlichen Kämpfer sollen einspringen, wenn es politisch brenzlig wird.', 'http://www.spiegel.de/politik/ausland/russland-kreml-plant-privatarmee-nach-dem-vorbild-blackwater-a-982559.html#ref=rss', 104),
+(630, 'Internet-Agenda der Bundesregierung: Drei Minister, eine Enttäuschung', 'Schneller, höher, weiter: Die Bundesregierung hat ihre Digitale Agenda vorgelegt - sie verspricht nicht weniger als eine Internet-Revolution für Deutschland. Und was heißt das konkret?', 'http://www.spiegel.de/politik/deutschland/digitale-agenda-erster-gesetzentwurf-ist-eine-enttaeuschung-a-982503.html#ref=rss', 104),
+(631, 'Kämpfe in der Ostukraine: Kiew macht Russland für Kampfjet-Abschuss verantwortlich', 'Für die Regierung in Kiew ist die Sache klar: Die Raketen auf zwei ukrainische Kampfjets seien von russischem Territorium aus abgefeuert worden. ', 'http://www.spiegel.de/politik/ausland/ukraine-macht-russland-fuer-abschuss-von-kampfjets-verantwortlich-a-982587.html#ref=rss', 104),
+(632, 'Gauck zu judenfeindlichen Demos: "Wir wollen Antisemitismus nicht hinnehmen"', 'Nach antisemitischen Parolen bei Anti-Israel-Kundgebungen verlangt Bundespräsident Gauck mehr Zivilcourage von den Deutschen. Die Kanzlerin warnt vor einem "Angriff auf Freiheit und Toleranz".', 'http://www.spiegel.de/politik/deutschland/antisemitismus-bundespraesident-gauck-fordert-zivilcourage-a-982566.html#ref=rss', 104),
+(633, 'Antisemitismus: Staatsanwaltschaft ermittelt gegen Berliner Hassprediger', 'Sheikh Abu Bilal Ismail wetterte in der Berliner Al-Nur-Moschee gegen Juden. Jetzt hat die Staatsanwaltschaft Ermittlungen eingeleitet. Der Vorwurf: Volksverhetzung.', 'http://www.spiegel.de/politik/deutschland/antisemitismus-ermittlungen-gegen-hassprediger-wegen-volksverhetzung-a-982381.html#ref=rss', 104),
+(634, 'Flugzeugunglück: Bruchlandung in Taiwan - viele Tote', 'In der taiwanischen Provinz Penghu sind bei einem Flugzeugunglück offenbar mindestens 47 Menschen gestorben. Laut der chinesischen Nachrichtenagentur Xinhua missglückte die Notlandung eines Flugzeugs der Linie Transasia.', 'http://www.spiegel.de/panorama/taiwan-tote-bei-flugzeugunglueck-der-transasia-a-982557.html#ref=rss', 104),
+(635, 'Prozess in Regensburg: Mollath-Anwälte sollen als Pflichtverteidiger weitermachen', 'Turbulenter Tag vor dem Landgericht Regensburg: Die Mollath-Anwälte legen ihr Mandat nieder - weil der Mandant offenbar das Vertrauen in sie verloren hat. Nun sollen die Juristen als Pflichtverteidiger weiterarbeiten.', 'http://www.spiegel.de/panorama/justiz/mollath-prozes-anwalt-strate-wird-pflichtverteidiger-a-982550.html#ref=rss', 104),
+(636, 'Transport-App: Hamburg verbietet Fahrdienst Uber', 'Taxifahrer hassen die Konkurrenz durch Uber, jetzt will die Stadt Hamburg den kalifornischen Dienst stoppen. Die Verkehrsbehörde bezeichnet dessen App als "nicht legal". Privatleute, die sich dem Verbot widersetzen, riskieren hohe Strafen.', 'http://www.spiegel.de/wirtschaft/unternehmen/uber-hamburg-verbietet-fahrtdienst-a-982543.html#ref=rss', 104);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -305,12 +427,12 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1406189186, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, 'TycT.YvC6jvogsS-9eeS.O8bf3988e02339842cf', 1406018508, 'mvG0oTgvGkxBY0wxir5VPe', 1404810260, 1406189381, 1, 'Us', 'er', '', ''),
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1406208298, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, 'TycT.YvC6jvogsS-9eeS.O8bf3988e02339842cf', 1406018508, 'mvG0oTgvGkxBY0wxir5VPe', 1404810260, 1406208683, 1, 'Us', 'er', '', ''),
 (5, '127.0.0.1', 'denys arkan', '$2y$08$SN.HQQiB/kMcPPjHLGn74.2ea5X4vVEBL6ZfpuljdkS9N60sdi.ga', NULL, 'denys.arkan@gmail.com', NULL, NULL, NULL, NULL, 1405498985, 1406106571, 1, 'Denys', 'Arkan', '', ''),
 (6, '127.0.0.1', 'dfdfdf dfdfdfd', '$2y$08$bR2iwiQN6VTJWxf2CJRIUuhjv30HX8VYhI8GXSMHHT0BlqTpY5wB2', NULL, 'fdfdf@dfdfdf.com', NULL, NULL, NULL, NULL, 1405502264, 1405502264, 1, 'dfdfdf', 'dfdfdfd', NULL, NULL),
 (7, '127.0.0.1', 'denys arkan1', '$2y$08$/w7i6eBA2iSGDsYqwEG02Oc4kl521AATdAFJh795urGYZHZpAs2Ii', NULL, 'dencik@ukr.cpm', NULL, NULL, NULL, NULL, 1405504352, 1405504352, 1, 'denys', 'arkan', NULL, NULL),
@@ -322,7 +444,7 @@ INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users_groups`
+-- Table structure for table `users_groups`
 --
 
 CREATE TABLE IF NOT EXISTS `users_groups` (
@@ -336,7 +458,7 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
--- Дамп данных таблицы `users_groups`
+-- Dumping data for table `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -351,23 +473,23 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (22, 11, 2);
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `feeds`
+-- Constraints for table `feeds`
 --
 ALTER TABLE `feeds`
   ADD CONSTRAINT `fk_feeds_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `rss_posts`
+-- Constraints for table `rss_posts`
 --
 ALTER TABLE `rss_posts`
   ADD CONSTRAINT `fk_rss_posts_feeds1` FOREIGN KEY (`feeds_id`) REFERENCES `feeds` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `users_groups`
+-- Constraints for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,

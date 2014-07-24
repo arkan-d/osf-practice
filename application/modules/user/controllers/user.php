@@ -72,7 +72,7 @@ class User extends CI_controller {
 	function add_feed(){
 			
 			//$user = $this->session->userdata('user_id');
-		//if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $user)))
+		//if (!$this->ion_auth->logged_in() && !($this->ion_auth->user()->row()->id == $user))
 		//{
 		//	show_404();
 		//}
@@ -94,7 +94,9 @@ class User extends CI_controller {
 			try {
 		$rss = @$this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(50);
 				} catch (Exception $e) {
+					
 				//some error occured
+				$this->session->set_flashdata('message', "Invalid URL");
 				redirect('user/add_feed');
 				}
 		
