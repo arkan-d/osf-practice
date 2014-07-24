@@ -32,7 +32,25 @@
 			<td><?php echo ($user->active) ? anchor("admin/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
 			<td><?php echo anchor("auth/edit_user/".$user->id, "<span class='glyphicon glyphicon-edit'></span>") ;?></td>
 			<td><?php echo anchor("admin/delete_user/".$user->id, "<span class='glyphicon glyphicon-trash'></span>",array ("onClick"=>"return confirm('Delete This account?')")) ;?></td>
-			<td><?php echo anchor("admin/edit_feeds/".$user->id,'Edit Feeds',"target='_blank'") ;?></td>
+			
+			
+			<td>
+				
+				<p><span class="glyphicon glyphicon-cog"></span>    <?php
+			   $atts = array(
+              'width'      => '1200',
+              'height'     => '800',
+              'scrollbars' => 'yes',
+              'status'     => 'yes',
+              'resizable'  => 'yes',
+              'screenx'    => '0',
+              'screeny'    => '0'
+            );
+
+echo anchor_popup('admin/edit_feeds/'.$user->id, 'Edit Feeds', $atts);
+			   ?></p>
+				
+			</td>
 			
 			
 		</tr>

@@ -1,5 +1,6 @@
  <div class="container" style="padding-top: 100px;">
            
+           
           <?php if(!isset($feeds) || empty($feeds)) { ?>
            <p> Here is not feeds !!! </p>
           <?php }
@@ -12,6 +13,7 @@
                                    
 				   <a href="<?=base_url();?>user/single_feed/<?=$value['id']?>"><?=$value['link']?></a> </p>
 				</p> <p><?=$value['description']?></p>
+                                
                                 <?php }
 				?>
                       

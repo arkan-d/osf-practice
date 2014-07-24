@@ -57,14 +57,9 @@
 		<br/>
 		<div id="options-content" class="span12">
 			<?php
-			if(!$unset_add || !$unset_export || !$unset_print){?>
-				<?php if(!$unset_add){?>
-					<a href="<?php echo $add_url?>" title="<?php echo $this->l('list_add'); ?> <?php echo $subject?>" class="add-anchor btn">
-						<i class="icon-plus"></i>
-						<?php echo $this->l('list_add'); ?> <?php echo $subject?>
-					</a>
+			if(!$unset_export || !$unset_print){?>
+				
 	 			<?php
-	 			}
 	 			if(!$unset_export) { ?>
 		 			<a class="export-anchor btn" data-url="<?php echo $export_url; ?>" rel="external">
 		 				<i class="icon-download"></i>

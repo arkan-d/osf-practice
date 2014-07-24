@@ -11,7 +11,7 @@
 
 
 <p><?php if (isset($message) && !empty($message))
-{ var_dump($message); echo "<div class='col-md-12 alert alert-warning' role='alert'>{$message}</div>";}?> </p>
+{  echo "<div class='col-md-12 alert alert-warning' role='alert'>{$message}</div>";}?> </p>
 
 
 <?php echo form_open("user/add_feed/","class='form col-md-12 center-block'");?>

@@ -33,6 +33,8 @@ class User extends CI_controller {
 		$this->load->library('grocery_CRUD');
 		$this->load->model('feeds_model');
 		$this->load->library('form_validation');
+		$this->load->library('rssparser');
+		$this->load->library('session');
 		$this->load->helper('form');
 		
 		
@@ -67,12 +69,13 @@ class User extends CI_controller {
 		$this->load->view('templates/footer');
 	}
 	
-	function add_feed($id){
-		
-		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
-		{
-			show_404();
-		}
+	function add_feed(){
+			
+			//$user = $this->session->userdata('user_id');
+		//if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $user)))
+		//{
+		//	show_404();
+		//}
 		
 		
 		$this->form_validation->set_rules('url', "Url", 'required|xss_clean|min_length[10]|trim');
@@ -85,19 +88,18 @@ class User extends CI_controller {
 			$feed['users_id']= $this->session->userdata('user_id');
 			$feed['favourite'] = 0;
 			
-			$user = $this->session->userdata('user_id');				
-			$this->load->library('rssparser');
+			$user = $this->session->userdata('user_id');
 			$url = $feed['link'];	
 			
 			try {
-		$rss = @$this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(0);
+		$rss = @$this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(50);
 				} catch (Exception $e) {
 				//some error occured
 				redirect('user/add_feed');
 				}
 		
 		$this->feeds_model->insert_feed($user,$feed,$rss);
-		redirect('user/add_feed','refresh');
+		redirect('user');
 		}else{
 			$data['message'] = validation_errors();
 			$data['title'] = 'Add feed';
@@ -155,7 +157,11 @@ class User extends CI_controller {
 	 *@todo check for sql/xss injections
 	 */
        
-        function single_feed($feed_id){
+        function single_feed($feed_id = null){
+		
+		if(!isset($feed_id)) {
+			show_404();
+		}
 	
 	$data['title'] = "Single";	
 	$data['rss'] = $this->feeds_model->rss_posts($feed_id);
@@ -220,6 +226,34 @@ class User extends CI_controller {
 	$this->load->view('all_feeds',$data);
 	$this->load->view('templates/footer');
 		
+	}
+	
+	
+	function refresh_posts($feed_id=null){
+		
+		if (!isset($feed_id)) {
+			show_404();
+		}		
+	$url = $this->feeds_model->link_by_id($feed_id);	
+	$url = (string)$url['link'];	
+		
+	$rss = $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(1);
+	$old = $this->feeds_model->old_record($feed_id);
+	
+		if ( $new = $rss[0]['link'] === $old['link']) {
+			
+			$this->session->set_flashdata('message', "All up to date");
+			redirect('user/single_feed/'.$feed_id);
+			
+		}else { //delete, then  insert new posts
+			
+		$rss = $this->rssparser->set_feed_url($url)->set_cache_life(30)->getFeed(50);		
+		$this->feeds_model->reinsert_rss_posts($rss,$feed_id);
+		redirect('user/single_feed/'.$feed_id);
+			
+		}
+	
+	
 	}
 	
 	

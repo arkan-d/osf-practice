@@ -9,12 +9,16 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:
-                        <br>Special Thanks</h2>
-                    <p class="lead">A special thanks to Death to the Stock Photo for providing the photographs that you see in this template. <a target="_blank" href="http://join.deathtothestockphoto.com/">Visit their website</a> to become a member.</p>
+                    <h2 class="section-heading">Age RSS News Feeds</h2>
+                    <p class="lead">Really Simple Syndication (RSS) is an XML-based format for news
+		    distribution that includes headlines, summaries and links back to a publisher website
+		    for the full article. You load RSS news feeds into a reader or visit them on
+		    a personalized web page. RSS keeps you up-to-the-moment on your favorite news sources,
+		    providing an indicator when news breaks. You may use any of the popular RSS readers to
+		    organize your own feeds.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="<?=base_url();?>img/ipad.png" alt="">
+                    <img class="img-responsive" src="<?=base_url();?>img/rss-reader.png" alt="">
                 </div>
             </div>
 
@@ -62,10 +66,23 @@
                            
                         </div>
 
-                        <div class="panel-footer">
-                           <p> <span class="glyphicon glyphicon-cog"></span> <?php echo anchor('user/edit_feeds/'.$user,"Manage feeds","target='_blank'"); ?> </p>
+                        <div class="panel-footer">                           
 			   <p><span class="glyphicon glyphicon-user"></span> <?php echo anchor('auth/edit_user/'.$user,"Edit profile"); ?></p>
 			   <p><span class="glyphicon glyphicon-plus-sign"></span> <?php echo anchor('user/add_feed/'.$user,"Add Feed"); ?></p>
+			   
+			<p><span class="glyphicon glyphicon-cog"></span>    <?php
+			   $atts = array(
+              'width'      => '1200',
+              'height'     => '800',
+              'scrollbars' => 'yes',
+              'status'     => 'yes',
+              'resizable'  => 'yes',
+              'screenx'    => '0',
+              'screeny'    => '0'
+            );
+
+echo anchor_popup('user/edit_feeds/'.$user, 'Manage feeds', $atts);
+			   ?></p>
                         </div>
 
                     </div>

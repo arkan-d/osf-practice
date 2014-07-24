@@ -81,8 +81,6 @@ class Admin extends CI_Controller {
 			$crud->fields('link','description','users_id');
 			$crud->change_field_type('users_id', 'hidden', $id);			
 			
-			
-
 			$output = $crud->render();
 			$this->_example_output($output);
 
@@ -90,6 +88,9 @@ class Admin extends CI_Controller {
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
 	}
+	
+	
+	
 	
 	
 	//deactivate the user
