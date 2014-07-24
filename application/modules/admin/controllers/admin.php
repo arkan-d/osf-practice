@@ -62,11 +62,10 @@ class Admin extends CI_Controller {
 	
 	public function edit_feeds($id=null)
 	{
-		if (!$this->ion_auth->logged_in() && !$this->ion_auth->is_admin())
+		if (!$this->ion_auth->is_admin())
 		{
 			show_404();
-		}		
-		if(!isset($id)){
+		}elseif(!isset($id)){
 			show_404();
 		}
 		
@@ -151,7 +150,7 @@ class Admin extends CI_Controller {
 		}elseif ($this->ion_auth->is_admin())
 			{
 			$this->ion_auth->delete_user($id);
-			$this->session->set_flashdata('message', "User remouved");
+			
 			redirect('admin', 'refresh');
 		}
 		

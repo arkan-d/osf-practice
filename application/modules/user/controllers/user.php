@@ -160,7 +160,12 @@ class User extends CI_controller {
 	 */
        
         function single_feed($feed_id = null){
+		$user = $this->session->userdata('user_id');
 		
+		if (!$this->ion_auth->logged_in() || !($this->ion_auth->user()->row()->id == $user))
+		{
+			show_404();
+		}		
 		if(!isset($feed_id)) {
 			show_404();
 		}
@@ -212,15 +217,17 @@ class User extends CI_controller {
         }	
 	
 	
-	function all_feeds($id=0){
+	function all_feeds(){
+		
+		
 		
 		$data['title'] = "My feeds";
-
-		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
+		$user = $this->session->userdata('user_id');
+		if (!$this->ion_auth->logged_in() ||  !($this->ion_auth->user()->row()->id == $user))
 		{
 			show_404();
 		}
-	$user = $this->session->userdata('user_id');
+	
 	$data['feeds'] = $this->feeds_model->get_all_feeds($user);
 	
 	$this->load->view('templates/header',$data);
