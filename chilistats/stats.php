@@ -1,25 +1,39 @@
 <?PHP
 require_once('config.php');
+
+
+// Get Month and Year
+$time=time();
+if (is_numeric($_GET["m"]) AND $_GET["m"] >= 1 AND $_GET["m"] <= 12 ) {$show_month = $_GET["m"];} 
+else {$show_month=date("n",$time);}
+if (is_numeric($_GET["y"]) AND $_GET["y"] >= 1 AND $_GET["y"] <= 9999 ) {$show_year = $_GET["y"];} 
+else {$show_year=date("Y",$time);}
+
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Add custom CSS here -->
+    <link href="css/landing-page.css" rel="stylesheet">
+               
+    <!--Add favicon.ico    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+  
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>ChiliStats - OneWiev</title>
 <link href="chilistats.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="container">
-<div id="logo">
-  <h1>ChiliStats</h1>
-</div>
-<div id="menu">
- <ul>
-  <li><a href="stats.php">OneView</a></li>
-  <li><a href="visitors.php">Visitors</a></li>
-  <li><a href="history.php">History</a></li> 
- </ul>
-</div>
+
   <div class="middle">
     <h3>One View</h3>
 	<table width="100%" border="0" cellpadding="5" cellspacing="0" class="oneview">
@@ -149,6 +163,45 @@ require_once('config.php');
 	</tr></table>
   </div>
   <div style="clear:both"></div>
+  <div class="middle">
+    <h3>Pages Top10</h3>
+	<table width="100%" cellpadding="5" cellspacing="0">
+  	<tr>
+      <td width="30"><strong>Nr.</strong></td>
+      <td width="280"><strong>Page</strong></td>
+      <td width="120"><strong>Prozent</strong></td>
+  	</tr>
+<?PHP  
+	// gesammt Pages
+	$abfrage=mysql_query("select sum(view) from ".$db_prefix."Page");
+	$ges_page=mysql_result($abfrage,0,0);
+	mysql_free_result($abfrage);
+	// Top Pages
+	$nr = 1;
+	$abfrage=mysql_query("SELECT page, SUM(view) AS views from ".$db_prefix."Page GROUP BY page ORDER BY views DESC LIMIT 0, 10");
+	while($row=mysql_fetch_array($abfrage))
+		{
+		$page=htmlspecialchars($row['page']);
+		if(strlen($page) > 35){$shortpage="<a href=\"#\" title=\"$page\">...</a>".substr($page,strlen($page)-30,strlen($page)); }
+		else {$shortpage=$page;}
+		$views=$row['views'];
+		$prozent = (100/$ges_page)*$views;
+		if ($prozent < 0.1 ) $prozent = round($prozent,2);
+		else $prozent = round($prozent,1);
+		$bar_width = round((100/$ges_page)*$views);
+		echo"	<tr>\n";
+		echo"		<td>$nr</td>\n";
+		echo"		<td>$shortpage</td>\n";
+		echo"		<td nowrap><div class=\"vbar\" style=\"width:".$bar_width."px;\" title=\"$views Visits\" >&nbsp;$prozent%</div></td>\n";
+		echo"	</tr>\n";
+		$nr++;
+		}
+	mysql_free_result($abfrage);
+?>
+	</table>
+  </div>
+  <div style="clear:both"></div>
+  
   <div class="full">
     <h3>Last 30 days </h3>
 	<table height="230" width="100%" cellpadding="0" cellspacing="0" align="right">
@@ -195,7 +248,12 @@ require_once('config.php');
 	</tr></table>
   </div>
   <div style="clear:both"></div>
-  <div id="footer">ChiliStats by <a href="http://www.chiliscripts.com" target="_blank" >ChiliScripts.com</a></div>
+  
+  
+  
 </div>
+
+<script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>

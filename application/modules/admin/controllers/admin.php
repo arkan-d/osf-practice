@@ -209,6 +209,11 @@ class Admin extends CI_Controller {
 			$this->_render_page('admin/create_group', $this->data);
 		}
 	}
+	
+	
+	
+	
+	
 
 	//edit a group
 	function edit_group($id)
