@@ -29,13 +29,6 @@ $db_name = 'like12';// database name
 $db_prefix = ''; // database prefix
 
 
-//
-// Optional settings
-//
-
-$style = "dark"; // Counter Style "dark" or "light"
-$show = "totally"; // Counter shows "totally"  or "last24h"  visitors
-$size = "big"; // Size of the counter "small" or "big"
 
 $reload=3*60*60; // Reload lock in seconds (3 * 60 * 60 => 3 hours)
 $online=3*60; // online time in seconds (3 * 60 => 3 minutes)

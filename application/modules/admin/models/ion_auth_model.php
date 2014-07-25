@@ -2017,6 +2017,8 @@ class Ion_auth_model extends CI_Model
 
 		return TRUE;
 	}
+        
+       
 
 	/**
 	 * set_message

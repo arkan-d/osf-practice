@@ -30,12 +30,19 @@ class User extends CI_controller {
 			redirect(base_url());
 		}
 		
+		$this->load->library('usertracking');
+		$this->usertracking->track_this();
+		
+		
 		$this->load->library('grocery_CRUD');
 		$this->load->model('feeds_model');
 		$this->load->library('form_validation');
 		$this->load->library('rssparser');
 		$this->load->library('session');
 		$this->load->helper('form');
+		
+		
+		
 		
 		
 	}
@@ -55,6 +62,7 @@ class User extends CI_controller {
 			redirect('admin');
 		}
 		
+		 
 		$data['user']=  $this->session->userdata('user_id');
 		$user = $this->session->userdata('user_id');
 		$data['favourite']= $this->feeds_model->get_feeds_sources($user);
@@ -64,7 +72,7 @@ class User extends CI_controller {
 		
 		//$data['info'] = $this->feeds_model->get_feeds_sources($user,1);
 		$this->load->view('templates/header',$data);
-		$this->load->view('templates/nav');
+		//$this->load->view('templates/nav');
 		$this->load->view('main_page',$data);
 		$this->load->view('templates/footer');
 	}
