@@ -72,7 +72,7 @@ class User extends CI_controller {
 		
 		//$data['info'] = $this->feeds_model->get_feeds_sources($user,1);
 		$this->load->view('templates/header',$data);
-		//$this->load->view('templates/nav');
+		$this->load->view('templates/nav');
 		$this->load->view('main_page',$data);
 		$this->load->view('templates/footer');
 	}
@@ -167,7 +167,7 @@ class User extends CI_controller {
 	 *@todo check for sql/xss injections
 	 */
        
-        function single_feed($feed_id = null){
+        function single_feed($feed_id = null,$page=null){
 		$user = $this->session->userdata('user_id');
 		
 		if (!$this->ion_auth->logged_in() || !($this->ion_auth->user()->row()->id == $user))
@@ -185,7 +185,7 @@ class User extends CI_controller {
 			
 	$this->load->library('pagination'); 
 	$config = array(); 
-	$config["base_url"] = base_url()."user/single_feed/{$feed_id}";
+	$config["base_url"] = base_url()."user/single_feed/{$feed_id}/";
 	 $config['total_rows'] = count($data['rss']);	
 	 $config["per_page"] = 10; 
 	 $config["uri_segment"] = 4; 

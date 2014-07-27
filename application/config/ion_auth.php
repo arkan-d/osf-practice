@@ -122,7 +122,7 @@ $config['track_login_attempts']       = TRUE;               // Track the number 
 $config['track_login_ip_address']     = TRUE;                // Track login attempts by IP Address, if FALSE will track based on identity. (Default: TRUE)
 $config['maximum_login_attempts']     = 3;                   // The maximum number of failed login attempts.
 $config['lockout_time']               = 30;                 // 600 The number of seconds to lockout an account due to exceeded attempts
-$config['forgot_password_expiration'] = 0;                   // The number of milliseconds after which a forgot password request will expire. If set to 0, forgot password requests will not expire.
+$config['forgot_password_expiration'] = 6500;                   // The number of milliseconds after which a forgot password request will expire. If set to 0, forgot password requests will not expire.
 
 
 /*

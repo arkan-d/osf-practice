@@ -15,7 +15,14 @@
 		    for the full article. You load RSS news feeds into a reader or visit them on
 		    a personalized web page. RSS keeps you up-to-the-moment on your favorite news sources,
 		    providing an indicator when news breaks. You may use any of the popular RSS readers to
-		    organize your own feeds.</p>
+		    organize your own feeds.
+		    <?php
+		    
+		    echo date('Y-m-d H:i:s', 1406454308);
+		    
+		    ?>
+		    
+		    </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <img class="img-responsive" src="<?=base_url();?>img/rss-reader.png" alt="">

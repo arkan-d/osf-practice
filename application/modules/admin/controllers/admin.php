@@ -58,7 +58,11 @@ class Admin extends CI_Controller {
 		
 	}
 	
-
+	
+	function statistic ($user=null){
+		
+	}
+	
 	
 	public function edit_feeds($id=null)
 	{
@@ -156,6 +160,16 @@ class Admin extends CI_Controller {
 		
 	}
 	
+	
+	
+	function user_activity($user=null){
+		$this->load->helper('date');
+		$this->load->model('statistic_model');
+		
+		$data = $this->statistic_model->last_login($user);
+		
+		echo date('Y-m-d H:i:s', $data['last_login']);
+	}
 	
 
 	// create a new group

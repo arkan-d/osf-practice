@@ -20,7 +20,7 @@
 | default: null
 */
 //$config['usertracking']['user_identifier'] = NULL;
-$config['usertracking']['user_identifier'] = array('library', 'ion_auth', 'get_user_id');
+//$config['usertracking']['user_identifier'] = array('library', 'ion_auth', 'get_user_id');
 
 
 /*

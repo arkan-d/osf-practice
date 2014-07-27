@@ -30,13 +30,13 @@ class Usertracking
   private $configuration;
 
   private $needed_fields = array(array('name' => 'id', 'type' => 'int', 'primary_key' => 1, 'forge_type' => 'int', 'forge_auto_increment' => TRUE),
-														array('name' => 'session_id', 'type' => 'string', 'forge_type' => 'varchar', 'forge_constraint' => '100'),
-														array('name' => 'user_identifier', 'type' => 'string', 'forge_type' => 'varchar', 'forge_constraint' => '255'),
-														array('name' => 'request_uri', 'type' => 'string', 'forge_type' => 'text'),
-														array('name' => 'timestamp', 'type' => 'string', 'forge_type' => 'varchar', 'forge_constraint' => '20'),
-														array('name' => 'client_ip', 'type' => 'string', 'forge_type' => 'varchar', 'forge_constraint' => '50'),
-														array('name' => 'client_user_agent', 'type' => 'string', 'forge_type' => 'text'),
-														array('name' => 'referer_page', 'type' => 'string', 'forge_type' => 'text'));
+								      array('name' => 'session_id', 'type' => 'string', 'forge_type' => 'varchar', 'forge_constraint' => '100'),
+								      array('name' => 'user_identifier', 'type' => 'int', 'forge_type' => 'int', 'forge_constraint' => '5'),
+								      array('name' => 'request_uri', 'type' => 'string', 'forge_type' => 'text'),
+								      array('name' => 'timestamp', 'type' => 'string', 'forge_type' => 'varchar', 'forge_constraint' => '20'),
+								      array('name' => 'client_ip', 'type' => 'string', 'forge_type' => 'varchar', 'forge_constraint' => '50'),
+								      array('name' => 'client_user_agent', 'type' => 'string', 'forge_type' => 'text'),
+								      array('name' => 'referer_page', 'type' => 'string', 'forge_type' => 'text'));
 
   /**
    * Constructor
@@ -150,41 +150,17 @@ class Usertracking
     $input_data = array();
     $input_data['session_id'] = $this->CI->session->userdata('session_id');    
     $input_data['user_identifier'] = $this->CI->ion_auth->get_user_id();
+    
+    if(!isset($input_data['user_identifier'])) {
+      redirect(base_url());
+    }
     $input_data['request_uri'] = $this->CI->input->server('REQUEST_URI');
     $input_data['timestamp'] = time();
-    //$input_data['client_ip'] = $this->CI->input->server('REMOTE_ADDR');
-     $input_data['client_ip'] = "192.168.1.1";
+    $input_data['client_ip'] = $this->CI->input->server('REMOTE_ADDR');    
     $input_data['client_user_agent'] = $this->CI->agent->agent_string();
     $input_data['referer_page'] = $this->CI->agent->referrer();
-    var_dump($input_data);
-    //$input_data['user_identifier'] = $this->CI->session->userdata('user_id');
     
-    //Get the user identifier, if set
-    //if ($this->configuration['user_identifier'] !== null && is_array($this->configuration['user_identifier']))
-    //{
-    //  if (count($this->configuration['user_identifier']) == 3)
-    //  {
-    //    list($class_type, $class_name, $function_name) = $this->configuration['user_identifier'];
-    //    $the_args = array();
-    //  }
-    //  elseif (count($this->configuration['user_identifier']) == 4)
-    //    list($class_type, $class_name, $function_name, $the_args) = $this->configuration['user_identifier'];
-    //
-    //  if ( ! $this->CI->load->$class_type($class_name))
-    //  {
-    //    if ((($class_type !== 'helper') && !method_exists($this->CI->$class_name, $function_name)) OR ($class_type == 'helper' && !function_exists($function_name)))
-    //      display_error("Could not load the $function_name in $class_name.  Check the userIdentifier configuration in userTracking config. User Identifier will not be tracked.");
-    //    else //Do it!
-    //    {
-    //      if ($class_type == 'helper')
-    //        $input_data['user_identifier'] = call_user_func_array($function_name, $the_args);
-    //      else
-    //        $input_data['user_identifier'] = call_user_func_array(array($this->CI->$class_name, $function_name), $the_args);
-    //    }
-    //  }
-    //  else
-    //    display_error("Could not load the $class_type: $class_name.  Check the userIdentifier configuration in userTracking config. User Identifier will not be tracked.");
-    //}
+     
 
     //Add it to the database
     $this->CI->load->database();
@@ -382,6 +358,7 @@ class Usertracking
     else
     {
       //if the table doesn't exist, and autoBuild_db is off, show error and return FALSE
+      
       show_error("The usertracking database table does not exist.  Check your database installation.");
       return FALSE;
     }
