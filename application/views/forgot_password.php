@@ -1,12 +1,21 @@
- <div class="modal-dialog" style="padding-top:50px;">
+ <section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                   <h1><?php echo lang('forgot_password_heading');?></h1>
+<p><?php echo sprintf(lang('forgot_password_subheading'), $identity_label);?></p>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->    
+ 
+ 
+ 
+ <div class="modal-dialog" >
    
   <div class="modal-content">
-      <div class="modal-header">
-         
-          <h1><?php echo lang('forgot_password_heading');?></h1>
-<p><?php echo sprintf(lang('forgot_password_subheading'), $identity_label);?></p>
-
-      </div>
+     
       <div class="modal-body">
 
 

@@ -16,11 +16,7 @@
 		    a personalized web page. RSS keeps you up-to-the-moment on your favorite news sources,
 		    providing an indicator when news breaks. You may use any of the popular RSS readers to
 		    organize your own feeds.
-		    <?php
-		    
-		    echo date('Y-m-d H:i:s', 1406454308);
-		    
-		    ?>
+		   
 		    
 		    </p>
                 </div>
@@ -74,7 +70,7 @@
                         </div>
 
                         <div class="panel-footer">                           
-			   <p><span class="glyphicon glyphicon-user"></span> <?php echo anchor('auth/edit_user/'.$user,"Edit profile"); ?></p>
+			  
 			   <p><span class="glyphicon glyphicon-plus-sign"></span> <?php echo anchor('user/add_feed/'.$user,"Add Feed"); ?></p>
 			   
 			<p><span class="glyphicon glyphicon-cog"></span>    <?php

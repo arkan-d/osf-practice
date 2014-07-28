@@ -1,9 +1,21 @@
 
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+               <h1>TOP RSS Feeds: </h1>
+	       <p><?=date('l, F d, Y');?> </p>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->
+    
 <div class="container"  style="padding-top:50px;">
 	<div class="row">
 		<div class="col-lg-12">
                     
-                    <h2>TOP RSS Feeds - <?=date('l, F d, Y');?></h2>
+                    
                     
                     <div class="container">
                      

@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 3.5.1
--- http://www.phpmyadmin.net
---
--- Хост: 127.0.0.1
--- Время создания: Июл 19 2014 г., 15:26
--- Версия сервера: 5.5.25
--- Версия PHP: 5.3.13
-
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -16,14 +7,12 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
---
--- База данных: `like12`
---
+
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ci_sessions`
+-- table`ci_sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
@@ -36,17 +25,10 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `ci_sessions`
---
 
-INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('7d558daca2104e3c417e8d55846460e8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 1405772600, 'a:6:{s:9:"user_data";s:0:"";s:8:"identity";s:13:"user@user.com";s:8:"username";s:4:"user";s:5:"email";s:13:"user@user.com";s:7:"user_id";s:1:"4";s:14:"old_last_login";s:10:"1405711398";}');
-
--- --------------------------------------------------------
 
 --
--- Структура таблицы `feeds`
+-- table `feeds`
 --
 
 CREATE TABLE IF NOT EXISTS `feeds` (
@@ -56,30 +38,16 @@ CREATE TABLE IF NOT EXISTS `feeds` (
   `description` text,
   `users_id` int(11) unsigned NOT NULL,
   `favourite` tinyint(1) DEFAULT NULL,
+  `views` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_feeds_users1` (`users_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
 
---
--- Дамп данных таблицы `feeds`
---
-
-INSERT INTO `feeds` (`id`, `link`, `thumbnail`, `description`, `users_id`, `favourite`) VALUES
-(1, 'http://feeds.feedburner.com/ruseller/CdHX?format=xml', NULL, '<p>\r\n	russelersdsd</p>\r\n', 4, 1),
-(3, 'http://www.it-stars.ua/informers/news/companies/rss/', 'yuyuyu', '<p>\r\n	it starsal;kdjslkdjasdolkasdjlajlkasdff111111111111111</p>\r\n', 4, 1),
-(24, 'ghgh', 'ghghgh', '<p>\r\n	ghghggghghghgh</p>\r\n', 4, 1),
-(31, 'sdfsdf', 'sdfsdfsdf', '<p>\r\n	sdfsdfsdf</p>\r\n', 5, 1),
-(32, 'esrer', 'serrse', '<p>\r\n	srerssdsdsdsdsdsd</p>\r\n', 15, NULL),
-(34, 'qqqqqqqqqqqqqqqq', NULL, '<p>\r\n	qdfdfdfdfdfd44444444444</p>\r\n', 5, NULL),
-(35, 'fgfgf', NULL, '<p>\r\n	gfgfgfgfgfgfg</p>\r\n', 4, 1),
-(36, 'http://www.spiegel.de/schlagzeilen/tops/index.rss', NULL, NULL, 4, 0),
-(58, 'http://www.spiegel.de/schlagzeilen/tops/index.rss', NULL, NULL, 4, 0),
-(59, 'http://www.spiegel.de/schlagzeilen/tops/index.rss', NULL, NULL, 4, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `groups`
+-- table `groups`
 --
 
 CREATE TABLE IF NOT EXISTS `groups` (
@@ -90,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `groups`
+-- dump `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -100,7 +68,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `login_attempts`
+-- table `login_attempts`
 --
 
 CREATE TABLE IF NOT EXISTS `login_attempts` (
@@ -109,12 +77,12 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   `login` varchar(100) NOT NULL,
   `time` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `rss_posts`
+-- table`rss_posts`
 --
 
 CREATE TABLE IF NOT EXISTS `rss_posts` (
@@ -125,12 +93,12 @@ CREATE TABLE IF NOT EXISTS `rss_posts` (
   `feeds_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_rss_posts_feeds1` (`feeds_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=965 ;
 
--- --------------------------------------------------------
+---------------------------------------------
 
 --
--- Структура таблицы `users`
+--  `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -152,29 +120,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1405711342, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, NULL, NULL, 'mvG0oTgvGkxBY0wxir5VPe', 1404810260, 1405759607, 1, 'Us', 'ername', '', ''),
-(5, '127.0.0.1', 'denys arkan', '$2y$08$7Dr.Wk4vLbVxlLj2QTnkb.rJNUy6PQz.UH6CL3NMndsVuHWVr6SMq', NULL, 'denys.arkan@gmail.com', NULL, NULL, NULL, NULL, 1405498985, 1405498985, 1, 'Denys', 'Arkan', '', ''),
-(6, '127.0.0.1', 'dfdfdf dfdfdfd', '$2y$08$bR2iwiQN6VTJWxf2CJRIUuhjv30HX8VYhI8GXSMHHT0BlqTpY5wB2', NULL, 'fdfdf@dfdfdf.com', NULL, NULL, NULL, NULL, 1405502264, 1405502264, 1, 'dfdfdf', 'dfdfdfd', NULL, NULL),
-(7, '127.0.0.1', 'denys arkan1', '$2y$08$/w7i6eBA2iSGDsYqwEG02Oc4kl521AATdAFJh795urGYZHZpAs2Ii', NULL, 'dencik@ukr.cpm', NULL, NULL, NULL, NULL, 1405504352, 1405504352, 1, 'denys', 'arkan', NULL, NULL),
-(8, '127.0.0.1', 'denys1 arkan1', '$2y$08$JXrG/jQv/HclX4W.bOox7.g.q/C.n99Ju90cFRn2cSYOGP0ljPTxe', NULL, 'dencik1@ukr.cpm', NULL, NULL, NULL, NULL, 1405504570, 1405504570, 1, 'denys1', 'arkan1', NULL, NULL),
-(9, '127.0.0.1', 'sdsdsdsds asasasasas', '$2y$08$C7raL/yMtAw6iw5ZzVLzOOjtEw07v6gYgeblZDcyHApHcwY3f0A5C', NULL, 'profiks11.1994@mail.ru', NULL, NULL, NULL, NULL, 1405504618, 1405504618, 1, 'sdsdsdsds', 'asasasasas', NULL, NULL),
-(10, '127.0.0.1', 'denys1 sdsdsd', '$2y$08$hAm1UzzDJ.iDKcA6gH2h9ew0zlbjszXCkbeGp1gd1eGVD1O6C5u0e', NULL, 'admiqqn@admin.com', NULL, NULL, NULL, NULL, 1405504959, 1405504959, 1, 'Denys1', 'sdsdsd', NULL, NULL),
-(11, '127.0.0.1', 'dfdfdf addadad', '$2y$08$BI6w5.5FtJCP41d8qzk53eySsNo1Ysr4Cnvw6q4nEA6VsN0dYh0KC', NULL, 'prqqqofiks.1994@mail.ru', NULL, NULL, NULL, NULL, 1405505175, 1405505175, 1, 'dfdfdf', 'addadad', NULL, NULL),
-(12, '127.0.0.1', 'fgfgfgfg fgfgfgfgf', '$2y$08$lgmm3mqmWWHp5JwDVHjuMeyv6jaJu0mSlJbUtUMB.7U8/4JscVatW', NULL, 'profiqks.1994@mail.ru', '9c55f4620f15236fa7dea5a788ddcdaffc08fdfd', NULL, NULL, NULL, 1405505419, 1405505419, 0, 'fgfgfgfg', 'fgfgfgfgf', NULL, NULL),
-(15, '127.0.0.1', 'sdsdsds sdsdsds', '$2y$08$Wfp2dz.JyH2rDDP7KWc7W.o14hMIQeZhpw/C8Ji41.4SJdJ3cbD4O', NULL, 'denys@arkan.com', NULL, NULL, NULL, NULL, 1405512862, 1405512862, 1, 'sdsdsds1', 'sdsdsds', '', '');
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1406559106, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, 'TycT.YvC6jvogsS-9eeS.O8bf3988e02339842cf', 1406018508, 'mvG0oTgvGkxBY0wxir5VPe', 1404810260, 1406559079, 1, 'Us', 'ername', 'OSF GLobal Services', '');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users_groups`
+-- `users_groups`
 --
 
 CREATE TABLE IF NOT EXISTS `users_groups` (
@@ -185,40 +144,50 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
   KEY `fk_users_groups_users1_idx` (`user_id`),
   KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
--- Дамп данных таблицы `users_groups`
+-- `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
-(13, 1, 1),
-(8, 4, 2),
-(20, 5, 1),
-(14, 6, 2),
-(15, 7, 2),
-(16, 8, 2),
-(17, 9, 2),
-(18, 10, 2),
-(19, 11, 2),
-(21, 12, 2),
-(26, 15, 2);
+(23, 1, 1),
+(25, 4, 2);
+
+
+-- --------------------------------------------------------
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+--  `usertracking`
+--
+
+CREATE TABLE IF NOT EXISTS `usertracking` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_id` varchar(100) NOT NULL,
+  `user_identifier` int(5) NOT NULL,
+  `request_uri` text NOT NULL,
+  `timestamp` varchar(20) NOT NULL,
+  `client_ip` varchar(50) NOT NULL,
+  `client_user_agent` text NOT NULL,
+  `referer_page` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=172 ;
+
+--
+-- Дамп данных таблицы `usertracking`
 --
 
 --
 -- Ограничения внешнего ключа таблицы `feeds`
 --
 ALTER TABLE `feeds`
-  ADD CONSTRAINT `fk_feeds_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_feeds_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `rss_posts`
 --
 ALTER TABLE `rss_posts`
-  ADD CONSTRAINT `fk_rss_posts_feeds1` FOREIGN KEY (`feeds_id`) REFERENCES `feeds` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_rss_posts_feeds1` FOREIGN KEY (`feeds_id`) REFERENCES `feeds` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `users_groups`

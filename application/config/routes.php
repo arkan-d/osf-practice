@@ -37,15 +37,17 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-$route['user/single_feed/(:num)/(:num)'] = "user/single_feed/$1/$2";
+
 
 $route['default_controller'] = "route";
-$route['404_override'] = '';
+
 
 if (config_item('installed') == 'no')
 {
  $route["default_controller"] = "install";
 }
+
+$route['404_override'] = '';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

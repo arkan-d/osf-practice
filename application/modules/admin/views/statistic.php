@@ -1,15 +1,11 @@
-<div class="container"  style="padding-top:50px;">
-	<div class="row">
-		<div class="col-lg-12">
-			
-<h1>Users activity</h1>
 
-<p><?php if (isset($message) && !empty($message))
-{ echo "<div class='col-md-12 alert alert-warning' role='alert'>{$message}</div>";}?> </p>
-
-<div class="container">
-    <div class="col-md-6">
-<table class="table table-bordered">
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+               <h1>Users activity</h1>
+	       
+	       <table class="table table-bordered">
 	<tr>
 		<th>Email</th>
 		<th>Last login</th>		
@@ -25,6 +21,25 @@
 	</tr>
 	
 </table>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->
+
+
+<div class="container"  style="padding-top:50px;">
+	<div class="row">
+		<div class="col-lg-12">
+			
+
+
+<p><?php if (isset($message) && !empty($message))
+{ echo "<div class='col-md-12 alert alert-warning' role='alert'>{$message}</div>";}?> </p>
+
+<div class="container">
+    <div class="col-md-6">
+
     </div>
 </div>
 

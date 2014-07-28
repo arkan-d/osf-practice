@@ -1,15 +1,23 @@
-
- <div class="modal-dialog" style="padding-top:50px;">
-   
-  <div class="modal-content">
-      <div class="modal-header">
-         
-          
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                         
 
 <h1><?php echo lang('edit_user_heading');?></h1>
 <p><?php echo lang('edit_user_subheading');?></p>
 
-      </div>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->  
+
+
+ <div class="modal-dialog" style="padding-top:50px;">
+   
+  <div class="modal-content">
+    
       <div class="modal-body">
 	
 

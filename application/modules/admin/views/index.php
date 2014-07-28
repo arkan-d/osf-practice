@@ -1,10 +1,19 @@
-
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+               			
+<h1><?php echo lang('index_heading');?></h1>
+<p><?php echo lang('index_subheading');?></p>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->    
 <div class="container"  style="padding-top:50px;">
 	<div class="row">
 		<div class="col-lg-12">
-			
-<h1><?php echo lang('index_heading');?></h1>
-<p><?php echo lang('index_subheading');?></p>
+
 
 <p><?php if (isset($message) && !empty($message))
 { echo "<div class='col-md-12 alert alert-warning' role='alert'>{$message}</div>";}?> </p>

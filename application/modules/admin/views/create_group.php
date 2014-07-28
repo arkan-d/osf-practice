@@ -1,13 +1,20 @@
-
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                <h1><?php echo lang('create_group_heading');?></h1>
+<p><?php echo lang('create_group_subheading');?></p>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->
+    
+    
  <div class="modal-dialog" style="padding-top:50px;">
    
   <div class="modal-content">
-      <div class="modal-header">
-         
-         <h1><?php echo lang('create_group_heading');?></h1>
-<p><?php echo lang('create_group_subheading');?></p>
-
-      </div>
+      
       <div class="modal-body">
 	
 

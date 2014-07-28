@@ -1,3 +1,16 @@
+ 
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+               <h1>Posts</h1>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->
+    
+ 
  <div class="container" style="padding-top: 100px;">
            
            <?php if(!isset($rss) || empty($rss)) { ?>

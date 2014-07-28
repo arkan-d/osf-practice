@@ -1,13 +1,20 @@
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+               <h1><?php echo lang('login_heading');?></h1>
+          <p><?php echo lang('login_subheading');?></p>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->    
 
- <div class="modal-dialog" style="padding-top:50px;">
+
+ <div class="modal-dialog">
    
   <div class="modal-content">
-      <div class="modal-header">
-         
-          <h1 class="text-center"><?php echo lang('login_heading');?></h1>
-          <p><?php echo lang('login_subheading');?></p>
-
-      </div>
+     
       <div class="modal-body">
 	
 
@@ -51,10 +58,6 @@
 
 	  
       </div>
-      <div class="modal-footer">
-          <div class="col-md-12">
-          
-		  </div>	
-      </div>
+     
   </div>
   </div>
