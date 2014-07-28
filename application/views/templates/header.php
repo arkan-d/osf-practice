@@ -24,4 +24,13 @@
 
 </head>
 <body>
-
+<noscript>
+   <div class="container">
+   <center>
+      <div class='col-md-12 alert alert-warning' role='alert'>
+      <h1 style="padding-top: 100px;">Please turn on JavaScripts </h1>
+      <h3> This site requre Javascripts enabled to work correctly</h3>
+      </div>
+   </center>
+   </div>
+</noscript>

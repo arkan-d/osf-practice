@@ -18,7 +18,13 @@
         <a href="<?=base_url();?>"> Home <span class="glyphicon glyphicon-home"></span></a>
              </li>           
            
+            <? if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()) {?>
             
+           <li <?php if ($this->uri->segment(2) == 'popular_feeds') {echo"class='active'";}?>>
+                <a href="<?=base_url();?>admin/popular_feeds" class="animate">Most visited feeds
+					<span class="glyphicon glyphicon-info-sign"></span>
+				</a> <li>
+          <? } ?>
             
              <?php
              $user = $this->session->userdata('user_id');

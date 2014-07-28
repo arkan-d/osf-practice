@@ -2,10 +2,10 @@
 -- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 24, 2014 at 04:37 PM
--- Server version: 5.5.25
--- PHP Version: 5.3.13
+-- Хост: 127.0.0.1
+-- Время создания: Июл 28 2014 г., 17:52
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `like12`
+-- База данных: `like12`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ci_sessions`
+-- Структура таблицы `ci_sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
@@ -37,37 +37,16 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ci_sessions`
+-- Дамп данных таблицы `ci_sessions`
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('c549c93e60d62d6027a80d46237f3d3a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0', 1406208931, 'a:1:{s:9:"user_data";s:0:"";}');
+('dc822a2c02e360b4e7672e8d2f1091b3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 1406559137, 'a:2:{s:9:"user_data";s:0:"";s:17:"flash:old:message";s:30:"<p>Logged Out Successfully</p>";}');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `day`
---
-
-CREATE TABLE IF NOT EXISTS `day` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `day` varchar(10) NOT NULL DEFAULT '',
-  `user` int(10) NOT NULL DEFAULT '0',
-  `view` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `day`
---
-
-INSERT INTO `day` (`id`, `day`, `user`, `view`) VALUES
-(2, '2014.07.24', 1, 61);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feeds`
+-- Структура таблицы `feeds`
 --
 
 CREATE TABLE IF NOT EXISTS `feeds` (
@@ -77,26 +56,28 @@ CREATE TABLE IF NOT EXISTS `feeds` (
   `description` text,
   `users_id` int(11) unsigned NOT NULL,
   `favourite` tinyint(1) DEFAULT NULL,
+  `views` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_feeds_users1` (`users_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=115 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
 
 --
--- Dumping data for table `feeds`
+-- Дамп данных таблицы `feeds`
 --
 
-INSERT INTO `feeds` (`id`, `link`, `thumbnail`, `description`, `users_id`, `favourite`) VALUES
-(104, 'http://www.spiegel.de/schlagzeilen/tops/index.rss', NULL, NULL, 4, 1),
-(109, 'http://feeds.feedburner.com/e64f?format=xml', NULL, NULL, 4, 0),
-(111, 'http://feeds.visitlondon.com/WhatsOnInLondon?format=xml', NULL, NULL, 4, 0),
-(112, 'http://feeds.feedburner.com/ruseller/CdHX?format=xml', NULL, NULL, 4, 0),
-(113, 'http://feeds.visitlondon.com/LondonComedyGuide?format=xml', NULL, '<p>\r\n	last description</p>\r\n', 4, 1),
-(114, 'http://www.spiegel.de/schlagzeilen/tops/index.rss', NULL, NULL, 11, 1);
+INSERT INTO `feeds` (`id`, `link`, `thumbnail`, `description`, `users_id`, `favourite`, `views`) VALUES
+(104, 'http://www.spiegel.de/schlagzeilen/tops/index.rss', NULL, NULL, 4, 1, 4),
+(109, 'http://feeds.feedburner.com/e64f?format=xml', NULL, NULL, 4, 0, 2),
+(111, 'http://feeds.visitlondon.com/WhatsOnInLondon?format=xml', NULL, NULL, 4, 0, 0),
+(112, 'http://feeds.feedburner.com/ruseller/CdHX?format=xml', NULL, NULL, 4, 0, 2),
+(113, 'http://feeds.visitlondon.com/LondonComedyGuide?format=xml', NULL, '<p>\r\n	last description2</p>\r\n', 4, 1, 5),
+(114, 'http://www.spiegel.de/schlagzeilen/tops/index.rss', NULL, '<p>\r\n	fgfgfgfgfgfg</p>\r\n', 11, 1, 4),
+(115, 'http://feeds.feedburner.com/ruseller/CdHX?format=xml', NULL, NULL, 11, 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups`
+-- Структура таблицы `groups`
 --
 
 CREATE TABLE IF NOT EXISTS `groups` (
@@ -107,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `groups`
+-- Дамп данных таблицы `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -117,63 +98,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ips`
---
-
-CREATE TABLE IF NOT EXISTS `ips` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ip` varchar(15) NOT NULL DEFAULT '',
-  `time` int(20) NOT NULL DEFAULT '0',
-  `online` int(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `ips`
---
-
-INSERT INTO `ips` (`id`, `ip`, `time`, `online`) VALUES
-(1, '127.0.0.1', 1406206470, 1406209005);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `keyword`
---
-
-CREATE TABLE IF NOT EXISTS `keyword` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `day` varchar(10) NOT NULL DEFAULT '',
-  `keyword` varchar(255) NOT NULL DEFAULT '',
-  `view` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `language`
---
-
-CREATE TABLE IF NOT EXISTS `language` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `day` varchar(10) NOT NULL DEFAULT '',
-  `language` varchar(2) NOT NULL DEFAULT '',
-  `view` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `language`
---
-
-INSERT INTO `language` (`id`, `day`, `language`, `view`) VALUES
-(1, '2014.07.24', 'en', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login_attempts`
+-- Структура таблицы `login_attempts`
 --
 
 CREATE TABLE IF NOT EXISTS `login_attempts` (
@@ -182,57 +107,12 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   `login` varchar(100) NOT NULL,
   `time` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `page`
---
-
-CREATE TABLE IF NOT EXISTS `page` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `day` varchar(10) NOT NULL DEFAULT '',
-  `page` varchar(255) NOT NULL DEFAULT '',
-  `view` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
-
---
--- Dumping data for table `page`
---
-
-INSERT INTO `page` (`id`, `day`, `page`, `view`) VALUES
-(1, '2014.07.24', '/user', 4),
-(2, '2014.07.24', '/user/all_feeds/4', 5),
-(3, '2014.07.24', '/user/single_feed/104', 3),
-(4, '2014.07.24', '/user/edit_feeds/4', 1),
-(5, '2014.07.24', '/user/add_feed/4', 1),
-(6, '2014.07.24', '/admin', 1),
-(7, '2014.07.24', '/user/single_feed/112', 2),
-(8, '2014.07.24', '/user/single_feed/109', 2),
-(9, '2014.07.24', '/auth/create_user', 1),
-(10, '2014.07.24', '/auth/forgot_password', 1),
-(11, '2014.07.24', '/auth/login', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `referer`
---
-
-CREATE TABLE IF NOT EXISTS `referer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `day` varchar(10) NOT NULL DEFAULT '',
-  `referer` varchar(255) NOT NULL DEFAULT '',
-  `view` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rss_posts`
+-- Структура таблицы `rss_posts`
 --
 
 CREATE TABLE IF NOT EXISTS `rss_posts` (
@@ -243,10 +123,10 @@ CREATE TABLE IF NOT EXISTS `rss_posts` (
   `feeds_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_rss_posts_feeds1` (`feeds_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=637 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=965 ;
 
 --
--- Dumping data for table `rss_posts`
+-- Дамп данных таблицы `rss_posts`
 --
 
 INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUES
@@ -337,72 +217,112 @@ INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUE
 (410, 'Afternoon Tease at Volupté', 'A burlesque afternoon tea event at sumptuous London cabaret venue Volupté. Various dates	 	 ', 'http://www.visitlondon.com/things-to-do/event/13664960', 113),
 (411, '99 Club Leicester Square', 'Laughs for your weekend at Leicester Square''s 99 Club. Bring your pals and your sense of humour!	 	 ', 'http://www.visitlondon.com/things-to-do/event/973478', 113),
 (412, 'Old Rope', 'Award winning comedian Phil Nichol presents a weekly comedy night at The Phoenix. Every Monday	 	 ', 'http://www.visitlondon.com/things-to-do/event/6866216', 113),
-(577, 'Sudan: Zum Tode verurteilte Christin rettet sich nach Italien', 'Wegen ihres Übertritts zum Christentum wurde eine Frau im Sudan zum Tode verurteilt. Jetzt durfte Mariam Jahia Ibrahim Ishak mit ihrer Familie nach Italien ausfliegen.', 'http://www.spiegel.de/politik/ausland/sudan-zum-tode-verurteilte-christin-nach-italien-a-982643.html#ref=rss', 114),
-(578, 'Afghanistan: Gericht verhängt Todesstrafe gegen Mörder der Fotografin Niedringhaus', 'Die sechs Richter in Kabul waren sich einig: Sie verurteilten den Mörder der in Afghanistan getöteten deutschen Fotografin Anja Niedringhaus zum Tode.', 'http://www.spiegel.de/politik/ausland/anja-niedringhaus-todesstrafe-fuer-moerder-der-fotografin-in-afghanistan-a-982631.html#ref=rss', 114),
-(579, 'Gaza-Konflikt: Uno-Generalsekretär empört über Raketenfunde in Schulen', 'In mehreren Uno-Schulen im Gazastreifen sind Raketen versteckt worden. Generalsekretär Ban Ki Moon fordert Aufklärung: Das Leben unschuldiger Kinder sei in Gefahr gebracht worden.', 'http://www.spiegel.de/politik/ausland/krieg-in-gaza-ban-ki-moon-empoert-ueber-raketen-fund-in-uno-schulen-a-982624.html#ref=rss', 114),
-(580, 'Stiftung Warentest: Viele Mineralwässer sind verunreinigt', 'Die Stiftung Warentest hat in 10 von 30 Medium-Mineralwässern Süßstoff oder Abbauprodukte von Pestiziden entdeckt. Uneingeschränkt empfehlen können die Tester nur wenige Produkte - vor allem günstige Eigenmarken von Lidl und Co.', 'http://www.spiegel.de/wirtschaft/service/stiftung-warentest-verunreinigung-vieler-mineralwasser-mit-a-982627.html#ref=rss', 114),
-(581, 'Zwei Stunden Todeskampf: US-Doppelmörder stirbt bei qualvoller Hinrichtung', 'In den USA ist erneut ein Mann grausam hingerichtet worden. Bis Joseph Wood tot war, vergingen zwei Stunden.', 'http://www.spiegel.de/panorama/justiz/qualvolle-hinrichtung-in-arizona-moerder-stirbt-nach-zwei-stunden-a-982625.html#ref=rss', 114),
-(582, 'Gaza-Konflikt: Deutsche Politiker kritisieren Flugstopp nach Israel', 'Die US-Luftfahrtbehörde hat das Flugverbot für amerikanische Airlines nach Tel Aviv aufgehoben. Doch die Lufthansa und andere Gesellschaften steuern Israel weiter nicht an. Deutsche Politiker kritisieren die Einstellung der Flüge massiv.', 'http://www.spiegel.de/politik/ausland/gaza-konflikt-flugverbot-nach-israel-in-der-kritik-a-982623.html#ref=rss', 114),
-(583, 'Akute Rückenschmerzen: Paracetamol nicht besser als Placebo', 'Bei akuten Rückenschmerzen entscheiden sich Patienten wie Ärzte häufig für einen Wirkstoff: Paracetamol. Doch einer neuen Studie zufolge hilft das Schmerzmittel nicht besser als ein Placebo.', 'http://www.spiegel.de/gesundheit/diagnose/akute-rueckenschmerzen-paracetamol-nicht-besser-als-placebo-a-982366.html#ref=rss', 114);
+(738, 'Совет: меняем поведение относительных URL с помощью тега base', 'HTML тег base - относительно малоизвестный тег, который не так давно стал частью HTML5.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/B73y3TAns48" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/B73y3TAns48/lessons.php', 115),
+(739, 'Превосходство Google Chrome', 'Google Chrome - один из крупнейших современных игроков в Вебе. Он быстрый, надежный, напичкан различными функциями, а также очень полезный, особенно если вы - веб-разработчик. Chrome также позволяет устанавливать сторонние расширения. Эти расширения пишутся на чистом HTML, CSS и JavaScript. Команда Google делает большую работу. В данной статье мы рассмотрим несколько полезных инструментов Chrome, которые могут помочь в процессе разработки.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/K9IZGPuO7rw" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/K9IZGPuO7rw/lessons.php', 115),
+(740, 'Построитель динамического меню на Bootstrap 3: элемент и ссылка', 'В первой части статьи мы описали прототип системы и реализовали основной класс Menu, который играет роль менеджера меню - контейнер, содержащий составные единицы (элементы и ссылки). В этой части мы реализуем оставшиеся классы, и попробуем построитель меню в действии.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/opsGb7Dd6k0" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/opsGb7Dd6k0/lessons.php', 115),
+(741, 'Построитель динамического меню на Bootstrap 3: менеджер меню', 'В данной статье я расскажу о том, как можно реализовать построитель динамического меню на PHP. Это урок из двух статей, в первой статье мы фокусируемся на демонстрационном коде и классе Menu, а во второй статье рассказывается о других классах и примерах использования.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/Xx_gZasPpUo" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/Xx_gZasPpUo/lessons.php', 115);
 INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUES
-(584, 'Maccabi Haifa: Testspiel von israelischem Spitzenklub nach Platzsturm abgebrochen', 'Anti-Israel-Proteste auch beim Fußball: Nach Angriffen auf Spieler und einem Zuschauersturm auf den Rasen ist ein Spiel des israelischen Klubs Maccabi Haifa in Österreich abgebrochen worden. Am Samstag spielt das Team gegen Paderborn.', 'http://www.spiegel.de/sport/fussball/anti-israel-proteste-testspiel-abgebrochen-a-982622.html#ref=rss', 114),
-(585, 'Erdumrundung: 17-Jähriger stirbt bei Weltrekordversuch mit Flugzeug', 'Er wollte der jüngste Mensch sein, der jemals in einer einmotorigen Maschine in 30 Tagen um die Welt flog. Diesen Wunsch musste Haris Suleman nun mit dem Leben bezahlen. Sein Flugzeug stürzte vor Amerikanisch-Samoa ins Meer.', 'http://www.spiegel.de/panorama/weltrekordversuch-17-jaehriger-stirbt-bei-flugzeugabsturz-a-982620.html#ref=rss', 114),
-(586, 'Ostukraine: Rebellenführer bestätigt Besitz von Buk-Flugabwehr', 'Die Separatisten in der Ostukraine verfügten über das Buk-System, mit dessen Raketen offenbar der Malaysia-Airlines-Flug MH17 abgeschossen wurde. Das räumt jetzt ein einflussreicher Rebellenkommandeur ein. Er will auch wissen, woher die Waffe kam.', 'http://www.spiegel.de/politik/ausland/mh17-rebellenkommandeur-bestaetigt-besitz-von-buk-raketen-a-982616.html#ref=rss', 114),
-(587, 'Unglücksflug MH17: Niederlande finden keine Hinweise auf Manipulation der Blackbox', 'Die Flugschreiber des abgestürzten Malaysia-Airlines-Flugzeugs befanden sich tagelang in den Händen von Aufständischen. Doch Befürchtungen, dass die Separatisten die Blackbox manipulierten, waren unbegründet. ', 'http://www.spiegel.de/politik/ausland/malaysia-airlines-mh17-boeing-777-blackbox-wurde-nicht-manipuliert-a-982607.html#ref=rss', 114),
-(588, '"Russisches Blackwater": Moskau will Privatarmeen aufbauen', 'Die russische Regierung plant den Einsatz privater Sicherheitsfirmen. Die nichtstaatlichen Kämpfer sollen einspringen, wenn es politisch brenzlig wird.', 'http://www.spiegel.de/politik/ausland/russland-kreml-plant-privatarmee-nach-dem-vorbild-blackwater-a-982559.html#ref=rss', 114),
-(589, 'Internet-Agenda der Bundesregierung: Drei Minister, eine Enttäuschung', 'Schneller, höher, weiter: Die Bundesregierung hat ihre Digitale Agenda vorgelegt - sie verspricht nicht weniger als eine Internet-Revolution für Deutschland. Und was heißt das konkret?', 'http://www.spiegel.de/politik/deutschland/digitale-agenda-erster-gesetzentwurf-ist-eine-enttaeuschung-a-982503.html#ref=rss', 114),
-(590, 'Kämpfe in der Ostukraine: Kiew macht Russland für Kampfjet-Abschuss verantwortlich', 'Für die Regierung in Kiew ist die Sache klar: Die Raketen auf zwei ukrainische Kampfjets seien von russischem Territorium aus abgefeuert worden. ', 'http://www.spiegel.de/politik/ausland/ukraine-macht-russland-fuer-abschuss-von-kampfjets-verantwortlich-a-982587.html#ref=rss', 114),
-(591, 'Gauck zu judenfeindlichen Demos: "Wir wollen Antisemitismus nicht hinnehmen"', 'Nach antisemitischen Parolen bei Anti-Israel-Kundgebungen verlangt Bundespräsident Gauck mehr Zivilcourage von den Deutschen. Die Kanzlerin warnt vor einem "Angriff auf Freiheit und Toleranz".', 'http://www.spiegel.de/politik/deutschland/antisemitismus-bundespraesident-gauck-fordert-zivilcourage-a-982566.html#ref=rss', 114),
-(592, 'Antisemitismus: Staatsanwaltschaft ermittelt gegen Berliner Hassprediger', 'Sheikh Abu Bilal Ismail wetterte in der Berliner Al-Nur-Moschee gegen Juden. Jetzt hat die Staatsanwaltschaft Ermittlungen eingeleitet. Der Vorwurf: Volksverhetzung.', 'http://www.spiegel.de/politik/deutschland/antisemitismus-ermittlungen-gegen-hassprediger-wegen-volksverhetzung-a-982381.html#ref=rss', 114),
-(593, 'Flugzeugunglück: Bruchlandung in Taiwan - viele Tote', 'In der taiwanischen Provinz Penghu sind bei einem Flugzeugunglück offenbar mindestens 47 Menschen gestorben. Laut der chinesischen Nachrichtenagentur Xinhua missglückte die Notlandung eines Flugzeugs der Linie Transasia.', 'http://www.spiegel.de/panorama/taiwan-tote-bei-flugzeugunglueck-der-transasia-a-982557.html#ref=rss', 114),
-(594, 'Prozess in Regensburg: Mollath-Anwälte sollen als Pflichtverteidiger weitermachen', 'Turbulenter Tag vor dem Landgericht Regensburg: Die Mollath-Anwälte legen ihr Mandat nieder - weil der Mandant offenbar das Vertrauen in sie verloren hat. Nun sollen die Juristen als Pflichtverteidiger weiterarbeiten.', 'http://www.spiegel.de/panorama/justiz/mollath-prozes-anwalt-strate-wird-pflichtverteidiger-a-982550.html#ref=rss', 114),
-(595, 'Transport-App: Hamburg verbietet Fahrdienst Uber', 'Taxifahrer hassen die Konkurrenz durch Uber, jetzt will die Stadt Hamburg den kalifornischen Dienst stoppen. Die Verkehrsbehörde bezeichnet dessen App als "nicht legal". Privatleute, die sich dem Verbot widersetzen, riskieren hohe Strafen.', 'http://www.spiegel.de/wirtschaft/unternehmen/uber-hamburg-verbietet-fahrtdienst-a-982543.html#ref=rss', 114),
-(596, 'Krise in der Ukraine: Merkel verlangt schnelle Sanktionen gegen Russland', 'Der Druck auf Wladimir Putin steigt. Bundeskanzlerin Merkel fordert jetzt weitere Strafmaßnahmen gegen Russland - weil Moskau kein Interesse an einer schnellen Aufklärung des MH17-Abschusses zeige. Das Auswärtige Amt erklärt: "Jetzt reicht es."', 'http://www.spiegel.de/politik/ausland/ukraine-merkel-fordert-schnelle-eu-sanktionen-gegen-russland-a-982546.html#ref=rss', 114),
-(597, 'Prozess in Regensburg: Verteidiger von Mollath legen Mandat nieder', 'Die beiden Verteidiger von Gustl Mollath haben ihr Mandat niedergelegt. Dies erfolge auf Wunsch des Angeklagten, sagte Mollaths Anwalt Gerhard Strate. ', 'http://www.spiegel.de/panorama/justiz/gustl-mollath-verteidiger-legen-mandat-nieder-a-982541.html#ref=rss', 114),
-(598, 'Deutsche Fußball-Nationalmannschaft: Bundestrainer Löw macht bis 2016 weiter', 'Er macht weiter: Joachim Löw bleibt bis 2016 Bundestrainer der Fußball-Nationalmannschaft. "Ich bin so motiviert wie am ersten Tag", sagt der 54-Jährige.', 'http://www.spiegel.de/sport/fussball/joachim-loew-bundestrainer-macht-bis-2016-weiter-a-982542.html#ref=rss', 114),
-(599, 'Terrorgruppe im Irak: "Islamischer Staat" lässt Schaufensterpuppen verhüllen', 'Die Radikalen berufen sich auf das Bilderverbot im Islam: Im Einflussgebiet der Terrorgruppe "Islamischer Staat" müssen sich nicht nur Frauen verschleiern - sondern auch Schaufensterpuppen.', 'http://www.spiegel.de/politik/ausland/irak-islamischer-staat-laesst-schaufensterpuppen-in-mossul-verhuellen-a-982485.html#ref=rss', 114),
-(600, 'Kämpfe in der Ostukraine: Separatisten schießen zwei ukrainische Militärjets ab', 'Schon wieder sind in der Ostukraine zwei Flugzeuge abgestürzt: Die prorussischen Milizen haben zwei Militärjets der Armee abgeschossen - nahe dem Unglücksort des Malaysian-Airlines-Fluges MH17.', 'http://www.spiegel.de/politik/ausland/ukraine-separatisten-teilen-abschuss-von-zwei-militaerjets-mit-a-982525.html#ref=rss', 114),
-(601, 'Klimapolitik: Brüssel beschließt Energiesparziel von 30 Prozent', 'Die EU-Kommission wird nach SPIEGEL-ONLINE-Informationen ein Energieeffizienzziel von 30 Prozent für 2030 vorschlagen. Dies ist höher als erwartet - und entspricht der Forderung des künftigen Kommissionschefs Jean-Claude Juncker.', 'http://www.spiegel.de/wirtschaft/soziales/energieeffizienz-eu-kommission-will-ziel-von-30-prozent-fuer-2030-a-982471.html#ref=rss', 114),
-(602, 'Reaktion auf Russlands Ukraine-Politik: Nato hält Putin Lügen vor', 'Die Nato schlägt einen eisigen Ton gegenüber Russland an: In einer Erklärung wirft das Militärbündnis Kreml-Chef Wladimir Putin vor, Unwahrheiten zu verbreiten. Im Gegensatz zu Moskau halte sich der Westen an internationale Vereinbarungen.', 'http://www.spiegel.de/politik/ausland/ukraine-konflikt-mit-russland-nato-haelt-putin-luegen-vor-a-982517.html#ref=rss', 114),
-(603, '"Freies Netz Süd": Bayern verbietet größtes Neonazi-Netzwerk', '"Aggressiv und verfassungsfeindlich": Das bayerische Innenministerium hat das rechtsextreme "Freie Netz Süd" verboten. Zudem gehen die Behörden gegen Unterstützer vor - ein bundesweit bekannter Neonazi-Treffpunkt wird durchsucht. ', 'http://www.spiegel.de/politik/deutschland/freies-netz-sued-bayern-verbietet-neonazi-netzwerk-a-982487.html#ref=rss', 114),
-(604, 'Eingestellter Flugverkehr nach Tel Aviv: Airlines bescheren der Hamas einen Erfolg', 'Dutzende internationale Airlines haben ihren Flugverkehr nach Israel eingestellt: Ein großer strategischer Sieg für die Hamas - er könnte Israel zu Zugeständnissen zwingen. ', 'http://www.spiegel.de/politik/ausland/fluege-nach-tel-aviv-airlines-bescheren-der-hamas-einen-erfolg-a-982452.html#ref=rss', 114),
-(605, 'Allianz-Berechnung: Mini-Zinsen kosten deutsche Sparer im Schnitt 67 Euro im Jahr', 'Die mickrigen Zinsen kommen Deutschlands Sparer teuer zu stehen. Laut Allianz summierte sich der Verlust 2013 auf 67,60 Euro pro Kopf im Vergleich zur Zeit vor der Finanzkrise. Dieses Jahr fällt das Minus wohl noch größer aus.', 'http://www.spiegel.de/wirtschaft/service/mini-zinsen-kosten-sparer-in-deutschland-laut-allianz-milliarden-a-982463.html#ref=rss', 114),
-(606, '"Costa Concordia": Wrack nimmt Kurs auf Genua', 'Die letzte Reise der "Costa Concordia" hat begonnen. Zweieinhalb Jahre nach der Havarie bewegt sich das Kreuzfahrtschiff wieder. Schlepper haben das Wrack von der Insel Giglio weggezogen und Kurs auf Genua genommen.', 'http://www.spiegel.de/panorama/costa-concordia-abtransport-von-giglio-nach-genua-beginnt-a-982468.html#ref=rss', 114),
-(607, 'Neue Satellitendaten: Extremer Sonnensturm verfehlte die Erde', 'Die Analyse von Satellitendaten belegt: Ein heftiger Sonnensturm hat die Erde im Juli 2012 knapp verfehlt. Er hätte wohl Schäden von mehr als einer Billion Euro verursacht - und könnte sich schon bald wiederholen.', 'http://www.spiegel.de/wissenschaft/weltall/sonnensturm-2012-fast-katastrophe-auf-erde-plasma-verfehlt-planet-a-982652.html#ref=rss', 104),
-(608, 'Randale bei Akademikerball: Josef S. geht gegen Schuldspruch vor', 'Ein Wiener Gericht verurteilte den deutschen Studenten Josef S. zu 12 Monaten Haft. Er soll am Rande einer rechtsgerichteten Tanzveranstaltung randaliert haben. Die Beweislage war dürftig - jetzt haben seine Anwälte Berufung angekündigt.', 'http://www.spiegel.de/unispiegel/jobundberuf/josef-s-geht-in-berufung-deutscher-student-in-wien-verurteilt-a-982729.html#ref=rss', 104),
-(609, 'Schiedsrichter-Hilfsmittel: Spanien führt Freistoßspray ein', 'Es darf gesprüht werden: Der spanische Fußballverband gibt seinen Schiedsrichtern das von der Weltmeisterschaft bekannte Freistoßspray in die Hand. Auch in anderen Wettbewerben wird es eingesetzt.', 'http://www.spiegel.de/sport/fussball/freistossspray-wird-in-spanien-eingesetzt-a-982720.html#ref=rss', 104),
-(610, 'Sinkende Arbeitslosigkeit: Hunderttausende Spanier haben wieder einen Job', 'Nach Jahren der Rezession schafft die spanische Wirtschaft wieder Jobs. Zwar ist noch immer fast jeder Vierte ohne Beschäftigung, doch die Zahl der Arbeitslosen ist binnen eines Jahres um 425.000 gefallen. ', 'http://www.spiegel.de/wirtschaft/soziales/spanien-arbeitslosenzahl-sinkt-wirtschafft-erholt-sich-a-982714.html#ref=rss', 104),
-(611, 'Wahl im Parlament: Kurde Massum ist neuer irakischer Präsident', 'Nach monatelangen Verhandlungen hat der Irak einen neuen Staatschef: Der Kurde Fuad Massum wurde vom Parlament in Bagdad zum Präsidenten gewählt. Damit ist auch der Weg frei für eine neue Regierung.', 'http://www.spiegel.de/politik/ausland/irak-kurde-massum-neuer-staatschef-a-982727.html#ref=rss', 104),
-(612, 'Verdacht auf Mordversuch im Kreißsaal: Münchner Polizei verhaftet Hebamme', 'Eine Hebamme soll in einer Münchner Klinik mit einem Medikament versucht haben, vier Mütter und deren Neugeborene zu töten. Die 33-Jährige wurde verhaftet. Sie bestreitet die Taten.', 'http://www.spiegel.de/panorama/justiz/muenchen-hebamme-wegen-versuchten-mordes-verhaftet-a-982709.html#ref=rss', 104),
-(613, 'Air Algérie: Passagiermaschine mit 116 Insassen stürzt über Mali ab', 'Auf dem Weg von Burkina Faso nach Algerien ist ein Passagierflugzeug abgestürzt. Nach Uno-Angaben ereignete sich das Unglück über Mali. An Bord der Maschine von Air Algérie waren 116 Menschen.', 'http://www.spiegel.de/panorama/flugzeugabsturz-ueber-mali-air-algerie-verliert-maschine-mit-116-passagieren-a-982676.html#ref=rss', 104),
-(614, 'Angriff auf Datenbank: Hacker knacken EZB-Computersystem', 'In eine Datenbank der Europäischen Zentralbank sind Hacker eingedrungen. Die Angreifer erbeuteten 20.000 E-Mail-Adressen und weitere Kontakte - und versuchten, die Notenbank zu erpressen. ', 'http://www.spiegel.de/wirtschaft/ezb-hacker-stehlen-daten-und-e-mail-adressen-aus-computersystem-a-982662.html#ref=rss', 104),
-(615, 'Ukrainische Kampfjets: Kreml bestreitet Abschuss von russischem Boden aus', 'Der Kreml spricht von "Fantasien der Kiewer Behörden": Die russische Regierung streitet ab, dass zwei ukrainische Kampfflugzeuge von Russland aus abgeschossen wurden.', 'http://www.spiegel.de/politik/ausland/ukraine-russland-bestreitet-verantwortung-fuer-abschuss-von-kampfflugzeugen-a-982654.html#ref=rss', 104),
-(616, 'Antisemitismus in Deutschland: CDU-Ratsherr tritt nach judenfeindlicher Äußerung zurück', '"Juden sind scheiße", schrieb ein CDU-Kommunalpolitiker aus Niedersachsen auf Facebook. Der 62-Jährige ist nun einem Parteiausschluss zuvorgekommen.', 'http://www.spiegel.de/politik/deutschland/antisemitismus-cdu-politiker-aus-seesen-in-niedersachsen-tritt-zurueck-a-982647.html#ref=rss', 104),
-(617, 'Reaktion auf MH17-Abschuss: Niederländer fordern Ausweisung von Putins Tochter', 'Maria Putina, Tochter des russischen Präsidenten, lebt in den Niederlanden - noch. Viele Holländer machen Moskau für den Abschuss der Malaysia-Airlines-Maschine verantwortlich. Sie fordern die Ausweisung der jungen Frau. ', 'http://www.spiegel.de/politik/ausland/malaysia-airlines-mh17-niederlande-wollen-putins-tochter-ausweisen-a-982630.html#ref=rss', 104),
-(618, 'Sudan: Zum Tode verurteilte Christin rettet sich nach Italien', 'Wegen ihres Übertritts zum Christentum wurde eine Frau im Sudan zum Tode verurteilt. Jetzt durfte Mariam Yahya Ibrahim mit ihrer Familie nach Italien ausfliegen.', 'http://www.spiegel.de/politik/ausland/sudan-zum-tode-verurteilte-christin-nach-italien-a-982643.html#ref=rss', 104),
-(619, 'Afghanistan: Gericht verhängt Todesstrafe gegen Mörder der Fotografin Niedringhaus', 'Die sechs Richter in Kabul waren sich einig: Sie verurteilten den Mörder der in Afghanistan getöteten deutschen Fotografin Anja Niedringhaus zum Tode.', 'http://www.spiegel.de/politik/ausland/anja-niedringhaus-todesstrafe-fuer-moerder-der-fotografin-in-afghanistan-a-982631.html#ref=rss', 104),
-(620, 'Gaza-Konflikt: Uno-Generalsekretär empört über Raketenfunde in Schulen', 'In mehreren Uno-Schulen im Gazastreifen sind Raketen versteckt worden. Generalsekretär Ban Ki Moon fordert Aufklärung: Das Leben unschuldiger Kinder sei in Gefahr gebracht worden.', 'http://www.spiegel.de/politik/ausland/krieg-in-gaza-ban-ki-moon-empoert-ueber-raketen-fund-in-uno-schulen-a-982624.html#ref=rss', 104),
-(621, 'Stiftung Warentest: Viele Mineralwässer sind verunreinigt', 'Die Stiftung Warentest hat in 10 von 30 Medium-Mineralwässern Süßstoff oder Abbauprodukte von Pestiziden entdeckt. Uneingeschränkt empfehlen können die Tester nur wenige Produkte - vor allem günstige Eigenmarken von Lidl und Co.', 'http://www.spiegel.de/wirtschaft/service/stiftung-warentest-verunreinigung-vieler-mineralwasser-mit-a-982627.html#ref=rss', 104),
-(622, 'Zwei Stunden Todeskampf: US-Doppelmörder stirbt bei qualvoller Hinrichtung', 'In den USA ist erneut ein Mann grausam hingerichtet worden. Bis Joseph Wood tot war, vergingen zwei Stunden.', 'http://www.spiegel.de/panorama/justiz/qualvolle-hinrichtung-in-arizona-moerder-stirbt-nach-zwei-stunden-a-982625.html#ref=rss', 104),
-(623, 'Gaza-Konflikt: Deutsche Politiker kritisieren Flugstopp nach Israel', 'Die US-Luftfahrtbehörde hat das Flugverbot für amerikanische Airlines nach Tel Aviv aufgehoben. Doch die Lufthansa und andere Gesellschaften steuern Israel weiter nicht an. Deutsche Politiker kritisieren die Einstellung der Flüge massiv.', 'http://www.spiegel.de/politik/ausland/gaza-konflikt-flugverbot-nach-israel-in-der-kritik-a-982623.html#ref=rss', 104),
-(624, 'Akute Rückenschmerzen: Paracetamol nicht besser als Placebo', 'Bei akuten Rückenschmerzen entscheiden sich Patienten wie Ärzte häufig für einen Wirkstoff: Paracetamol. Doch einer neuen Studie zufolge hilft das Schmerzmittel nicht besser als ein Placebo.', 'http://www.spiegel.de/gesundheit/diagnose/akute-rueckenschmerzen-paracetamol-nicht-besser-als-placebo-a-982366.html#ref=rss', 104),
-(625, 'Maccabi Haifa: Testspiel von israelischem Spitzenklub nach Platzsturm abgebrochen', 'Anti-Israel-Proteste auch beim Fußball: Nach Angriffen auf Spieler und einem Zuschauersturm auf den Rasen ist ein Spiel des israelischen Klubs Maccabi Haifa in Österreich abgebrochen worden. Am Samstag spielt das Team gegen Paderborn.', 'http://www.spiegel.de/sport/fussball/anti-israel-proteste-testspiel-abgebrochen-a-982622.html#ref=rss', 104),
-(626, 'Erdumrundung: 17-Jähriger stirbt bei Weltrekordversuch mit Flugzeug', 'Er wollte der jüngste Mensch sein, der jemals in einer einmotorigen Maschine in 30 Tagen um die Welt flog. Diesen Wunsch musste Haris Suleman nun mit dem Leben bezahlen. Sein Flugzeug stürzte vor Amerikanisch-Samoa ins Meer.', 'http://www.spiegel.de/panorama/weltrekordversuch-17-jaehriger-stirbt-bei-flugzeugabsturz-a-982620.html#ref=rss', 104),
-(627, 'Ostukraine: Rebellenführer bestätigt Besitz von Buk-Flugabwehr', 'Die Separatisten in der Ostukraine verfügten über das Buk-System, mit dessen Raketen offenbar der Malaysia-Airlines-Flug MH17 abgeschossen wurde. Das räumt jetzt ein einflussreicher Rebellenkommandeur ein. Er will auch wissen, woher die Waffe kam.', 'http://www.spiegel.de/politik/ausland/mh17-rebellenkommandeur-bestaetigt-besitz-von-buk-raketen-a-982616.html#ref=rss', 104),
-(628, 'Unglücksflug MH17: Niederlande finden keine Hinweise auf Manipulation der Blackbox', 'Die Flugschreiber des abgestürzten Malaysia-Airlines-Flugzeugs befanden sich tagelang in den Händen von Aufständischen. Doch Befürchtungen, dass die Separatisten die Blackbox manipulierten, waren unbegründet. ', 'http://www.spiegel.de/politik/ausland/malaysia-airlines-mh17-boeing-777-blackbox-wurde-nicht-manipuliert-a-982607.html#ref=rss', 104),
-(629, '"Russisches Blackwater": Moskau will Privatarmeen aufbauen', 'Die russische Regierung plant den Einsatz privater Sicherheitsfirmen. Die nichtstaatlichen Kämpfer sollen einspringen, wenn es politisch brenzlig wird.', 'http://www.spiegel.de/politik/ausland/russland-kreml-plant-privatarmee-nach-dem-vorbild-blackwater-a-982559.html#ref=rss', 104),
-(630, 'Internet-Agenda der Bundesregierung: Drei Minister, eine Enttäuschung', 'Schneller, höher, weiter: Die Bundesregierung hat ihre Digitale Agenda vorgelegt - sie verspricht nicht weniger als eine Internet-Revolution für Deutschland. Und was heißt das konkret?', 'http://www.spiegel.de/politik/deutschland/digitale-agenda-erster-gesetzentwurf-ist-eine-enttaeuschung-a-982503.html#ref=rss', 104),
-(631, 'Kämpfe in der Ostukraine: Kiew macht Russland für Kampfjet-Abschuss verantwortlich', 'Für die Regierung in Kiew ist die Sache klar: Die Raketen auf zwei ukrainische Kampfjets seien von russischem Territorium aus abgefeuert worden. ', 'http://www.spiegel.de/politik/ausland/ukraine-macht-russland-fuer-abschuss-von-kampfjets-verantwortlich-a-982587.html#ref=rss', 104),
-(632, 'Gauck zu judenfeindlichen Demos: "Wir wollen Antisemitismus nicht hinnehmen"', 'Nach antisemitischen Parolen bei Anti-Israel-Kundgebungen verlangt Bundespräsident Gauck mehr Zivilcourage von den Deutschen. Die Kanzlerin warnt vor einem "Angriff auf Freiheit und Toleranz".', 'http://www.spiegel.de/politik/deutschland/antisemitismus-bundespraesident-gauck-fordert-zivilcourage-a-982566.html#ref=rss', 104),
-(633, 'Antisemitismus: Staatsanwaltschaft ermittelt gegen Berliner Hassprediger', 'Sheikh Abu Bilal Ismail wetterte in der Berliner Al-Nur-Moschee gegen Juden. Jetzt hat die Staatsanwaltschaft Ermittlungen eingeleitet. Der Vorwurf: Volksverhetzung.', 'http://www.spiegel.de/politik/deutschland/antisemitismus-ermittlungen-gegen-hassprediger-wegen-volksverhetzung-a-982381.html#ref=rss', 104),
-(634, 'Flugzeugunglück: Bruchlandung in Taiwan - viele Tote', 'In der taiwanischen Provinz Penghu sind bei einem Flugzeugunglück offenbar mindestens 47 Menschen gestorben. Laut der chinesischen Nachrichtenagentur Xinhua missglückte die Notlandung eines Flugzeugs der Linie Transasia.', 'http://www.spiegel.de/panorama/taiwan-tote-bei-flugzeugunglueck-der-transasia-a-982557.html#ref=rss', 104),
-(635, 'Prozess in Regensburg: Mollath-Anwälte sollen als Pflichtverteidiger weitermachen', 'Turbulenter Tag vor dem Landgericht Regensburg: Die Mollath-Anwälte legen ihr Mandat nieder - weil der Mandant offenbar das Vertrauen in sie verloren hat. Nun sollen die Juristen als Pflichtverteidiger weiterarbeiten.', 'http://www.spiegel.de/panorama/justiz/mollath-prozes-anwalt-strate-wird-pflichtverteidiger-a-982550.html#ref=rss', 104),
-(636, 'Transport-App: Hamburg verbietet Fahrdienst Uber', 'Taxifahrer hassen die Konkurrenz durch Uber, jetzt will die Stadt Hamburg den kalifornischen Dienst stoppen. Die Verkehrsbehörde bezeichnet dessen App als "nicht legal". Privatleute, die sich dem Verbot widersetzen, riskieren hohe Strafen.', 'http://www.spiegel.de/wirtschaft/unternehmen/uber-hamburg-verbietet-fahrtdienst-a-982543.html#ref=rss', 104);
+(742, 'Всесторонний обзор элемента track из HTML5', 'После прочтения статьи вы будете знать, как можно добавить синхронизированные дорожки к вашим медиафайлам, вроде субтитров. Также вы узнаете, как с их помощью улучшить поисковую оптимизацию (SEO) вашего сайта.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/2h6bffzppe0" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/2h6bffzppe0/lessons.php', 115),
+(743, 'HTML5 валидация форм на стороне клиента', 'Ранее валидацию на стороне клиента можно было провести только с помощью JavaScript. Но все изменилось (или почти изменилось), так как с помощью HTML5 валидацию можно проводить средствами браузера, без необходимости писать сложные скрипты для валидации на JavaScript.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/zoxFqj9vofs" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/zoxFqj9vofs/lessons.php', 115),
+(744, '6 золотых правил дизайна в электронной коммерции', 'Сегодняшняя статья раскроет основные моменты дизайна процесса покупки, включая оформление корзины, и общий процесс оформления и оплаты заказа.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/H0AWhdfyZp8" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/H0AWhdfyZp8/lessons.php', 115),
+(745, 'Отладка e-mail с помощью MailCatcher', 'Вы ведь занимаетесь отправкой писем в своих приложениях, не так ли? Вообще-то это риторический вопрос. Конечно же да. Несмотря на то, что электронной почте уже более тридцати лет, она все еще остается самым популярным приложением на планете.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/bblh62eFc9Q" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/bblh62eFc9Q/lessons.php', 115),
+(746, '4 простых способа реализации адаптивной сеточной разметки', 'В наши дни для всего есть фреймворки, и кажется, что только вы разберетесь с одним, как на смену ему придет другой. Это особенно касается CSS фреймворков для адаптивной сетки, и каждый называет себя “самым лучшим”. Такой переизбыток информации вводит в замешательство.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/tb_X45EznsQ" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/tb_X45EznsQ/lessons.php', 115),
+(747, 'Реализуем эффект мозаичного слайдшоу', 'Руководство по воссозданию эффекта слайдшоу из четырех плиток, подсмотренного на сайте Serge Thoroval. С помощью 3D трансформаций, переходов и анимаций мы реализуем плавный, приятный эффект, вдобавок сделаем еще пару вариантов эффектов.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/S9YN9diJL3A" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/S9YN9diJL3A/lessons.php', 115),
+(748, 'Последнее “прощай”, или как закрыть провальный проект', 'В этой статье описаны основные шаги, которые необходимо предпринять при закрытии вашего продукта, и как донести до пользователя сей печальный факт. Отмечу, что данная статья относится к моменту закрытия продукта или сервиса. Мы не говорим о моменте закрытия компании в целом.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/ci1Ioj4WUb4" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/ci1Ioj4WUb4/lessons.php', 115),
+(749, 'Переход по страницам с помощью горячих клавиш', 'Мы, люди, которые делают сайты, должны делать их максимально удобными в использовании, в том числе используя клавиатуру. В этом уроке рассмотрим плагин, с помощью которого можно осуществить переход по страницам с помощью горячих клавиш.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/O68bbi0RgMY" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/O68bbi0RgMY/lessons.php', 115),
+(750, 'Включаем дополнительные возможности PhpMyAdmin', 'Когда дело доходит до управления базами данных, очень часто приходится пользоваться утилитой PhpMyAdmin. И в стандартной поставке с его помощью можно делать очень много всего. Но, как бы то ни было, у него есть ряд полезных возможностей, которые можно включить отдельно. В этой статье мы раскроем дополнительные возможности PhpMyAdmin, и посмотрим, чем они могут быть нам полезны.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/_gFTFkb_ieU" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/_gFTFkb_ieU/lessons.php', 115),
+(751, 'Идея для классных ховер-эффектов', 'Вашему вниманию представляем набор прикольных ховер-эффектов, в работе которых используются современные CSS техники и 3D эффекты.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/L1_FehwsLHY" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/L1_FehwsLHY/lessons.php', 115),
+(752, 'Системы контроля версий и анализ изменений', 'Каждый проект состоит из бесчисленного числа маленьких изменений. В конечном итоге, они формируют сайт, приложение, или какой-либо другой продукт. Ваша система контроля версий следит за этими изменениями. Но как только вы поймете, как их читать - вы сможете отслеживать прогресс вашего проекта.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/Xv0vr1OZuwM" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/Xv0vr1OZuwM/lessons.php', 115),
+(753, 'Формы HTML5: CSS', 'Во второй статье серии из трех статей о формах HTML5 я собираюсь познакомить вас со стилизацией, а точнее - о селекторах псевдоклассов, которые можно использовать для стилизации элементов формы в различном своем состоянии.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/Q_mc5uTkazY" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/Q_mc5uTkazY/lessons.php', 115),
+(754, 'Формы HTML5: разметка', 'Это первая из трех статей о веб-формах HTML5. Перед тем, как перейти к стилизации и JavaScript-валидации на стороне клиента, мы рассмотрим основную разметку. Я рекомендую вам прочесть эту статью, даже если вы уже знакомы с формами - здесь описано множество новых атрибутов и плюшек!<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/HiRvRc4VJK8" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/HiRvRc4VJK8/lessons.php', 115),
+(755, 'Полное руководство по размещению меток для элементов формы', 'Полное описание по размещению меток для элементов форм.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/SBp3BDexE7M" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/SBp3BDexE7M/lessons.php', 115),
+(756, '4 ошибки, которые могут сорвать запуск сайта', 'Сегодня я расскажу о четырех наиболее распространенных ошибках, которые могут разрушить сайт, и как можно с ними бороться, чтобы запуск вашего сайта был успешен.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/EF8m6g33Apw" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/EF8m6g33Apw/lessons.php', 115),
+(757, 'Воссоздаем эффект подгрузки сеткой в стиле “Design Samsung”', 'Если вы уже успели увидеть сайт Корпоративного Дизайнерского Центра Samsung, то, скорее всего, вы обратили внимание на стильный и симпатичный эффект загрузки сетки элементов. Повторим данный эффект.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/hR0Iz67TZGU" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/hR0Iz67TZGU/lessons.php', 115),
+(758, '40 CSS приложух, инструментов и ресурсов для веб разработчиков', 'Ещё один набор из наиполезнейших CSS сервисов.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/Y2XspC5Gicg" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/Y2XspC5Gicg/lessons.php', 115),
+(759, 'HTML5: API работы с вибрацией', 'HTML5 - глоток свежего воздуха в современном вебе. Она повлиял не только на классический веб, каким мы знаем его сейчас. HTML5 предоставляет разработчикам ряд API для создания и улучшения сайтов с ориентацией на мобильные устройства. В этой статье мы рассмотрим API для работы с вибрацией.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/MBE3CFOUJAA" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/MBE3CFOUJAA/lessons.php', 115),
+(760, 'Создаем CSS-анимации с помощью Move.js', 'На данный момент предпочтительным способом создания легких анимаций на сайтах является использование CSS3 переходов и анимаций. К сожалению, многие разработчики считают, что их синтаксис получается сложным и запутанным. Если так же считаете и вы, то, возможно, выходом для вас будет библиотека Move.js. Move.js - простая JavaScript библиотека для создания CSS3 анимаций с использованием простых функций. В этом руководстве описан основной синтаксис Move.js, а также небольшая демонстрация его использования.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/Q9AeBt8xZqs" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/Q9AeBt8xZqs/lessons.php', 115),
+(761, '35 сайтов, использующих в дизайне плоские изображения и иконки', 'Несколько примеров для обмена опыта и получения вдохновения.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/OtgtMQ7kV8w" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/OtgtMQ7kV8w/lessons.php', 115),
+(762, 'Работа с датой и временем с помощью Moment.js', 'Работа с датой и временем зачастую весьма обременительна. Я всегда считал, что отдельная JavaScript библиотека для манипуляции датами была бы очень полезной. Не так давно я познакомился с замечательной библиотекой Moment.js, позволяющей валидировать, парсить и управлять датами и временем.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/1hkk1fxoXNI" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/1hkk1fxoXNI/lessons.php', 115),
+(763, 'Адаптивный дизайн начинается с URL', 'В данной статье мы рассматриваем адаптивную переработку страниц программ канала BBC.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/2Wm8M5t5ul0" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/2Wm8M5t5ul0/lessons.php', 115),
+(764, 'Стили для стрелок навигации', 'Сегодня мы подготовили для вас несколько демок интересных примеров стрелок, которые можно применить для навигации слайдера.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/p-mPlraxs_E" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/p-mPlraxs_E/lessons.php', 115),
+(765, 'Учимся фокусироваться на элементах страницы', 'В этом примере я предлагаю вам представить, что вы хотите улучшить навигацию на текущей странице так, что вместо резкого перехода к ссылке-якорю, вы плавно перемещаете пользователя к месту назначения посредством JavaScript анимации scrollTop.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/7cg1a2ifqH8" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/7cg1a2ifqH8/lessons.php', 115),
+(766, 'Знакомство с Valentina', 'Valentina - набор инструментов, включающий: Valentina DB (новый SQL-сервер), Valentina Studio (инструмент управления базами данных), Valentina Report (графическая утилита для генерации отчетов, которые могут быть использованы в приложениях, например PHP) и связанный с ними набор инструментов разработки (называемый ADK).<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/QEYMJ0SSu_c" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/QEYMJ0SSu_c/lessons.php', 115),
+(767, '34 примера адаптивных портфолио', 'В этой подборке вас ждёт несколько десятков примеров адаптивных портфолио. Не забудьте поиграть с размером окна при просмотре данных страниц.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/b-NgIPR3wTc" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/b-NgIPR3wTc/lessons.php', 115),
+(768, 'Wholly: делаем таблицы читабельными', 'Данный jQuery плагин обрабатывает события mouseenter и mouseleave. Используется для подсветки элементов таблиц в зависимости от атрибутов colspan и rowspan.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/v-EWQBVpT8M" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/v-EWQBVpT8M/lessons.php', 115),
+(769, 'Git для начинающих', 'Противостояние изменениям - основная черта человека. Если в то время, когда вы начинали работу с системами контроля версий, не было Git - весьма вероятно, что вы начинали с Subversion. Часто люди говорят, что Git слишком сложен для начинающих. Тем не менее, я позволю себе с вами не согласиться.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/lkxi4iLgfpQ" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/lkxi4iLgfpQ/lessons.php', 115),
+(770, '9 способов локализации веб-сайта', 'Так как ваш сайт могут просматривать посетители со всего мира, необходимо сохранить суть и подачу вашего бренда, из какой страны бы ни просматривался ваш сайт.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/cZ8T0LFaX_g" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/cZ8T0LFaX_g/lessons.php', 115),
+(771, '15 сервисов конвертации из PSD в HTML', 'Ещё одна наиполезнейшая подборка сервисов с помощью которых вы сможете с лёгкостью конвертировать PSD файл в полноценную HTML страницу.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/m4F15Blf7jk" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/m4F15Blf7jk/lessons.php', 115),
+(772, '38 бесплатных CSS наработок выпадающих меню', 'Навигация - неотъемлемая часть любого сайта. В этой статье вы найдёте подборку из множества готовых решений, которые могут вам пригодиться.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/Rm0NVP45huI" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/Rm0NVP45huI/lessons.php', 115),
+(773, 'Горячие скрипты: проверка успешности загрузки страницы', 'Когда-то перед вами может возникнуть задача проверки загрузки страницы со статусом ОК (200). В этой статейке вы сможете найти одно из возможных решений.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/zSwshv8mLEk" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/zSwshv8mLEk/lessons.php', 115),
+(774, 'Введение в механизм Веб-оповещений', 'Время соединений на скорости 56k уже стерлось из людской памяти (первыми не выдержали пользователи мобильных устройств). Это было время, когда браузеры могли открывать только одну вкладку в окне, и никто даже и представить себе не мог просмотр сайтов в нескольких вкладках. Сегодня на нас свалились все эти социальные сети, посты, ответы, комментарии, фотографии, видео, и много чего еще. Было создано несколько систем, которые пришли на смену необходимости проверять каждую вкладку на предмет новой активности. Одним из таких способов явилась система оповещений, которые широко распространены на различных сайтах.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/E8c9EHjUj6Q" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/E8c9EHjUj6Q/lessons.php', 115),
+(775, 'Делаем кнопку-индикатор прогресса в виде кольца', 'Урок, показывающий, как можно претворить в жизнь концепцию кнопки индикатора прогресса в виде кольца, предложенную Колином Гарвеном. Для анимации прогресса в виде заполнения кольца будем использовать технику анимации линии в SVG, описанную Джейком Арчибальдом, а также будем отображать кнопку в успешном и ошибочном состояниях.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/15ZneBlmL2I" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/15ZneBlmL2I/lessons.php', 115),
+(776, '36 Bootstrap сниппетов', 'Предлагаем вашему вниманию целый набор из Bootstrap сниппетов, где каждый сможет найти что-то полезное для себя.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/2xlKt-hhBf4" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/2xlKt-hhBf4/lessons.php', 115),
+(777, 'Разбираем Underscore.js по косточкам. Метод some', 'Продолжаем разбирать библиотеку underscore и в этой посте посмотрим как работать с методом some.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/PKL9Wx6ys-A" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/PKL9Wx6ys-A/lessons.php', 115),
+(778, 'Делаем простой переключатель стилей', 'В данном уроке я покажу, как создать простой переключатель стилей, а также хранить настройки пользователя в локальном хранилище.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/dS3DrcgUiZM" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/dS3DrcgUiZM/lessons.php', 115),
+(779, 'Горячие скрипты: как объединить несколько изображений при помощи PHP', 'В этом посте мы рассмотрим небольшой PHP, который выполняет следующую задачу: объединяет два изображения и отображает в видео одного.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/Ut_uFPkQEEs" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/Ut_uFPkQEEs/lessons.php', 115),
+(780, 'Оптимизация конфигурации MySQL', 'MySQL - наиболее используемый движок баз данных в мире PHP. Поэтому для быстрорастущих веб-приложений очень важно знать, что ваши базы данных MySQL работают настолько хорошо, насколько это вообще возможно.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/X9Xmtttyr1E" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/X9Xmtttyr1E/lessons.php', 115),
+(781, 'Как распланировать свой следующий мобильный электронный магазин', 'В этой статье мы рассмотрим все основные шаги планирования мобильного электронного магазина с высокой конверсией.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/eDWHcaruBg8" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/eDWHcaruBg8/lessons.php', 115),
+(782, 'Аутентификация через Twitter', 'Привет, друзья! Да, да, да, наконец дошли руки до долгожданного урока, о котором просили многие из вас: реализации аутентификации через Twitter.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/SfsdXttgP00" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/SfsdXttgP00/lessons.php', 115),
+(783, 'Новые атрибуты HTML5 для ссылок: download, media и ping', 'Ссылки были введены еще на заре веба. Но с расцветом HTML5 к так хорошо знакомым ссылкам были добавлены новые атрибуты, которые призваны составить компанию уже знакомым атрибутам href и rel.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/kHt71qBUkJ4" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/kHt71qBUkJ4/lessons.php', 115),
+(784, 'Оптимизация индексов MySQL', 'MySQL - наиболее широко используемая в связке с PHP СУБД. Забота о том, что ваши базы данных MySQL работают настолько хорошо, насколько это вообще возможно - наиважнейший аспект залога хорошей работы растущего приложения.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/wFxLqAJKhZw" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/wFxLqAJKhZw/lessons.php', 115),
+(785, '3D-эффект для сетки элементов', 'Воссоздание эффекта анимации, увиденного в приложении Маркуса Экхерта. Идея - переворачивать элемент сетки в пространстве, раскрывая блок на весь экран, и в итоге отображать некоторое содержимое, ассоциированное с элементом. Мы создали две демки, с вертикальным и горизонтальным поворотом.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/IWWBrvXAHqY" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/IWWBrvXAHqY/lessons.php', 115),
+(786, 'Делаем “ленивую” прокрутку на jQuery', 'В этой статье мы поговорим о другом подходе - “ленивой” прокрутке, также известной под названием “бесконечной прокрутки” и “отказом от пагинации”. С помощью этой техники подгрузка контента производится с помощью AJAX, когда пользователь прокручивает страницу до места, где загруженный контент заканчивается.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/_acsf4IFKoc" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/_acsf4IFKoc/lessons.php', 115),
+(787, 'Animate.Css – CSS3 Библиотека для создания анимации', 'За последние несколько лет в CSS появилось множество интересных фишек, которые делают веб разработку более увлекательной. Одной из таких вещей является CSS3 анимация. До CSS3, анимацию можно было реализовать только с помощью Javascript.<img src="http://feeds.feedburner.com/~r/ruseller/CdHX/~4/tUlKqU_L7KA" height="1" width="1"/>', 'http://feedproxy.google.com/~r/ruseller/CdHX/~3/tUlKqU_L7KA/lessons.php', 115),
+(892, 'MH17-Katastrophe: Kiew nennt Druckabfall nach Explosion als Absturzursache', 'Die Ursache für den Absturz der Malaysia-Airlines-Maschine steht für die ukrainische Regierung fest: Nach Angaben der Behörden kam es nach einer starken Explosion zu einem Druckabfall in der Kabine des Flugzeugs.', 'http://www.spiegel.de/politik/ausland/mh17-absturz-ukraine-nennt-druckabfall-nach-explosion-als-ursache-a-983235.html#ref=rss', 104),
+(893, '100-Jahre-Gedenken: Serbien feiert sich zum Jahrestag des Ersten Weltkriegs', 'Es war der Beginn einer weltweiten Tragödie: Am 28. Juli 1914 erklärte Österreich-Ungarn Serbien den Krieg. 100 Jahre danach feiern sich viele Serben als "Helden Europas", Zeitungen veröffentlichen patriotische bis nationalistische Artikel.', 'http://www.spiegel.de/politik/ausland/erster-weltkrieg-serbien-gedenkt-kriegserklaerung-oesterreich-ungarns-a-983229.html#ref=rss', 104),
+(894, 'Gebäudemodernisierung: Maas plant neue Kostenbremse für Mieter', 'Noch ist die Mietpreisbremse nicht beschlossen, da kündigt Justizminister Maas das nächste Gesetzesvorhaben an: Nach einer Gebäudemodernisierung soll die Miete nicht mehr so stark steigen dürfen.', 'http://www.spiegel.de/wirtschaft/soziales/mieten-maas-plant-kosten-deckel-bei-modernisierungen-a-983218.html#ref=rss', 104),
+(895, 'Blutverdünner Pradaxa: Pharmakonzern soll Daten verschwiegen haben', 'Neuer Ärger für Boehringer Ingelheim: Der Pharmakonzern soll aus Marketinggründen verschwiegen haben, dass eine ärztliche Kontrolle die Therapie mit dem Blutverdünner Pradaxa sicherer machen könnte. Kritiker fordern nun genauere Tests.', 'http://www.spiegel.de/wissenschaft/medizin/pradaxa-boehringer-ingelheim-soll-daten-verschwiegen-haben-a-983124.html#ref=rss', 104),
+(896, 'Schmähgesang: BVB nimmt Schweinsteigers Entschuldigung an', 'In einem Internetvideo schmähte Bastian Schweinsteigen den Liga-Konkurrenten Borussia Dortmund, später entschuldigte er sich. Der BVB nimmt den Vorfall mit Humor - und bietet dem Bayern-Profi Gesangsunterricht an.', 'http://www.spiegel.de/sport/fussball/bastian-schweinsteiger-borussia-dortmund-nimmt-entschuldigung-an-a-983227.html#ref=rss', 104),
+(897, 'Epidemie: Ebola-Infizierter könnte in Hamburg behandelt werden', 'Ein Mediziner, der sich in Westafrika mit Ebola angesteckt hat, wird möglicherweise zur Behandlung nach Hamburg geflogen. Um die Epidemie einzudämmen, hat Liberia seine Grenzen geschlossen. ', 'http://www.spiegel.de/gesundheit/diagnose/ebola-infizierter-koennte-in-hamburg-behandelt-werden-a-983208.html#ref=rss', 104),
+(898, 'Prozess in Regensburg: Neuer Krach zwischen Gustl Mollath und seinen Verteidigern', 'Der Verteidiger von Gustl Mollath, Gerhard Strate, hat darum gebeten, ihn und seinen Kollegen als Pflichtverteidiger zu entbinden. Zuvor hatte der Angeklagte erklärt, er wolle 27 weitere Beweisanträge stellen.', 'http://www.spiegel.de/panorama/justiz/mollath-prozess-anwalt-strate-will-nicht-pflichtverteidiger-sein-a-983188.html#ref=rss', 104),
+(899, 'Menschenrechtsbericht zur Ukraine: Uno wirft Separatisten Schreckensherrschaft vor', 'Entführungen, Folter, Exekutionen: Der Uno-Menschenrechtsrat erhebt in seinem neuen Bericht schwere Vorwürfe gegen die prorussischen Separatisten in der Ukraine. Der Abschuss von MH17 könnte "einem Kriegsverbrechen gleichkommen".', 'http://www.spiegel.de/politik/ausland/ukraine-uno-spricht-von-schreckensherrschaft-der-separatisten-a-983190.html#ref=rss', 104),
+(900, 'Jukos-Zerschlagung: Russland zu 50 Milliarden Dollar Schadensersatz verurteilt', 'Das Urteil ist eine schwere Niederlage für die russische Regierung: Ein internationales Gericht in Den Haag hat zugunsten der Ex-Eigner des zerschlagenen Ölkonzerns Jukos entschieden - und spricht ihnen rund 50 Milliarden Dollar zu.', 'http://www.spiegel.de/wirtschaft/unternehmen/yukos-russland-verliert-rechtsstreit-gegen-ex-eigentuemer-a-983167.html#ref=rss', 104),
+(901, 'Streit bei Springer: "Bild"-Chefredaktion distanziert sich von Anti-Islam-Kommentar', 'Der Islam sei ein Integrationshindernis - diese Meinung hat Nicolaus Fest, Vizechefredakteur der "Bild am Sonntag", in einem Kommentar vertreten. Sein Chef Kai Diekmann geht öffentlich auf Distanz.', 'http://www.spiegel.de/kultur/gesellschaft/bild-zeitung-islam-streit-zwischen-fest-und-diekmann-bei-springer-a-983156.html#ref=rss', 104),
+(902, 'Geleaktes Video: Schweinsteiger entschuldigt sich für BVB-Schmähgesang', '"BVB, Hurensöhne": Ein Video zeigt, wie Bastian Schweinsteiger Borussia Dortmund verhöhnt. Nun hat sich der Bayern-Star dazu geäußert.', 'http://www.spiegel.de/sport/fussball/bastian-schweinsteiger-entschuldigt-sich-fuer-bvb-schmaehgesang-a-983159.html#ref=rss', 104),
+(903, 'Kämpfe in der Ostukraine: USA veröffentlichen angebliche Beweise für russische Angriffe', 'Die USA beschuldigen Russland, Raketen auf ukrainisches Staatsgebiet abgefeuert zu haben. Jetzt hat das US-Außenministerium Satellitenbilder präsentiert, die dies angeblich belegen sollen. ', 'http://www.spiegel.de/politik/ausland/ukraine-usa-veroeffentlichen-angebliche-beweise-fuer-russische-angriffe-a-983153.html#ref=rss', 104),
+(904, 'Getöteter Achtjähriger in Freiburg: Polizei warnt vor Aufruf zur Selbstjustiz', 'Unbekannte nutzen die Tötung eines Jungen in Freiburg für eine geschmacklose Aktion: Es kursieren ein gefälschtes Phantombild des Täters und Aufrufe zur Selbstjustiz. Die Polizei spricht von einer gefährlichen Falschmeldung.', 'http://www.spiegel.de/panorama/justiz/getoeteter-achtjaehriger-in-freiburg-warnung-vor-selbstjustiz-aufrufen-a-983152.html#ref=rss', 104),
+(905, 'Krieg in Gaza: Uno-Sicherheitsrat fordert einstimmig sofortige Waffenruhe', 'Israelis und Palästinenser sollen "sofort und bedingungslos" die Kampfhandlungen einstellen: Der Sicherheitsrat der Vereinten Nationen ruft im Gaza-Krieg zur Feuerpause auf. Das Uno-Gremium votierte einstimmig für die Erklärung.', 'http://www.spiegel.de/politik/ausland/krieg-in-gaza-uno-sicherheitsrat-fordert-sofortige-waffenruhe-a-983150.html#ref=rss', 104),
+(906, 'Tour de France: Nibali feiert Gesamtsieg, Kittel triumphiert in Paris', 'Vincenzo Nibali hat die 101. Tour de France gewonnen. Der Italiener war bei der letzten Etappe nicht mehr einzuholen. Den prestigeträchtigen Tagessieg in Paris sicherte sich der Deutsche Marcel Kittel. ', 'http://www.spiegel.de/sport/sonst/tour-de-france-kittel-siegt-in-paris-nibali-holt-gesamtsieg-a-983135.html#ref=rss', 104),
+(907, 'Rüstungsexporte: Gabriel warnt vor "Geschäft mit dem Tod"', 'Welche Waffen darf Deutschland liefern - und vor allem: wohin? Die Große Koalition streitet über den richtigen Kurs bei Rüstungsexporten. CSU-Chef Seehofer warnt vor Arbeitsplatzverlusten - Wirtschaftsminister Gabriel kontert.', 'http://www.spiegel.de/politik/deutschland/ruestungsexporte-gabriel-warnt-vor-heiklen-waffengeschaeften-a-983132.html#ref=rss', 104),
+(908, 'Ukraine-Krise: SPD streitet über Schröder-Putin-Allianz', 'In der SPD bahnt sich ein Streit über Gerhard Schröder an. Führende Außenpolitiker fordern vom Ex-Kanzler ein Ende seiner russlandfreundlichen Haltung. Außenminister Steinmeier stärkt dem alten Freund demonstrativ den Rücken.', 'http://www.spiegel.de/politik/deutschland/ukraine-krise-spd-streitet-ueber-schroeders-freundschaft-mit-putin-a-983130.html#ref=rss', 104),
+(909, 'Berechnung des "Economist": Putins Politik kostet Investoren eine Billion Dollar', 'Russische Aktien sind bei Anlegern derzeit noch unbeliebter als Unternehmensanteile aus dem Iran oder Argentinien. Das liegt auch an der Ukraine-Krise - vor allem aber an der katastrophalen Wirtschaftspolitik des Kreml.', 'http://www.spiegel.de/wirtschaft/unternehmen/economist-eine-billion-dollar-abschlag-auf-russische-aktien-a-983109.html#ref=rss', 104),
+(910, 'Aufstand von Islamisten: Deutsche sollen dringend aus Libyen ausreisen', 'Die Gewalt in Libyen alarmiert das Auswärtige Amt: Es ruft alle Deutschen in dem nordafrikanischen Land auf, schleunigst auszureisen. Bei neuen Kämpfen zwischen Regierungstruppen und Islamisten kamen mindestens 38 Menschen ums Leben.', 'http://www.spiegel.de/politik/ausland/kaempfe-in-libyen-auswaertiges-amt-draengt-deutsche-zu-ausreise-a-983125.html#ref=rss', 104),
+(911, 'Afghanistan: Berlin will Todesstrafe für Niedringhaus-Mörder verhindern', 'Ein Gericht in Kabul hat den Mörder der deutschen Fotografin Anja Niedringhaus in einem kurzen und geheim geführten Prozess zum Tode verurteilt. Die Bundesregierung drängt nach SPIEGEL-Informationen darauf, die Entscheidung in eine lange Gefängnisstrafe umzuwandeln.', 'http://www.spiegel.de/politik/ausland/niedringhaus-berlin-gegen-todesstrafe-fuer-moerder-in-afghanistan-a-983097.html#ref=rss', 104),
+(912, 'Formel 1 in Ungarn: Ricciardo triumphiert auf dem Hungaroring', 'Red Bull kann doch noch gewinnen: Beim Großen Preis von Ungarn siegte Sebastian Vettels Teamkollege Daniel Ricciardo. Es war erst der zweite Erfolg des Teams in dieser Saison. Nico Rosberg wurde Vierter.', 'http://www.spiegel.de/sport/formel1/formel-1-in-ungarn-ricciardo-triumphiert-auf-dem-hungaroring-a-983112.html#ref=rss', 104),
+(913, 'Gaza-Konflikt: Netanjahu will sich nicht auf Hamas-Waffenruhe einlassen', 'Israel will vorerst keine neue 24-stündige Waffenruhe ausrufen. Regierungschef Netanjahu warf der radikalislamischen Hamas vor, gegen die von ihr selbst ausgerufene Feuerpause zu verstoßen.', 'http://www.spiegel.de/politik/ausland/gaza-konflikt-israel-will-sich-nicht-auf-hamas-waffenruhe-einlassen-a-983122.html#ref=rss', 104),
+(914, 'Angriff in Kamerun: Boko Haram entführt Frau des Vizepremiers', 'Boko Haram terrorisiert nun auch Städte im Norden Kameruns: Die Extremisten überfielen einen Ort an der Grenze zu Nigeria - sie töteten Bewohner und entführten die Frau des stellvertretenden Regierungschefs. ', 'http://www.spiegel.de/politik/ausland/angriff-in-kamerun-boko-haram-entfuehrt-frau-des-vizepremiers-a-983120.html#ref=rss', 104),
+(915, 'Kinderbetreuung: Schwesig verschiebt Kita-Qualitätsgesetz um Jahre', 'In vielen Kitas werden Kinder mehr verwahrt als gefördert. Doch Familienministerin Schwesig verschiebt nach Informationen des SPIEGEL ein geplantes Qualitätsgesetz, das mehr Personal garantieren soll, auf nach 2017. Die Länder fürchten die Kosten besserer Betreuung.', 'http://www.spiegel.de/politik/deutschland/schwesig-plant-doch-kein-kita-gesetz-fuer-mehr-erzieher-a-983115.html#ref=rss', 104),
+(940, '50 Milliarden Dollar Schadensersatz: Ex-Jukos-Chef Chodorkowski begrüßt Urteil gegen Russland', 'Genugtuung für Michail Chodorkowski: Der Ex-Chef des Ölkonzerns Jukos feiert den Sieg gegen die russische Regierung. Die ehemaligen Besitzer erhalten 50 Milliarden Dollar. Nur eins bedauert der frühere Oligarch.', 'http://www.spiegel.de/wirtschaft/unternehmen/jukos-chodorkowski-begruesst-50-milliarden-dollar-urteil-gegen-russland-a-983233.html#ref=rss', 114),
+(941, 'MH17-Katastrophe: Kiew bezeichnet durchlöcherten Rumpf als Absturzursache', 'Die Ursache für den Absturz der Malaysia-Airlines-Maschine steht für die ukrainische Regierung fest: Nach Angaben der Behörden kam es nach einer starken Explosion zu einem Druckabfall in der Kabine des Flugzeugs.', 'http://www.spiegel.de/politik/ausland/mh17-absturz-ukraine-nennt-druckabfall-nach-explosion-als-ursache-a-983235.html#ref=rss', 114),
+(942, '100-Jahre-Gedenken: Serbien feiert sich zum Jahrestag des Ersten Weltkriegs', 'Es war der Beginn einer weltweiten Tragödie: Am 28. Juli 1914 erklärte Österreich-Ungarn Serbien den Krieg. 100 Jahre danach feiern sich viele Serben als "Helden Europas", Zeitungen veröffentlichen patriotische bis nationalistische Artikel.', 'http://www.spiegel.de/politik/ausland/erster-weltkrieg-serbien-gedenkt-kriegserklaerung-oesterreich-ungarns-a-983229.html#ref=rss', 114),
+(943, 'Gebäudemodernisierung: Maas plant neue Kostenbremse für Mieter', 'Noch ist die Mietpreisbremse nicht beschlossen, da kündigt Justizminister Maas das nächste Gesetzesvorhaben an: Nach einer Gebäudemodernisierung soll die Miete nicht mehr so stark steigen dürfen.', 'http://www.spiegel.de/wirtschaft/soziales/mieten-maas-plant-kosten-deckel-bei-modernisierungen-a-983218.html#ref=rss', 114),
+(944, 'Blutverdünner Pradaxa: Pharmakonzern soll Daten verschwiegen haben', 'Neuer Ärger für Boehringer Ingelheim: Der Pharmakonzern soll aus Marketinggründen verschwiegen haben, dass eine ärztliche Kontrolle die Therapie mit dem Blutverdünner Pradaxa sicherer machen könnte. Kritiker fordern nun genauere Tests.', 'http://www.spiegel.de/wissenschaft/medizin/pradaxa-boehringer-ingelheim-soll-daten-verschwiegen-haben-a-983124.html#ref=rss', 114),
+(945, 'Schmähgesang: BVB nimmt Schweinsteigers Entschuldigung an', 'In einem Internetvideo schmähte Bastian Schweinsteigen den Liga-Konkurrenten Borussia Dortmund, später entschuldigte er sich. Der BVB nimmt den Vorfall mit Humor - und bietet dem Bayern-Profi Gesangsunterricht an.', 'http://www.spiegel.de/sport/fussball/bastian-schweinsteiger-borussia-dortmund-nimmt-entschuldigung-an-a-983227.html#ref=rss', 114),
+(946, 'Epidemie: Ebola-Infizierter könnte in Hamburg behandelt werden', 'Ein Mediziner, der sich in Westafrika mit Ebola angesteckt hat, wird möglicherweise zur Behandlung nach Hamburg geflogen. Um die Epidemie einzudämmen, hat Liberia seine Grenzen geschlossen. ', 'http://www.spiegel.de/gesundheit/diagnose/ebola-infizierter-koennte-in-hamburg-behandelt-werden-a-983208.html#ref=rss', 114),
+(947, 'Prozess in Regensburg: Neuer Krach zwischen Gustl Mollath und seinen Verteidigern', 'Der Verteidiger von Gustl Mollath, Gerhard Strate, hat darum gebeten, ihn und seinen Kollegen als Pflichtverteidiger zu entbinden. Zuvor hatte der Angeklagte erklärt, er wolle 27 weitere Beweisanträge stellen.', 'http://www.spiegel.de/panorama/justiz/mollath-prozess-anwalt-strate-will-nicht-pflichtverteidiger-sein-a-983188.html#ref=rss', 114),
+(948, 'Menschenrechtsbericht zur Ukraine: Uno wirft Separatisten Schreckensherrschaft vor', 'Entführungen, Folter, Exekutionen: Der Uno-Menschenrechtsrat erhebt in seinem neuen Bericht schwere Vorwürfe gegen die prorussischen Separatisten in der Ukraine. Der Abschuss von MH17 könnte "einem Kriegsverbrechen gleichkommen".', 'http://www.spiegel.de/politik/ausland/ukraine-uno-spricht-von-schreckensherrschaft-der-separatisten-a-983190.html#ref=rss', 114),
+(949, 'Jukos-Zerschlagung: Russland zu 50 Milliarden Dollar Schadensersatz verurteilt', 'Das Urteil ist eine schwere Niederlage für die russische Regierung: Ein internationales Gericht in Den Haag hat zugunsten der Ex-Eigner des zerschlagenen Ölkonzerns Jukos entschieden - und spricht ihnen rund 50 Milliarden Dollar zu.', 'http://www.spiegel.de/wirtschaft/unternehmen/yukos-russland-verliert-rechtsstreit-gegen-ex-eigentuemer-a-983167.html#ref=rss', 114),
+(950, 'Streit bei Springer: "Bild"-Chefredaktion distanziert sich von Anti-Islam-Kommentar', 'Der Islam sei ein Integrationshindernis - diese Meinung hat Nicolaus Fest, Vizechefredakteur der "Bild am Sonntag", in einem Kommentar vertreten. Sein Chef Kai Diekmann geht öffentlich auf Distanz.', 'http://www.spiegel.de/kultur/gesellschaft/bild-zeitung-islam-streit-zwischen-fest-und-diekmann-bei-springer-a-983156.html#ref=rss', 114),
+(951, 'Geleaktes Video: Schweinsteiger entschuldigt sich für BVB-Schmähgesang', '"BVB, Hurensöhne": Ein Video zeigt, wie Bastian Schweinsteiger Borussia Dortmund verhöhnt. Nun hat sich der Bayern-Star dazu geäußert.', 'http://www.spiegel.de/sport/fussball/bastian-schweinsteiger-entschuldigt-sich-fuer-bvb-schmaehgesang-a-983159.html#ref=rss', 114),
+(952, 'Kämpfe in der Ostukraine: USA veröffentlichen angebliche Beweise für russische Angriffe', 'Die USA beschuldigen Russland, Raketen auf ukrainisches Staatsgebiet abgefeuert zu haben. Jetzt hat das US-Außenministerium Satellitenbilder präsentiert, die dies angeblich belegen sollen. ', 'http://www.spiegel.de/politik/ausland/ukraine-usa-veroeffentlichen-angebliche-beweise-fuer-russische-angriffe-a-983153.html#ref=rss', 114),
+(953, 'Getöteter Achtjähriger in Freiburg: Polizei warnt vor Aufruf zur Selbstjustiz', 'Unbekannte nutzen die Tötung eines Jungen in Freiburg für eine geschmacklose Aktion: Es kursieren ein gefälschtes Phantombild des Täters und Aufrufe zur Selbstjustiz. Die Polizei spricht von einer gefährlichen Falschmeldung.', 'http://www.spiegel.de/panorama/justiz/getoeteter-achtjaehriger-in-freiburg-warnung-vor-selbstjustiz-aufrufen-a-983152.html#ref=rss', 114),
+(954, 'Krieg in Gaza: Uno-Sicherheitsrat fordert einstimmig sofortige Waffenruhe', 'Israelis und Palästinenser sollen "sofort und bedingungslos" die Kampfhandlungen einstellen: Der Sicherheitsrat der Vereinten Nationen ruft im Gaza-Krieg zur Feuerpause auf. Das Uno-Gremium votierte einstimmig für die Erklärung.', 'http://www.spiegel.de/politik/ausland/krieg-in-gaza-uno-sicherheitsrat-fordert-sofortige-waffenruhe-a-983150.html#ref=rss', 114),
+(955, 'Tour de France: Nibali feiert Gesamtsieg, Kittel triumphiert in Paris', 'Vincenzo Nibali hat die 101. Tour de France gewonnen. Der Italiener war bei der letzten Etappe nicht mehr einzuholen. Den prestigeträchtigen Tagessieg in Paris sicherte sich der Deutsche Marcel Kittel. ', 'http://www.spiegel.de/sport/sonst/tour-de-france-kittel-siegt-in-paris-nibali-holt-gesamtsieg-a-983135.html#ref=rss', 114),
+(956, 'Rüstungsexporte: Gabriel warnt vor "Geschäft mit dem Tod"', 'Welche Waffen darf Deutschland liefern - und vor allem: wohin? Die Große Koalition streitet über den richtigen Kurs bei Rüstungsexporten. CSU-Chef Seehofer warnt vor Arbeitsplatzverlusten - Wirtschaftsminister Gabriel kontert.', 'http://www.spiegel.de/politik/deutschland/ruestungsexporte-gabriel-warnt-vor-heiklen-waffengeschaeften-a-983132.html#ref=rss', 114),
+(957, 'Ukraine-Krise: SPD streitet über Schröder-Putin-Allianz', 'In der SPD bahnt sich ein Streit über Gerhard Schröder an. Führende Außenpolitiker fordern vom Ex-Kanzler ein Ende seiner russlandfreundlichen Haltung. Außenminister Steinmeier stärkt dem alten Freund demonstrativ den Rücken.', 'http://www.spiegel.de/politik/deutschland/ukraine-krise-spd-streitet-ueber-schroeders-freundschaft-mit-putin-a-983130.html#ref=rss', 114),
+(958, 'Berechnung des "Economist": Putins Politik kostet Investoren eine Billion Dollar', 'Russische Aktien sind bei Anlegern derzeit noch unbeliebter als Unternehmensanteile aus dem Iran oder Argentinien. Das liegt auch an der Ukraine-Krise - vor allem aber an der katastrophalen Wirtschaftspolitik des Kreml.', 'http://www.spiegel.de/wirtschaft/unternehmen/economist-eine-billion-dollar-abschlag-auf-russische-aktien-a-983109.html#ref=rss', 114),
+(959, 'Aufstand von Islamisten: Deutsche sollen dringend aus Libyen ausreisen', 'Die Gewalt in Libyen alarmiert das Auswärtige Amt: Es ruft alle Deutschen in dem nordafrikanischen Land auf, schleunigst auszureisen. Bei neuen Kämpfen zwischen Regierungstruppen und Islamisten kamen mindestens 38 Menschen ums Leben.', 'http://www.spiegel.de/politik/ausland/kaempfe-in-libyen-auswaertiges-amt-draengt-deutsche-zu-ausreise-a-983125.html#ref=rss', 114),
+(960, 'Afghanistan: Berlin will Todesstrafe für Niedringhaus-Mörder verhindern', 'Ein Gericht in Kabul hat den Mörder der deutschen Fotografin Anja Niedringhaus in einem kurzen und geheim geführten Prozess zum Tode verurteilt. Die Bundesregierung drängt nach SPIEGEL-Informationen darauf, die Entscheidung in eine lange Gefängnisstrafe umzuwandeln.', 'http://www.spiegel.de/politik/ausland/niedringhaus-berlin-gegen-todesstrafe-fuer-moerder-in-afghanistan-a-983097.html#ref=rss', 114),
+(961, 'Formel 1 in Ungarn: Ricciardo triumphiert auf dem Hungaroring', 'Red Bull kann doch noch gewinnen: Beim Großen Preis von Ungarn siegte Sebastian Vettels Teamkollege Daniel Ricciardo. Es war erst der zweite Erfolg des Teams in dieser Saison. Nico Rosberg wurde Vierter.', 'http://www.spiegel.de/sport/formel1/formel-1-in-ungarn-ricciardo-triumphiert-auf-dem-hungaroring-a-983112.html#ref=rss', 114);
+INSERT INTO `rss_posts` (`id`, `title`, `description`, `link`, `feeds_id`) VALUES
+(962, 'Gaza-Konflikt: Netanjahu will sich nicht auf Hamas-Waffenruhe einlassen', 'Israel will vorerst keine neue 24-stündige Waffenruhe ausrufen. Regierungschef Netanjahu warf der radikalislamischen Hamas vor, gegen die von ihr selbst ausgerufene Feuerpause zu verstoßen.', 'http://www.spiegel.de/politik/ausland/gaza-konflikt-israel-will-sich-nicht-auf-hamas-waffenruhe-einlassen-a-983122.html#ref=rss', 114),
+(963, 'Angriff in Kamerun: Boko Haram entführt Frau des Vizepremiers', 'Boko Haram terrorisiert nun auch Städte im Norden Kameruns: Die Extremisten überfielen einen Ort an der Grenze zu Nigeria - sie töteten Bewohner und entführten die Frau des stellvertretenden Regierungschefs. ', 'http://www.spiegel.de/politik/ausland/angriff-in-kamerun-boko-haram-entfuehrt-frau-des-vizepremiers-a-983120.html#ref=rss', 114),
+(964, 'Kinderbetreuung: Schwesig verschiebt Kita-Qualitätsgesetz um Jahre', 'In vielen Kitas werden Kinder mehr verwahrt als gefördert. Doch Familienministerin Schwesig verschiebt nach Informationen des SPIEGEL ein geplantes Qualitätsgesetz, das mehr Personal garantieren soll, auf nach 2017. Die Länder fürchten die Kosten besserer Betreuung.', 'http://www.spiegel.de/politik/deutschland/schwesig-plant-doch-kein-kita-gesetz-fuer-mehr-erzieher-a-983115.html#ref=rss', 114);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -427,24 +347,22 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1406208298, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, 'TycT.YvC6jvogsS-9eeS.O8bf3988e02339842cf', 1406018508, 'mvG0oTgvGkxBY0wxir5VPe', 1404810260, 1406208683, 1, 'Us', 'er', '', ''),
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1406559106, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, 'TycT.YvC6jvogsS-9eeS.O8bf3988e02339842cf', 1406018508, 'mvG0oTgvGkxBY0wxir5VPe', 1404810260, 1406559079, 1, 'Us', 'ername', 'OSF GLobal Services', ''),
 (5, '127.0.0.1', 'denys arkan', '$2y$08$SN.HQQiB/kMcPPjHLGn74.2ea5X4vVEBL6ZfpuljdkS9N60sdi.ga', NULL, 'denys.arkan@gmail.com', NULL, NULL, NULL, NULL, 1405498985, 1406106571, 1, 'Denys', 'Arkan', '', ''),
 (6, '127.0.0.1', 'dfdfdf dfdfdfd', '$2y$08$bR2iwiQN6VTJWxf2CJRIUuhjv30HX8VYhI8GXSMHHT0BlqTpY5wB2', NULL, 'fdfdf@dfdfdf.com', NULL, NULL, NULL, NULL, 1405502264, 1405502264, 1, 'dfdfdf', 'dfdfdfd', NULL, NULL),
 (7, '127.0.0.1', 'denys arkan1', '$2y$08$/w7i6eBA2iSGDsYqwEG02Oc4kl521AATdAFJh795urGYZHZpAs2Ii', NULL, 'dencik@ukr.cpm', NULL, NULL, NULL, NULL, 1405504352, 1405504352, 1, 'denys', 'arkan', NULL, NULL),
-(8, '127.0.0.1', 'denys1 arkan1', '$2y$08$JXrG/jQv/HclX4W.bOox7.g.q/C.n99Ju90cFRn2cSYOGP0ljPTxe', NULL, 'dencik1@ukr.cpm', NULL, NULL, NULL, NULL, 1405504570, 1405504570, 1, 'denys1', 'arkan1', NULL, NULL),
-(9, '127.0.0.1', 'sdsdsdsds asasasasas', '$2y$08$C7raL/yMtAw6iw5ZzVLzOOjtEw07v6gYgeblZDcyHApHcwY3f0A5C', NULL, 'profiks11.1994@mail.ru', NULL, NULL, NULL, NULL, 1405504618, 1405504618, 1, 'sdsdsdsds', 'asasasasas', NULL, NULL),
 (10, '127.0.0.1', 'denys1 sdsdsd', '$2y$08$hAm1UzzDJ.iDKcA6gH2h9ew0zlbjszXCkbeGp1gd1eGVD1O6C5u0e', NULL, 'admiqqn@admin.com', '28fdaf9cee7a002b805f9ad030bfb5d0265c5565', NULL, NULL, NULL, 1405504959, 1405504959, 0, 'Denys1', 'sdsdsd', NULL, NULL),
-(11, '127.0.0.1', 'denys arkan2', '$2y$08$mgiseNojfpZ7VsHxsQOOC.MhWhN1mfWOdUCJyu835wcYE7djLXkRW', NULL, 'denys.arkan@gm.com', NULL, NULL, NULL, NULL, 1406189268, 1406189401, 1, 'Denys', 'Arkan', 'OSF GLobal Services', '');
+(11, '127.0.0.1', 'denys arkan2', '$2y$08$mgiseNojfpZ7VsHxsQOOC.MhWhN1mfWOdUCJyu835wcYE7djLXkRW', NULL, 'denys.arkan@gm.com', NULL, NULL, NULL, NULL, 1406189268, 1406553627, 1, 'Denys', 'Arkan', 'OSF GLobal Services2', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_groups`
+-- Структура таблицы `users_groups`
 --
 
 CREATE TABLE IF NOT EXISTS `users_groups` (
@@ -455,41 +373,234 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
   KEY `fk_users_groups_users1_idx` (`user_id`),
   KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
--- Dumping data for table `users_groups`
+-- Дамп данных таблицы `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
-(13, 1, 1),
-(8, 4, 2),
+(23, 1, 1),
+(25, 4, 2),
 (21, 5, 2),
 (14, 6, 2),
 (15, 7, 2),
-(16, 8, 2),
-(17, 9, 2),
 (18, 10, 2),
 (22, 11, 2);
 
+-- --------------------------------------------------------
+
 --
--- Constraints for dumped tables
+-- Структура таблицы `usertracking`
+--
+
+CREATE TABLE IF NOT EXISTS `usertracking` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_id` varchar(100) NOT NULL,
+  `user_identifier` int(5) NOT NULL,
+  `request_uri` text NOT NULL,
+  `timestamp` varchar(20) NOT NULL,
+  `client_ip` varchar(50) NOT NULL,
+  `client_user_agent` text NOT NULL,
+  `referer_page` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=172 ;
+
+--
+-- Дамп данных таблицы `usertracking`
+--
+
+INSERT INTO `usertracking` (`id`, `session_id`, `user_identifier`, `request_uri`, `timestamp`, `client_ip`, `client_user_agent`, `referer_page`) VALUES
+(1, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user', '1406463766', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(2, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user', '1406463767', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(3, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user/all_feeds/4', '1406463784', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(4, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406463785', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(5, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user/all_feeds/js/bootstrap.js', '1406463785', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(6, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user/single_feed/104', '1406463787', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(7, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user/single_feed/js/bootstrap.js', '1406463787', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(8, 'de1b045a91fbd77b56d89aee6c969bf9', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406463787', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(9, 'ca699b1541641e68ddadb76209ac9c06', 4, '/user', '1406464902', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(10, 'ca699b1541641e68ddadb76209ac9c06', 4, '/user/all_feeds/4', '1406464904', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(11, 'ca699b1541641e68ddadb76209ac9c06', 4, '/user/all_feeds/js/bootstrap.js', '1406464905', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(12, 'ca699b1541641e68ddadb76209ac9c06', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406464905', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(13, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user', '1406464911', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(14, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user/single_feed/114', '1406464913', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(15, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user/single_feed/js/jquery-1.10.2.js', '1406464913', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(16, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user/single_feed/js/bootstrap.js', '1406464913', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(17, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user/refresh_posts/114', '1406464915', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(18, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user/single_feed/114', '1406464917', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(19, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user/single_feed/js/bootstrap.js', '1406464917', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(20, '6fa9cdf05fcf31d54246a035b2b36865', 11, '/user/single_feed/js/jquery-1.10.2.js', '1406464917', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(21, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user/refresh_posts/114', '1406471587', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(22, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user/single_feed/114', '1406471588', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(23, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user/single_feed/js/jquery-1.10.2.js', '1406471588', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(24, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user/single_feed/js/bootstrap.js', '1406471588', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(25, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user', '1406471590', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(26, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user/all_feeds/11', '1406471603', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(27, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user/all_feeds/js/jquery-1.10.2.js', '1406471604', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(28, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user/all_feeds/js/bootstrap.js', '1406471604', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(29, '76733f5e08c61bfc8f4f314fcbaa4927', 11, '/user', '1406471612', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(30, 'bf93479de4c444b00517ff344aa2cbc9', 4, '/user', '1406480715', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(31, 'bf93479de4c444b00517ff344aa2cbc9', 4, '/user', '1406480727', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(32, '821635d6c8bbf2adbffe36bdee2e26d2', 1, '/user/all_feeds/11', '1406540762', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(33, '821635d6c8bbf2adbffe36bdee2e26d2', 1, '/user/all_feeds/js/jquery-1.10.2.js', '1406540762', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(34, '821635d6c8bbf2adbffe36bdee2e26d2', 1, '/user/all_feeds/js/bootstrap.js', '1406540762', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(35, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user', '1406541371', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(36, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/single_feed/104', '1406541375', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(37, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406541376', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(38, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/single_feed/js/bootstrap.js', '1406541376', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(39, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/refresh_posts/104', '1406541378', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(40, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/single_feed/104', '1406541379', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(41, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/single_feed/js/bootstrap.js', '1406541380', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(42, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406541380', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(43, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/all_feeds/4', '1406541381', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(44, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/all_feeds/js/bootstrap.js', '1406541382', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(45, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406541382', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(46, 'fbd8c0877e2b18adc953f638b1403f9c', 4, '/user', '1406541386', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(47, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user', '1406541758', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/auth/login'),
+(48, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user/all_feeds/4', '1406541761', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/user'),
+(49, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user/all_feeds/js/bootstrap.js', '1406541762', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/user/all_feeds/4'),
+(50, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406541762', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/user/all_feeds/4'),
+(51, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user/single_feed/113', '1406541763', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/user/all_feeds/4'),
+(52, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user/single_feed/js/bootstrap.js', '1406541763', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/user/single_feed/113'),
+(53, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406541763', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/user/single_feed/113'),
+(54, 'b6624a30171e1c4aa1f35572a9b96e0a', 4, '/user', '1406541771', '127.0.0.1', 'Opera/9.80 (Windows NT 6.1; U; Edition Yx 01; ru) Presto/2.10.229 Version/11.61', 'http://osf_practice/user/single_feed/113'),
+(55, '4212cff8ccc0fe501ada8a8642fd7467', 4, '/user', '1406541795', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36', 'http://osf_practice/auth/login'),
+(56, '4212cff8ccc0fe501ada8a8642fd7467', 4, '/user/all_feeds/4', '1406541799', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36', 'http://osf_practice/user'),
+(57, '4212cff8ccc0fe501ada8a8642fd7467', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406541800', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36', 'http://osf_practice/user/all_feeds/4'),
+(58, '4212cff8ccc0fe501ada8a8642fd7467', 4, '/user/all_feeds/js/bootstrap.js', '1406541800', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36', 'http://osf_practice/user/all_feeds/4'),
+(59, '4212cff8ccc0fe501ada8a8642fd7467', 4, '/user', '1406541802', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36', 'http://osf_practice/user/all_feeds/4'),
+(60, 'c298d51a1e9f2b0416199eb81b979c58', 4, '/user', '1406542215', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(61, '361e9d828ee400595b730d305d55d425', 4, '/user', '1406550778', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(62, '361e9d828ee400595b730d305d55d425', 4, '/user/add_feed/4', '1406550782', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(63, '361e9d828ee400595b730d305d55d425', 4, '/user/add_feed/js/jquery-1.10.2.js', '1406550783', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/add_feed/4'),
+(64, '361e9d828ee400595b730d305d55d425', 4, '/user/add_feed/js/bootstrap.js', '1406550783', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/add_feed/4'),
+(65, '361e9d828ee400595b730d305d55d425', 4, '/user', '1406550784', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/add_feed/4'),
+(66, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4', '1406550788', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(67, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/js/jquery-1.10.2.js', '1406550789', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(68, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/js/bootstrap.js', '1406550789', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(69, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/js/jquery-1.10.2.js', '1406550791', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(70, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/js/bootstrap.js', '1406550791', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(71, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list_info', '1406550791', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(72, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list_info', '1406550791', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(73, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list', '1406550792', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(74, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list', '1406550792', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(75, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/edit/113', '1406550795', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4'),
+(76, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/edit/js/jquery-1.10.2.js', '1406550796', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/edit/113'),
+(77, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/edit/js/bootstrap.js', '1406550796', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/edit/113'),
+(78, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/update_validation/113', '1406550804', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/edit/113'),
+(79, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/update/113', '1406550804', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/edit/113'),
+(80, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/success/113', '1406550805', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/edit/113'),
+(81, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/success/js/jquery-1.10.2.js', '1406550806', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/success/113'),
+(82, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/success/js/bootstrap.js', '1406550806', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/success/113'),
+(83, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list_info', '1406550808', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/success/113'),
+(84, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list_info', '1406550808', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/success/113'),
+(85, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list', '1406550808', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/success/113'),
+(86, '361e9d828ee400595b730d305d55d425', 4, '/user/edit_feeds/4/ajax_list', '1406550808', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/edit_feeds/4/success/113'),
+(87, '361e9d828ee400595b730d305d55d425', 4, '/user', '1406551021', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/add_feed/4'),
+(88, '361e9d828ee400595b730d305d55d425', 4, '/user/single_feed/113', '1406551023', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(89, '361e9d828ee400595b730d305d55d425', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406551024', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(90, '361e9d828ee400595b730d305d55d425', 4, '/user/single_feed/js/bootstrap.js', '1406551024', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(91, '361e9d828ee400595b730d305d55d425', 4, '/user/single_feed/113', '1406551036', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(92, '361e9d828ee400595b730d305d55d425', 4, '/user/single_feed/js/bootstrap.js', '1406551037', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(93, '361e9d828ee400595b730d305d55d425', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406551037', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(94, '361e9d828ee400595b730d305d55d425', 4, '/user', '1406551049', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(95, '361e9d828ee400595b730d305d55d425', 4, '/user/fetch_increment/', '1406551062', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(96, '361e9d828ee400595b730d305d55d425', 4, '/user/', '1406551067', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(97, '361e9d828ee400595b730d305d55d425', 4, '/user/js/bootstrap.js', '1406551068', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/'),
+(98, '361e9d828ee400595b730d305d55d425', 4, '/user/js/jquery-1.10.2.js', '1406551068', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/'),
+(99, '361e9d828ee400595b730d305d55d425', 4, '/user/js/bootstrap.js', '1406551068', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/'),
+(100, '361e9d828ee400595b730d305d55d425', 4, '/user', '1406551069', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(101, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/all_feeds/4', '1406551149', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(102, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406551150', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(103, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/all_feeds/js/bootstrap.js', '1406551150', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(104, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/104', '1406551156', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(105, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/104', '1406551173', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(106, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406551174', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(107, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/bootstrap.js', '1406551174', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(108, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/refresh_posts/104', '1406551175', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(109, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/104', '1406551177', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(110, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406551177', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(111, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/bootstrap.js', '1406551177', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(112, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user', '1406551179', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(113, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/all_feeds/4', '1406551191', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(114, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406551192', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(115, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/all_feeds/js/bootstrap.js', '1406551192', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(116, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/104', '1406551193', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(117, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406551194', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(118, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/bootstrap.js', '1406551194', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(119, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/refresh_posts/104', '1406551196', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(120, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/104', '1406551196', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(121, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/bootstrap.js', '1406551196', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(122, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406551196', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(123, '14834923018c0b1b0068491e1b8c3f2d', 4, '/user', '1406551198', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/104'),
+(124, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user', '1406552288', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(125, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/all_feeds/4', '1406552291', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(126, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/all_feeds/js/jquery-1.10.2.js', '1406552291', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(127, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/all_feeds/js/bootstrap.js', '1406552291', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(128, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/single_feed/109', '1406552294', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(129, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406552294', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/109'),
+(130, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/single_feed/js/bootstrap.js', '1406552294', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/109'),
+(131, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/refresh_posts/109', '1406552296', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/109'),
+(132, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/single_feed/109', '1406552297', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/109'),
+(133, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/single_feed/js/bootstrap.js', '1406552297', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/109'),
+(134, '0f0d1e9d08f3c73d42e9c29bbda6a633', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406552297', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/109'),
+(135, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user', '1406552304', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(136, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/all_feeds/11', '1406552309', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(137, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/all_feeds/js/jquery-1.10.2.js', '1406552309', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(138, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/all_feeds/js/bootstrap.js', '1406552309', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(139, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/single_feed/114', '1406552312', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/11'),
+(140, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/single_feed/js/jquery-1.10.2.js', '1406552313', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(141, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/single_feed/js/bootstrap.js', '1406552313', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(142, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/refresh_posts/114', '1406552315', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(143, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/single_feed/114', '1406552315', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(144, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/single_feed/js/bootstrap.js', '1406552316', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(145, '8fe5c0b16a6f1e6f83259d8f12f48f92', 11, '/user/single_feed/js/jquery-1.10.2.js', '1406552316', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(146, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user', '1406553628', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(147, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user/single_feed/114', '1406553630', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(148, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user/single_feed/js/jquery-1.10.2.js', '1406553631', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(149, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user/single_feed/js/bootstrap.js', '1406553631', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(150, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user/refresh_posts/114', '1406553633', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(151, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user/single_feed/114', '1406553634', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(152, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user/single_feed/js/bootstrap.js', '1406553635', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(153, '5cb2303cbfb8e8b9a6d6ceec49d064ac', 11, '/user/single_feed/js/jquery-1.10.2.js', '1406553635', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/114'),
+(154, 'ae204e73cb66357c399e9506da369461', 4, '/user', '1406554991', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(155, 'ae204e73cb66357c399e9506da369461', 4, '/user/single_feed/113', '1406554994', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(156, 'ae204e73cb66357c399e9506da369461', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406554994', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(157, 'ae204e73cb66357c399e9506da369461', 4, '/user/single_feed/js/bootstrap.js', '1406554994', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(158, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user', '1406555016', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(159, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user/single_feed/113', '1406555022', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(160, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user/single_feed/js/bootstrap.js', '1406555023', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(161, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406555023', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(162, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user/refresh_posts/113', '1406555025', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(163, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user/single_feed/113', '1406555026', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(164, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user/single_feed/js/bootstrap.js', '1406555027', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(165, 'dbd67d91f5fb8220eea4260dbfef1229', 4, '/user/single_feed/js/jquery-1.10.2.js', '1406555027', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/113'),
+(166, '17bfc27a1a3239402112d14a11dbb2f2', 4, '/user', '1406559080', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', ''),
+(167, '17bfc27a1a3239402112d14a11dbb2f2', 4, '/user/all_feeds/4', '1406559090', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user'),
+(168, '17bfc27a1a3239402112d14a11dbb2f2', 4, '/user/single_feed/112', '1406559094', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/all_feeds/4'),
+(169, '17bfc27a1a3239402112d14a11dbb2f2', 4, '/user/refresh_posts/112', '1406559097', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/112'),
+(170, '17bfc27a1a3239402112d14a11dbb2f2', 4, '/user/single_feed/112', '1406559098', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/112'),
+(171, '17bfc27a1a3239402112d14a11dbb2f2', 4, '/user', '1406559100', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:30.0) Gecko/20100101 Firefox/30.0', 'http://osf_practice/user/single_feed/112');
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
 --
 
 --
--- Constraints for table `feeds`
+-- Ограничения внешнего ключа таблицы `feeds`
 --
 ALTER TABLE `feeds`
   ADD CONSTRAINT `fk_feeds_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `rss_posts`
+-- Ограничения внешнего ключа таблицы `rss_posts`
 --
 ALTER TABLE `rss_posts`
   ADD CONSTRAINT `fk_rss_posts_feeds1` FOREIGN KEY (`feeds_id`) REFERENCES `feeds` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `users_groups`
+-- Ограничения внешнего ключа таблицы `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,

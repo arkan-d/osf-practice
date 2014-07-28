@@ -1,3 +1,4 @@
+
 <div class="container"  style="padding-top:50px;">
 	<div class="row">
 		<div class="col-lg-12">
@@ -14,10 +15,12 @@
 		<th><?php echo lang('index_lname_th');?></th>
 		<th><?php echo lang('index_email_th');?></th>
 		<th><?php echo lang('index_groups_th');?></th>
-		<th><?php echo lang('index_status_th');?></th>
 		<th><?php echo lang('index_action_th');?></th>
+		<th><?php echo lang('index_status_th');?></th>
+		
 		<th><?php echo lang('index_delete_th');?></th>
 		<th><?php echo lang('index_feeds_th');?></th>
+		<th><?php echo "Log";?></th>
 	</tr>
 	<?php foreach ($users as $user):?>
 		<tr>
@@ -27,10 +30,13 @@
 			<td>
 				<?php foreach ($user->groups as $group):?>
 					<?php echo anchor("admin/edit_group/".$group->id, $group->name) ;?><br />
-                <?php endforeach?>
+                <?php endforeach?>		
 			</td>
-			<td><?php echo ($user->active) ? anchor("admin/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
+			
 			<td><?php echo anchor("auth/edit_user/".$user->id, "<span class='glyphicon glyphicon-edit'></span>") ;?></td>
+			<? if($group->name !== "admin") { ?>
+			<td><?php echo ($user->active) ? anchor("admin/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
+			
 			<td><?php echo anchor("admin/delete_user/".$user->id, "<span class='glyphicon glyphicon-trash'></span>",array ("onClick"=>"return confirm('Delete This account?')")) ;?></td>
 			
 			
@@ -52,7 +58,8 @@ echo anchor_popup('admin/edit_feeds/'.$user->id, 'Edit Feeds', $atts);
 				
 			</td>
 			
-			
+			<td><?php echo anchor('admin/statistic/'.$user->id, 'Activity'); ?></td>
+			<? }?>
 		</tr>
 	<?php endforeach;?>
 </table>

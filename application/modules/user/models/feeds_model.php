@@ -58,6 +58,17 @@ class Feeds_model extends CI_Model{
 	      }
 	      
 	      
+	      
+	      
+	
+	       function fetch_increment($feed_id){
+		
+		$this->db->where('id',$feed_id)
+			 ->set('views','views+1',FALSE)
+			 ->update('feeds');
+		
+	       }
+	      
 	      function link_by_id($feed_id){
 		    $this->db->select('link');
 		    $this->db->from('feeds');

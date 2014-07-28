@@ -177,10 +177,13 @@ class User extends CI_controller {
 		if(!isset($feed_id)) {
 			show_404();
 		}
+		
+		
 	
 	$data['title'] = "Single";	
 	$data['rss'] = $this->feeds_model->rss_posts($feed_id);
-			
+	
+	$this->feeds_model->fetch_increment($feed_id);		
 			
 			
 	$this->load->library('pagination'); 
@@ -223,6 +226,7 @@ class User extends CI_controller {
 	$this->load->view('templates/footer');
 	    
         }	
+	
 	
 	
 	function all_feeds(){

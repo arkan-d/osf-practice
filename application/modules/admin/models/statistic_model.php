@@ -12,42 +12,44 @@ class Statistic_model extends CI_Model
     
     
     
-    function last_login($user){
-        $this->db->select('last_login');
+    function log($user){
+        $this->db->select('last_login,email,created_on');
         $this->db->from('users');
-        $this->db->where('id',$user);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        
-        return $query->first_row('array');
+        $this->db->where('id',$user);        
+        $query = $this->db->get();        
+        return $query->result_array();
   
         
     }
     
     
-    function created_on ($user){
-        
-        $this->db->select('created_on');
-        $this->db->from('users');
-        $this->db->where('id',$user);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        
-        return $query->first_row('array');
-        
-    }
-    
     
     function visitor_info($user){
-         $this->db->select('timestamp,client_user_agent,referer_page');
-        $this->db->from('usertraking');
+         $this->db->select('timestamp,client_user_agent,referer_page,client_ip');
+        $this->db->from('usertracking');
         $this->db->where('user_identifier',$user);
+	$this->db->order_by('id','desc');
+	$this->db->limit(20);
         $query = $this->db->get();
         
         return $query->result_array();
         
     }
     
+    
+    function popular_feeds(){
+	$this->db->select('link,sum(views)')
+		 ->from('feeds')
+		 ->where('views >',0)		 
+		 ->group_by('link')
+		 ->order_by('sum(views)','desc')
+		 ->limit(10);
+	$query  = $this->db->get();
+	return $query->result_array();
+	
+    
+	
+    }
     
     
     

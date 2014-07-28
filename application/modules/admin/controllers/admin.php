@@ -61,8 +61,71 @@ class Admin extends CI_Controller {
 	
 	function statistic ($user=null){
 		
+			
+		$data = array();
+		$data['title'] = "Users activity";	
+		if (!$this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			redirect('auth/login');
+		}
+		
+		if (!isset($user)) {
+			show_404();
+		}
+		
+		
+		$this->load->model('statistic_model');
+		$log = $this->statistic_model->log($user);
+		
+		foreach ($log as $key){
+			$data['last_login'] = date('Y-m-d H:i:s',$key['last_login']);
+			$data['email'] = $key['email'];
+			$data['created_on'] = date('Y-m-d H:i:s',$key['created_on']);
+		}
+		$info = $this->statistic_model->visitor_info($user);
+		
+		foreach($info as $post => $value){
+			 $data1[$post]['date_time'] = date('Y-m-d H:i:s',$value['timestamp']);
+			 $data1[$post]['client_user_agent'] = $value['client_user_agent'];
+			 $data1[$post]['client_ip'] = $value['client_ip'];
+			 $data1[$post]['referer_page'] = $value['referer_page'];
+		 }
+		 if (!isset($data1)) {
+			$data['message'] = "This user has no activity";
+		 }else {
+			
+			
+		$data['todo'] = $data1;
+		 }
+		 
+		
+				
+		$this->load->view('templates/header',$data);
+		$this->load->view('templates/nav',$data);
+		$this->load->view('statistic',$data);
+		$this->load->view('templates/footer'); 
+		
 	}
 	
+	function popular_feeds(){
+		
+		$data['title'] = "Most popular feeds";	
+		if (!$this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			redirect('auth/login');
+		}
+		$this->load->model('statistic_model');
+		$data['stat'] = $this->statistic_model->popular_feeds();
+		
+		
+		
+		$this->load->view('templates/header',$data);
+		$this->load->view('templates/nav',$data);
+		$this->load->view('popular_feeds',$data);
+		$this->load->view('templates/footer');
+	}
 	
 	public function edit_feeds($id=null)
 	{
@@ -162,14 +225,14 @@ class Admin extends CI_Controller {
 	
 	
 	
-	function user_activity($user=null){
-		$this->load->helper('date');
-		$this->load->model('statistic_model');
-		
-		$data = $this->statistic_model->last_login($user);
-		
-		echo date('Y-m-d H:i:s', $data['last_login']);
-	}
+	//function user_activity($user=null){
+	//	$this->load->helper('date');
+	//	$this->load->model('statistic_model');
+	//	
+	//	$data = $this->statistic_model->last_login($user);
+	//	
+	//	echo date('Y-m-d H:i:s', $data['last_login']);
+	//}
 	
 
 	// create a new group
