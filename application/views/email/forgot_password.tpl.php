@@ -1,4 +1,6 @@
-<html>
+<a href="auth/reset_password/<?=$forgotten_password_code;?>"> Restore password</a>
+	
+<!--	<html>
 <body>
 	<h1><?php echo sprintf(lang('email_forgot_password_heading'), $identity);?></h1>
 	<p>Please click this link to
@@ -6,4 +8,4 @@
 	
 	</p>
 </body>
-</html>
+</html>-->

@@ -41,11 +41,15 @@ class Auth extends CI_Controller {
 	
 	//log the user in
 	function login(){
+		
+		
 		if ($this->ion_auth->logged_in()) {
 			redirect(base_url());
 		}
 		$this->data['title'] = "Login";
-
+		
+		
+		
 		//validate form input
 		$this->form_validation->set_rules('identity', 'Identity', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
@@ -60,6 +64,9 @@ class Auth extends CI_Controller {
 			{
 				//if the login is successful
 				//redirect them back to the home page
+				$this->load->model('user/page_view_model');
+				$this->page_view_model->daily_view();
+				
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 				redirect(base_url(), 'refresh');
 			}
@@ -413,7 +420,7 @@ class Auth extends CI_Controller {
 			//check to see if we are creating the user
 			//redirect them back to the admin page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			redirect("auth", 'refresh');
+			redirect(base_url());
 		}
 		else
 		{

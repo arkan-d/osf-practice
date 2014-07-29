@@ -1,18 +1,4 @@
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
-
-
--- --------------------------------------------------------
-
---
--- table`ci_sessions`
+--`ci_sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
@@ -28,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 
 
 --
--- table `feeds`
+--  `feeds`
 --
 
 CREATE TABLE IF NOT EXISTS `feeds` (
@@ -41,13 +27,11 @@ CREATE TABLE IF NOT EXISTS `feeds` (
   `views` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_feeds_users1` (`users_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
 
-
--- --------------------------------------------------------
 
 --
--- table `groups`
+-- `groups`
 --
 
 CREATE TABLE IF NOT EXISTS `groups` (
@@ -58,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- dump `groups`
+-- `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -68,7 +52,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- table `login_attempts`
+--  `login_attempts`
 --
 
 CREATE TABLE IF NOT EXISTS `login_attempts` (
@@ -77,12 +61,20 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   `login` varchar(100) NOT NULL,
   `time` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- `login_attempts`
+--
+
+INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
+(4, '127.0.0.1', 'profiks.1994@mail.ru', 1406560857),
+(5, '127.0.0.1', 'user@user.com', 1406634251);
 
 -- --------------------------------------------------------
 
 --
--- table`rss_posts`
+--  `rss_posts`
 --
 
 CREATE TABLE IF NOT EXISTS `rss_posts` (
@@ -93,9 +85,9 @@ CREATE TABLE IF NOT EXISTS `rss_posts` (
   `feeds_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_rss_posts_feeds1` (`feeds_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=965 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1055 ;
 
----------------------------------------------
+
 
 --
 --  `users`
@@ -120,20 +112,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1406559106, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, 'TycT.YvC6jvogsS-9eeS.O8bf3988e02339842cf', 1406018508, 'mvG0oTgvGkxBY0wxir5VPe', 1404810260, 1406559079, 1, 'Us', 'ername', 'OSF GLobal Services', '');
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'jXOxk1YUD7x5pZLSPENsj.', 1268889823, 1406634302, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(4, '127.0.0.1', 'user', '$2y$08$vQKX4PTcZ8r7jDUXkDCCYOXl4SxcJjj4CNxs/4wyP3wY4qC.BQmmO', NULL, 'user@user.com', NULL, 'me.9QSgsPEFFmM8df6s9tO044352bc6947e58fa2', 1406567757, 'VuRrxeKxA8WWsVt39PH/F.', 1404810260, 1406632112, 1, 'Us', 'ername', 'OSF GLobal Services', '');
 
 -- --------------------------------------------------------
 
 --
--- `users_groups`
+--  `users_groups`
 --
 
 CREATE TABLE IF NOT EXISTS `users_groups` (
@@ -144,16 +136,15 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
   KEY `fk_users_groups_users1_idx` (`user_id`),
   KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
--- `users_groups`
+--  `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (23, 1, 1),
 (25, 4, 2);
-
 
 -- --------------------------------------------------------
 
@@ -171,14 +162,30 @@ CREATE TABLE IF NOT EXISTS `usertracking` (
   `client_user_agent` text NOT NULL,
   `referer_page` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=172 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=529 ;
+
 
 --
--- Дамп данных таблицы `usertracking`
+--  `views`
 --
 
+CREATE TABLE IF NOT EXISTS `views` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` varchar(50) NOT NULL,
+  `views` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `day` (`day`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
+
 --
--- Ограничения внешнего ключа таблицы `feeds`
+--  `views`
+--
+
+INSERT INTO `views` (`id`, `day`, `views`) VALUES
+(1, '2014-07-29', 35),
+(7, '2014-07-28', 2);
+
+
 --
 ALTER TABLE `feeds`
   ADD CONSTRAINT `fk_feeds_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -62,8 +62,7 @@ class User extends CI_controller {
 			redirect('admin');
 		}
 		
-		$this->load->model('page_view_model');
-		$this->page_view_model->daily_view();
+		
 		 
 		 
 		$data['user']=  $this->session->userdata('user_id');
