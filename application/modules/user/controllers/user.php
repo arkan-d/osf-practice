@@ -62,6 +62,9 @@ class User extends CI_controller {
 			redirect('admin');
 		}
 		
+		$this->load->model('page_view_model');
+		$this->page_view_model->daily_view();
+		 
 		 
 		$data['user']=  $this->session->userdata('user_id');
 		$user = $this->session->userdata('user_id');
@@ -183,7 +186,8 @@ class User extends CI_controller {
 	$data['title'] = "Single";	
 	$data['rss'] = $this->feeds_model->rss_posts($feed_id);
 	
-	$this->feeds_model->fetch_increment($feed_id);		
+	$this->load->model('page_view_model');
+	$this->page_view_model->fetch_increment($feed_id);		
 			
 			
 	$this->load->library('pagination'); 
@@ -319,7 +323,6 @@ class User extends CI_controller {
 	{
 		
 		$this->load->view('edit_feeds',$output);
-		$this->load->view('templates/footer');
 		
 	}
 		

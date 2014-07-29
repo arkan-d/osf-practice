@@ -21,8 +21,10 @@
                      
                       <div class="col-md-6">
                  
-                 <ul class="nav nav-pills nav-stacked">
-                        <?
+                 <ol class="nav nav-pills nav-stacked">
+                
+		      
+		        <?
                         foreach ($stat as $key => $value){ ?>
                          
           <li>
@@ -37,9 +39,9 @@
                              
                     
                        
-                    
-                    
-                  </ul>
+		      
+		      
+                  </ol>
                   </div>
                  
                  

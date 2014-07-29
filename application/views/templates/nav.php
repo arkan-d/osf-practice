@@ -24,6 +24,7 @@
             <? if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()) {?>
           
          
+         
            <li <?php if ($this->uri->segment(2) == '') {echo"class='active'";}?>>
         <a href="<?=base_url();?>">Dashboard <span class="glyphicon glyphicon-dashboard"></span></a>
              </li>  

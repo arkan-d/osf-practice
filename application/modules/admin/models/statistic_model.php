@@ -52,6 +52,16 @@ class Statistic_model extends CI_Model
     }
     
     
+    function today_visits(){
+	
+	$today = date("Y-m-d");
+	$this->db->select('views')
+		 ->from('views')
+		 ->where('day',$today);	  
+	     $query  = $this->db->get();
+	     
+	return $query->first_row('array');
+    }
     
     
     

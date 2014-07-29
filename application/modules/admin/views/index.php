@@ -5,6 +5,18 @@
                			
 <h1><?php echo lang('index_heading');?></h1>
 <p><?php echo lang('index_subheading');?></p>
+
+ 
+                <h3><a href="#"> Today visits : 
+          <?
+	  if (isset($views)){
+          foreach($views as $view){
+                echo "$view";
+	  }
+	  }
+          ?>
+                </a> </h3>
+          
                 </div>
                 
             </div>

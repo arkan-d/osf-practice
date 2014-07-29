@@ -51,7 +51,12 @@ class Admin extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-
+			
+			$this->load->model('statistic_model');
+			$this->data['views'] = $this->statistic_model->today_visits();
+			
+			
+			
 			$this->_render_page('admin/index', $this->data);
 		}
 	

@@ -29,6 +29,7 @@ class Bcrypt {
   }
 
   private function getSalt() {
+    //'%02d$'
     $salt = sprintf($this->salt_prefix.'%02d$', $this->rounds);
 
     $bytes = $this->getRandomBytes(16);
@@ -81,7 +82,7 @@ class Bcrypt {
 
   private function encodeBytes($input) {
     // The following is code from the PHP Password Hashing Framework
-    $itoa64 = './ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    $itoa64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     $output = '';
     $i = 0;

@@ -1,14 +1,8 @@
-  
-    <!-- /.intro-header -->
-
-    <div class="content-section-a">
-
+ <section id="title" class="emerald">
         <div class="container">
-
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
+                <div class="col-sm-6">
+               <div class="clearfix"></div>
                     <h2 class="section-heading">Age RSS News Feeds</h2>
                     <p class="lead">Really Simple Syndication (RSS) is an XML-based format for news
 		    distribution that includes headlines, summaries and links back to a publisher website
@@ -20,25 +14,23 @@
 		    
 		    </p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="<?=base_url();?>img/rss-reader.png" alt="">
-                </div>
+                
             </div>
-
         </div>
-        <!-- /.container -->
+    </section> 
+    <!-- /.intro-header -->
 
-    </div>
-    <!-- /.content-section-a -->
-  
-<div class="content-section-b">
+    <div class="content-section-a">
 
-        <div class="container">	    
+        <div class="container">
+
+	
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
 		    
-		 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                   
-                    <div class="chat-panel panel panel-default chat-boder chat-panel-head" >
+                    <hr class="section-heading-spacer">
+			
+			 <div class="chat-panel panel panel-default chat-boder chat-panel-head" >
                         <div class="panel-heading">
                             <i class="glyphicon glyphicon-star"></i>
                             Favourites Feeds
@@ -89,18 +81,31 @@ echo anchor_popup('user/edit_feeds/'.$user, 'Manage feeds', $atts);
                         </div>
 
                     </div>
-                    
+<!--/#title-->
+                   
                 </div>
+                <div class="col-lg-4 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="<?=base_url();?>img/rss-reader.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+  
+<div class="content-section-b">
+
+        <div class="container">	    
 		    
-		    <div class="row">
+		 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                    
-                    <div class="chat-panel panel panel-default chat-boder chat-panel-head" >
-		    </div>
-		    
-		    
-		    </div></div>
-		    
+                   
+                    
+                </div>
+		   
 		 </div>
 	</div>
 	

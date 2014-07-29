@@ -23,9 +23,20 @@ foreach($css_files as $file): ?>
 <div class="container"  style="padding-top:50px;">
 	<div class="row">
 		<div class="col-lg-12">                
-                
-    <h2>Edit rssfeed</h2>
+             
+	      
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+             <h2>Edit rssfeed</h2>
 <p>Edit your feed sources</p>
+                </div>
+                
+            </div>
+        </div>
+    </section><!--/#title-->   
+    
 		<?php echo $output; ?>
 
                 
